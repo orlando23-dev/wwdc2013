@@ -36,6 +36,27 @@
                                             <segue destination="7sj-NX-YP5" kind="push" id="sCw-FD-Eh0"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Hww-OS-lSr">
+                                        <rect key="frame" x="0.0" y="44" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gravity + Collision" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="447-bp-VmS">
+                                                    <rect key="frame" x="27" y="11" width="145" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="FES-oF-SVr" kind="push" id="RVZ-f8-StU"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -49,7 +70,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XQb-TZ-h2K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="453" y="34"/>
+            <point key="canvasLocation" x="428" y="517"/>
         </scene>
         <!--Gravity View Controller - Gravity-->
         <scene sceneID="uvp-Gn-tun">
@@ -78,6 +99,40 @@
             </objects>
             <point key="canvasLocation" x="889" y="34"/>
         </scene>
+        <!--Gravity Collision View Controller - Gravity + Collision-->
+        <scene sceneID="5kH-Jh-8Qk">
+            <objects>
+                <viewController title="Gravity + Collision" id="FES-oF-SVr" customClass="GravityCollisionViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kxN-v9-e0T">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ff3-wb-Pq2">
+                                <rect key="frame" x="114" y="9" width="60" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.59824804600000003" green="0.54981007959999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.59824804600000003" green="0.54981007959999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zfb-lW-aQa">
+                                <rect key="frame" x="155" y="33" width="59" height="26"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.59824804600000003" green="0.54981007959999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.59824804600000003" green="0.54981007959999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Gravity + Collision" id="yDr-ph-eGk"/>
+                    <connections>
+                        <outlet property="lowerSquare" destination="zfb-lW-aQa" id="fzS-Ol-mXG"/>
+                        <outlet property="upperSquare" destination="ff3-wb-Pq2" id="1Qg-CR-Isw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uyw-IP-HdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="889" y="770"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="qiP-bf-8cv">
             <objects>
@@ -92,10 +147,17 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="32F-yn-wzK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="29" y="34"/>
+            <point key="canvasLocation" x="-18" y="517"/>
         </scene>
     </scenes>
     <classes>
+        <class className="GravityCollisionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GravityCollisionViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="lowerSquare" candidateClass="UIView"/>
+                <relationship kind="outlet" name="upperSquare" candidateClass="UIView"/>
+            </relationships>
+        </class>
         <class className="GravityViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GravityViewController.h"/>
             <relationships>

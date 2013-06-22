@@ -23,6 +23,9 @@
 	// Do any additional setup after loading the view.
     UIDynamicAnimator* animator = [[UIDynamicAnimator alloc]initWithReferenceView:self.view];
     UIGravityBehavior* gravity = [[UIGravityBehavior alloc]initWithItems:@[self.square]];
+    // desc - (0, 1) by default, UIKit Gravity 1 g (9.8 m/s^2) = 1000 p/s^2, that's dx/dt, dy/dt
+    gravity.xComponent = 0;
+    gravity.yComponent = 0.5f;
     [animator addBehavior:gravity];
     self.animator = animator;
 }

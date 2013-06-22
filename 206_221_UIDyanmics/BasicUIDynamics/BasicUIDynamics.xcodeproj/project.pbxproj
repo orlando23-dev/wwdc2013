@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F1115D3C1775A2A4001A46FB /* GravityCollisionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1115D3B1775A2A4001A46FB /* GravityCollisionViewController.m */; };
 		F137FD24177558B100B1AD33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F137FD23177558B100B1AD33 /* Foundation.framework */; };
 		F137FD26177558B100B1AD33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F137FD25177558B100B1AD33 /* CoreGraphics.framework */; };
 		F137FD28177558B100B1AD33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F137FD27177558B100B1AD33 /* UIKit.framework */; };
@@ -22,7 +23,6 @@
 		F137FD4D177558B100B1AD33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F137FD4B177558B100B1AD33 /* InfoPlist.strings */; };
 		F137FD4F177558B100B1AD33 /* BasicUIDynamicsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F137FD4E177558B100B1AD33 /* BasicUIDynamicsTests.m */; };
 		F137FD5E1775606200B1AD33 /* GravityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F137FD5D1775606200B1AD33 /* GravityViewController.m */; };
-		F137FD5F1775606200B1AD33 /* GravityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F137FD5D1775606200B1AD33 /* GravityViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F1115D3A1775A2A4001A46FB /* GravityCollisionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GravityCollisionViewController.h; sourceTree = "<group>"; };
+		F1115D3B1775A2A4001A46FB /* GravityCollisionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GravityCollisionViewController.m; sourceTree = "<group>"; };
 		F137FD20177558B100B1AD33 /* BasicUIDynamics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasicUIDynamics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F137FD23177558B100B1AD33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F137FD25177558B100B1AD33 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -164,6 +166,8 @@
 			children = (
 				F137FD5C1775606200B1AD33 /* GravityViewController.h */,
 				F137FD5D1775606200B1AD33 /* GravityViewController.m */,
+				F1115D3A1775A2A4001A46FB /* GravityCollisionViewController.h */,
+				F1115D3B1775A2A4001A46FB /* GravityCollisionViewController.m */,
 			);
 			path = UIDynamicsViewControllers;
 			sourceTree = "<group>";
@@ -265,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1115D3C1775A2A4001A46FB /* GravityCollisionViewController.m in Sources */,
 				F137FD3A177558B100B1AD33 /* ViewController.m in Sources */,
 				F137FD34177558B100B1AD33 /* AppDelegate.m in Sources */,
 				F137FD30177558B100B1AD33 /* main.m in Sources */,
@@ -277,7 +282,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F137FD4F177558B100B1AD33 /* BasicUIDynamicsTests.m in Sources */,
-				F137FD5F1775606200B1AD33 /* GravityViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +476,7 @@
 				F137FD54177558B100B1AD33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F137FD55177558B100B1AD33 /* Build configuration list for PBXNativeTarget "BasicUIDynamicsTests" */ = {
 			isa = XCConfigurationList;
@@ -480,6 +485,7 @@
 				F137FD57177558B100B1AD33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
