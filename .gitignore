@@ -12,3 +12,6 @@ bin-release/
 
 # mac local setting files
 .DS_Store
+
+# UIDynamics extended folders - 206_221_UIDyanmics/OfficialSamples
+206_221_UIDyanmics/OfficialSamples
