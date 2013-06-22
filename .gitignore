@@ -15,3 +15,5 @@ bin-release/
 
 # UIDynamics extended folders - 206_221_UIDyanmics/OfficialSamples
 206_221_UIDyanmics/OfficialSamples
+# UI change in Xcode project - just ignore
+206_221_UIDyanmics/UIDyanmics.xcworkspace/xcuserdata/llv22.xcuserdatad/
