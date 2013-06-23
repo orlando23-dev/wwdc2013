@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F1115D3C1775A2A4001A46FB /* GravityCollisionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1115D3B1775A2A4001A46FB /* GravityCollisionViewController.m */; };
+		F1178C3F177697680092A630 /* AttachmentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1178C3E177697680092A630 /* AttachmentsViewController.m */; };
 		F137FD24177558B100B1AD33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F137FD23177558B100B1AD33 /* Foundation.framework */; };
 		F137FD26177558B100B1AD33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F137FD25177558B100B1AD33 /* CoreGraphics.framework */; };
 		F137FD28177558B100B1AD33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F137FD27177558B100B1AD33 /* UIKit.framework */; };
@@ -15,7 +16,6 @@
 		F137FD30177558B100B1AD33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F137FD2F177558B100B1AD33 /* main.m */; };
 		F137FD34177558B100B1AD33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F137FD33177558B100B1AD33 /* AppDelegate.m */; };
 		F137FD37177558B100B1AD33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F137FD35177558B100B1AD33 /* Main.storyboard */; };
-		F137FD3A177558B100B1AD33 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F137FD39177558B100B1AD33 /* ViewController.m */; };
 		F137FD3C177558B100B1AD33 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F137FD3B177558B100B1AD33 /* Images.xcassets */; };
 		F137FD43177558B100B1AD33 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F137FD42177558B100B1AD33 /* XCTest.framework */; };
 		F137FD44177558B100B1AD33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F137FD23177558B100B1AD33 /* Foundation.framework */; };
@@ -38,6 +38,8 @@
 /* Begin PBXFileReference section */
 		F1115D3A1775A2A4001A46FB /* GravityCollisionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GravityCollisionViewController.h; sourceTree = "<group>"; };
 		F1115D3B1775A2A4001A46FB /* GravityCollisionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GravityCollisionViewController.m; sourceTree = "<group>"; };
+		F1178C3D177697680092A630 /* AttachmentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttachmentsViewController.h; sourceTree = "<group>"; };
+		F1178C3E177697680092A630 /* AttachmentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttachmentsViewController.m; sourceTree = "<group>"; };
 		F137FD20177558B100B1AD33 /* BasicUIDynamics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasicUIDynamics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F137FD23177558B100B1AD33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F137FD25177558B100B1AD33 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -49,8 +51,6 @@
 		F137FD32177558B100B1AD33 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F137FD33177558B100B1AD33 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F137FD36177558B100B1AD33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F137FD38177558B100B1AD33 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F137FD39177558B100B1AD33 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F137FD3B177558B100B1AD33 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F137FD41177558B100B1AD33 /* BasicUIDynamicsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasicUIDynamicsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F137FD42177558B100B1AD33 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -124,8 +124,6 @@
 				F137FD32177558B100B1AD33 /* AppDelegate.h */,
 				F137FD33177558B100B1AD33 /* AppDelegate.m */,
 				F137FD35177558B100B1AD33 /* Main.storyboard */,
-				F137FD38177558B100B1AD33 /* ViewController.h */,
-				F137FD39177558B100B1AD33 /* ViewController.m */,
 				F137FD3B177558B100B1AD33 /* Images.xcassets */,
 				F137FD2A177558B100B1AD33 /* Supporting Files */,
 			);
@@ -168,6 +166,8 @@
 				F137FD5D1775606200B1AD33 /* GravityViewController.m */,
 				F1115D3A1775A2A4001A46FB /* GravityCollisionViewController.h */,
 				F1115D3B1775A2A4001A46FB /* GravityCollisionViewController.m */,
+				F1178C3D177697680092A630 /* AttachmentsViewController.h */,
+				F1178C3E177697680092A630 /* AttachmentsViewController.m */,
 			);
 			path = UIDynamicsViewControllers;
 			sourceTree = "<group>";
@@ -269,8 +269,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1178C3F177697680092A630 /* AttachmentsViewController.m in Sources */,
 				F1115D3C1775A2A4001A46FB /* GravityCollisionViewController.m in Sources */,
-				F137FD3A177558B100B1AD33 /* ViewController.m in Sources */,
 				F137FD34177558B100B1AD33 /* AppDelegate.m in Sources */,
 				F137FD30177558B100B1AD33 /* main.m in Sources */,
 				F137FD5E1775606200B1AD33 /* GravityViewController.m in Sources */,

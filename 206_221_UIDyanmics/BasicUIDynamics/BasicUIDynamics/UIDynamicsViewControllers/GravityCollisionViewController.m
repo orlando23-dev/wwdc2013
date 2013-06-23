@@ -36,6 +36,9 @@
     self->_behCollision = [[UICollisionBehavior alloc]initWithItems:@[self.lowerSquare]];
     self->_behCollision.translatesReferenceBoundsIntoBoundary = YES;
     self->_behCollision.collisionDelegate = self;
+    // desc - collision boundaries
+//    [self->_behCollision addBoundaryWithIdentifier:@"Wall1" forPath:<Your Path>];
+//    [self->_behCollision addBoundaryWithIdentifier:@"Wall2" fromPoint:<From Point> toPoint:<To Point>];
     [animator addBehavior:self->_behGravity];
     [animator addBehavior:self->_behCollision];
     self.animator = animator;
@@ -57,6 +60,7 @@
 
 #pragma mark - Collision boundary & Item delegates
 
+// TODO : boundaryIdentifier will always return nil
 - (void)collisionBehavior:(UICollisionBehavior*)behavior
       beganContactForItem:(id <UIDynamicItem>)item
    withBoundaryIdentifier:(id <NSCopying>)identifier
