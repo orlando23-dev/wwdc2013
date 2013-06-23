@@ -27,14 +27,19 @@
 	// Do any additional setup after loading the view.
     UIDynamicAnimator* animator = [[UIDynamicAnimator alloc]initWithReferenceView:self.view];
     UICollisionBehavior* behCollision = [[UICollisionBehavior alloc]initWithItems:@[self.square]];
+    behCollision.translatesReferenceBoundsIntoBoundary = YES;
+    
     CGPoint squareCenterPoint = CGPointMake(self.square.center.x, self.square.center.y - 100.0);
     CGPoint attachmentPoint = CGPointMake(-25.0f, -25.0f);
-    
     /*
      By default, an attachment behavior uses the center of a view. By using a small offset, we get a more interesting effect which will cause the view to have rotation movement when dragging the attachment.
      */
     UIAttachmentBehavior* attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:self.square point:attachmentPoint attachedToAnchor:squareCenterPoint];
-    behCollision.translatesReferenceBoundsIntoBoundary = YES;
+    /*
+     By default, with spring effect, however, without delegate for frequency and damping
+     */
+//    [attachmentBehavior setFrequency:4.0];
+//    [attachmentBehavior setDamping:0.5];
     // Show visually the attachment points
     self.redSquare.center = attachmentBehavior.anchorPoint;
     

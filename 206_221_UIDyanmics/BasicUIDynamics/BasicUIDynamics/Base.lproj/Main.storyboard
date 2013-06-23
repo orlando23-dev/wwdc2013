@@ -78,6 +78,27 @@
                                             <segue destination="WUf-vy-VVC" kind="push" id="IKl-yr-tDU"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="DG2-if-fVQ">
+                                        <rect key="frame" x="0.0" y="132" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Snap" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RE0-GL-gGv">
+                                                    <rect key="frame" x="27" y="11" width="145" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="zUw-f2-ofE" kind="push" id="Tqc-Zf-Eb8"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -154,6 +175,41 @@
             </objects>
             <point key="canvasLocation" x="889" y="770"/>
         </scene>
+        <!--Snap View Controller - Snap-->
+        <scene sceneID="xuf-42-8OU">
+            <objects>
+                <viewController id="zUw-f2-ofE" customClass="SnapViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Su-cu-9Om">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view alpha="0.69999998807907104" contentMode="scaleToFill" id="Gi8-Zs-YSU">
+                                <rect key="frame" x="110" y="31" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="zez-jw-12a" appends="YES" id="DNo-WP-oNP"/>
+                        </connections>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Snap" id="8Q4-oD-7Zo"/>
+                    <connections>
+                        <outlet property="square" destination="Gi8-Zs-YSU" id="hwV-uN-t42"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MnL-fH-eDK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="zez-jw-12a">
+                    <connections>
+                        <action selector="handleSnapGesture:" destination="zUw-f2-ofE" id="8sZ-bn-ZAg"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1291" y="770"/>
+        </scene>
         <!--Attachments View Controller - Attachments-->
         <scene sceneID="ee9-UC-hJD">
             <objects>
@@ -222,33 +278,6 @@
             <point key="canvasLocation" x="-18" y="517"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="AttachmentView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AttachmentView.h"/>
-        </class>
-        <class className="AttachmentsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AttachmentsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="handleAttachmentGesture:" candidateClass="UIPanGestureRecognizer"/>
-                <relationship kind="outlet" name="blueSquare" candidateClass="UIView"/>
-                <relationship kind="outlet" name="redSquare" candidateClass="UIView"/>
-                <relationship kind="outlet" name="square" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="GravityCollisionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GravityCollisionViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="lowerSquare" candidateClass="UIView"/>
-                <relationship kind="outlet" name="upperSquare" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="GravityViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GravityViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="square" candidateClass="UIView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

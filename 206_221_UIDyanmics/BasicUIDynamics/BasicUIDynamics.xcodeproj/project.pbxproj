@@ -24,6 +24,7 @@
 		F137FD4D177558B100B1AD33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F137FD4B177558B100B1AD33 /* InfoPlist.strings */; };
 		F137FD4F177558B100B1AD33 /* BasicUIDynamicsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F137FD4E177558B100B1AD33 /* BasicUIDynamicsTests.m */; };
 		F137FD5E1775606200B1AD33 /* GravityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F137FD5D1775606200B1AD33 /* GravityViewController.m */; };
+		F13F777A177705C1000F048E /* SnapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F13F7779177705C1000F048E /* SnapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		F137FD59177558FF00B1AD33 /* readme.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = readme.rtf; sourceTree = "<group>"; };
 		F137FD5C1775606200B1AD33 /* GravityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GravityViewController.h; sourceTree = "<group>"; };
 		F137FD5D1775606200B1AD33 /* GravityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GravityViewController.m; sourceTree = "<group>"; };
+		F13F7778177705C1000F048E /* SnapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapViewController.h; sourceTree = "<group>"; };
+		F13F7779177705C1000F048E /* SnapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +176,8 @@
 				F1178C3E177697680092A630 /* AttachmentsViewController.m */,
 				F1095DEC1776AEA800A259CD /* AttachmentView.h */,
 				F1095DED1776AEA800A259CD /* AttachmentView.m */,
+				F13F7778177705C1000F048E /* SnapViewController.h */,
+				F13F7779177705C1000F048E /* SnapViewController.m */,
 			);
 			path = UIDynamicsViewControllers;
 			sourceTree = "<group>";
@@ -279,6 +284,7 @@
 				F1115D3C1775A2A4001A46FB /* GravityCollisionViewController.m in Sources */,
 				F137FD34177558B100B1AD33 /* AppDelegate.m in Sources */,
 				F137FD30177558B100B1AD33 /* main.m in Sources */,
+				F13F777A177705C1000F048E /* SnapViewController.m in Sources */,
 				F137FD5E1775606200B1AD33 /* GravityViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
