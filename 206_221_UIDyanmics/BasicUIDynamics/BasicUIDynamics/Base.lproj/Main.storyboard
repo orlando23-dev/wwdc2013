@@ -158,11 +158,11 @@
         <scene sceneID="ee9-UC-hJD">
             <objects>
                 <viewController id="WUf-vy-VVC" customClass="AttachmentsViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="PYO-v1-f02">
+                    <view key="view" contentMode="scaleToFill" id="PYO-v1-f02" customClass="AttachmentView">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="bgK-VI-XCl">
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" id="bgK-VI-XCl">
                                 <rect key="frame" x="110" y="57" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -222,6 +222,33 @@
             <point key="canvasLocation" x="-18" y="517"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="AttachmentView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AttachmentView.h"/>
+        </class>
+        <class className="AttachmentsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AttachmentsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="handleAttachmentGesture:" candidateClass="UIPanGestureRecognizer"/>
+                <relationship kind="outlet" name="blueSquare" candidateClass="UIView"/>
+                <relationship kind="outlet" name="redSquare" candidateClass="UIView"/>
+                <relationship kind="outlet" name="square" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="GravityCollisionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GravityCollisionViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="lowerSquare" candidateClass="UIView"/>
+                <relationship kind="outlet" name="upperSquare" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="GravityViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GravityViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="square" candidateClass="UIView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

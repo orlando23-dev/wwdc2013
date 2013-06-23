@@ -7,6 +7,7 @@
 //
 
 #import "AttachmentsViewController.h"
+#import "AttachmentView.h"
 
 @interface AttachmentsViewController ()
 
@@ -28,6 +29,7 @@
     UICollisionBehavior* behCollision = [[UICollisionBehavior alloc]initWithItems:@[self.square]];
     CGPoint squareCenterPoint = CGPointMake(self.square.center.x, self.square.center.y - 100.0);
     CGPoint attachmentPoint = CGPointMake(-25.0f, -25.0f);
+    
     /*
      By default, an attachment behavior uses the center of a view. By using a small offset, we get a more interesting effect which will cause the view to have rotation movement when dragging the attachment.
      */
@@ -35,6 +37,11 @@
     behCollision.translatesReferenceBoundsIntoBoundary = YES;
     // Show visually the attachment points
     self.redSquare.center = attachmentBehavior.anchorPoint;
+    
+    AttachmentView* containerView = (AttachmentView*)self.view;
+    containerView.redSquare = self.redSquare;
+    containerView.blueSquare = self.blueSquare;
+    containerView.square = self.square;
 //    NSLog(@"%f %f", self.redSquare.center.x, self.redSquare.center.y);
     // desc - incorrectly location
 //    self.blueSquare.center = CGPointMake(25.0, 25.0);
@@ -58,6 +65,7 @@
 //    NSLog(@"%f %f", anchorPoint.x, anchorPoint.y);
     [self.attachmentBehavior setAnchorPoint:anchorPoint];
     self.redSquare.center = anchorPoint;//self.attachmentBehavior.anchorPoint;
+    [self.view setNeedsDisplay];
 }
 
 @end

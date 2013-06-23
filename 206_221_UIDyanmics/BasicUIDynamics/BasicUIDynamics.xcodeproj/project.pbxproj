@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F1095DEE1776AEA800A259CD /* AttachmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1095DED1776AEA800A259CD /* AttachmentView.m */; };
 		F1115D3C1775A2A4001A46FB /* GravityCollisionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1115D3B1775A2A4001A46FB /* GravityCollisionViewController.m */; };
 		F1178C3F177697680092A630 /* AttachmentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1178C3E177697680092A630 /* AttachmentsViewController.m */; };
 		F137FD24177558B100B1AD33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F137FD23177558B100B1AD33 /* Foundation.framework */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F1095DEC1776AEA800A259CD /* AttachmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttachmentView.h; sourceTree = "<group>"; };
+		F1095DED1776AEA800A259CD /* AttachmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttachmentView.m; sourceTree = "<group>"; };
 		F1115D3A1775A2A4001A46FB /* GravityCollisionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GravityCollisionViewController.h; sourceTree = "<group>"; };
 		F1115D3B1775A2A4001A46FB /* GravityCollisionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GravityCollisionViewController.m; sourceTree = "<group>"; };
 		F1178C3D177697680092A630 /* AttachmentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttachmentsViewController.h; sourceTree = "<group>"; };
@@ -168,6 +171,8 @@
 				F1115D3B1775A2A4001A46FB /* GravityCollisionViewController.m */,
 				F1178C3D177697680092A630 /* AttachmentsViewController.h */,
 				F1178C3E177697680092A630 /* AttachmentsViewController.m */,
+				F1095DEC1776AEA800A259CD /* AttachmentView.h */,
+				F1095DED1776AEA800A259CD /* AttachmentView.m */,
 			);
 			path = UIDynamicsViewControllers;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1178C3F177697680092A630 /* AttachmentsViewController.m in Sources */,
+				F1095DEE1776AEA800A259CD /* AttachmentView.m in Sources */,
 				F1115D3C1775A2A4001A46FB /* GravityCollisionViewController.m in Sources */,
 				F137FD34177558B100B1AD33 /* AppDelegate.m in Sources */,
 				F137FD30177558B100B1AD33 /* main.m in Sources */,
