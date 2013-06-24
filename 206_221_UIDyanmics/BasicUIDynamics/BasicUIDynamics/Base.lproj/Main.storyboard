@@ -141,6 +141,48 @@
                                             <segue destination="R6M-Qk-8HJ" kind="push" identifier="Continuous" id="UiG-qE-aln"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="mHf-qf-KtE">
+                                        <rect key="frame" x="0.0" y="264" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Properties" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Prt-A1-M3I">
+                                                    <rect key="frame" x="27" y="11" width="145" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="MeM-fJ-iro" kind="push" id="O1L-OP-WmW"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="AOL-x7-Vf0">
+                                        <rect key="frame" x="0.0" y="308" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gravity + Collision + Spring" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Bu0-Ok-Nqu">
+                                                    <rect key="frame" x="27" y="11" width="219" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="O70-Kv-vCJ" kind="push" id="kKq-V3-IYK"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -292,7 +334,92 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1291" y="770"/>
+            <point key="canvasLocation" x="1281" y="770"/>
+        </scene>
+        <!--Gravity Collision Spring View Controller - Gravity + Collision + Spring-->
+        <scene sceneID="Hkg-z4-Vpr">
+            <objects>
+                <viewController id="O70-Kv-vCJ" customClass="GravityCollisionSpringViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2kl-ns-Lha">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view alpha="0.69999998807907104" contentMode="scaleToFill" id="7sg-yI-gph">
+                                <rect key="frame" x="116" y="75" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" id="e9x-im-6rR">
+                                        <rect key="frame" x="46" y="46" width="8" height="8"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.59824804600000003" green="0.54981007959999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.59824804600000003" green="0.54981007959999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="m3X-nU-gS5">
+                                <rect key="frame" x="162" y="22" width="8" height="8"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.16482327120000001" blue="0.4095905762" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.30937731619999997" green="0.5164682773" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="9vf-Fh-FbC" appends="YES" id="UmZ-gx-1xx"/>
+                        </connections>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Gravity + Collision + Spring" id="MSb-wy-Aww"/>
+                    <connections>
+                        <outlet property="blueSquare" destination="e9x-im-6rR" id="JqM-K4-3FJ"/>
+                        <outlet property="redSquare" destination="m3X-nU-gS5" id="uHd-GS-6ez"/>
+                        <outlet property="square" destination="7sg-yI-gph" id="Vfg-3m-9yf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lPJ-3h-XJC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="9vf-Fh-FbC">
+                    <connections>
+                        <action selector="handleSpringAttachmentGesture:" destination="O70-Kv-vCJ" id="I5h-Qv-SiZ"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2080" y="458"/>
+        </scene>
+        <!--Item Properties View Controller - Item Properties-->
+        <scene sceneID="yzM-Jw-cdT">
+            <objects>
+                <viewController id="MeM-fJ-iro" customClass="ItemPropertiesViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BrZ-s5-NPv">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="Ip2-oP-E2r">
+                                <rect key="frame" x="73" y="45" width="81" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.59824804600000003" green="0.54981007959999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.59824804600000003" green="0.54981007959999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="YZr-Bn-Abx">
+                                <rect key="frame" x="185" y="45" width="81" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.59824804600000003" green="0.54981007959999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.59824804600000003" green="0.54981007959999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Item Properties" id="OEY-p0-GJj"/>
+                    <connections>
+                        <outlet property="leftSquare" destination="Ip2-oP-E2r" id="PXU-gF-lsy"/>
+                        <outlet property="rightSquare" destination="YZr-Bn-Abx" id="a0v-0b-MvO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xQb-0X-be4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1664" y="770"/>
         </scene>
         <!--Attachments View Controller - Attachments-->
         <scene sceneID="ee9-UC-hJD">
@@ -317,7 +444,7 @@
                                 <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" id="kdV-sH-t7r">
-                                <rect key="frame" x="156" y="7" width="8" height="8"/>
+                                <rect key="frame" x="156" y="6" width="8" height="8"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.1648232711614861" blue="0.40959057617914829" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.30937731623843745" green="0.51646827725081057" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -362,6 +489,64 @@
             <point key="canvasLocation" x="-18" y="517"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="AttachmentView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AttachmentView.h"/>
+        </class>
+        <class className="AttachmentsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AttachmentsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="blueSquare" candidateClass="UIView"/>
+                <relationship kind="outlet" name="redSquare" candidateClass="UIView"/>
+                <relationship kind="outlet" name="square" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="GravityCollisionSpringViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GravityCollisionSpringViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="handleSpringAttachmentGesture:" candidateClass="UIPanGestureRecognizer"/>
+                <relationship kind="outlet" name="blueSquare" candidateClass="UIView"/>
+                <relationship kind="outlet" name="redSquare" candidateClass="UIView"/>
+                <relationship kind="outlet" name="square" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="GravityCollisionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GravityCollisionViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="lowerSquare" candidateClass="UIView"/>
+                <relationship kind="outlet" name="upperSquare" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="GravityViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GravityViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="square" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="ItemPropertiesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ItemPropertiesViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="leftSquare" candidateClass="UIView"/>
+                <relationship kind="outlet" name="rightSquare" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="MainViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
+        </class>
+        <class className="PushViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PushViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="square" candidateClass="UIView"/>
+                <relationship kind="outlet" name="vectorView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="SnapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SnapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="square" candidateClass="UIView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

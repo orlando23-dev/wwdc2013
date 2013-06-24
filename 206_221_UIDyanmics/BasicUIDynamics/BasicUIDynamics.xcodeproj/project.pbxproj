@@ -25,6 +25,8 @@
 		F137FD4F177558B100B1AD33 /* BasicUIDynamicsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F137FD4E177558B100B1AD33 /* BasicUIDynamicsTests.m */; };
 		F137FD5E1775606200B1AD33 /* GravityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F137FD5D1775606200B1AD33 /* GravityViewController.m */; };
 		F13875F717780D4E00C67639 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F13875F617780D4E00C67639 /* MainViewController.m */; };
+		F13875FA177824C000C67639 /* ItemPropertiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F13875F9177824C000C67639 /* ItemPropertiesViewController.m */; };
+		F13875FD177827DB00C67639 /* GravityCollisionSpringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F13875FC177827DB00C67639 /* GravityCollisionSpringViewController.m */; };
 		F13F777A177705C1000F048E /* SnapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F13F7779177705C1000F048E /* SnapViewController.m */; };
 		F18FCE9D1777E2A0009B44E6 /* PushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F18FCE9C1777E2A0009B44E6 /* PushViewController.m */; };
 /* End PBXBuildFile section */
@@ -68,6 +70,10 @@
 		F137FD5D1775606200B1AD33 /* GravityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GravityViewController.m; sourceTree = "<group>"; };
 		F13875F517780D4E00C67639 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		F13875F617780D4E00C67639 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		F13875F8177824C000C67639 /* ItemPropertiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemPropertiesViewController.h; sourceTree = "<group>"; };
+		F13875F9177824C000C67639 /* ItemPropertiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemPropertiesViewController.m; sourceTree = "<group>"; };
+		F13875FB177827DB00C67639 /* GravityCollisionSpringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GravityCollisionSpringViewController.h; sourceTree = "<group>"; };
+		F13875FC177827DB00C67639 /* GravityCollisionSpringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GravityCollisionSpringViewController.m; sourceTree = "<group>"; };
 		F13F7778177705C1000F048E /* SnapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapViewController.h; sourceTree = "<group>"; };
 		F13F7779177705C1000F048E /* SnapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnapViewController.m; sourceTree = "<group>"; };
 		F18FCE9B1777E2A0009B44E6 /* PushViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushViewController.h; sourceTree = "<group>"; };
@@ -188,6 +194,10 @@
 				F13F7779177705C1000F048E /* SnapViewController.m */,
 				F18FCE9B1777E2A0009B44E6 /* PushViewController.h */,
 				F18FCE9C1777E2A0009B44E6 /* PushViewController.m */,
+				F13875F8177824C000C67639 /* ItemPropertiesViewController.h */,
+				F13875F9177824C000C67639 /* ItemPropertiesViewController.m */,
+				F13875FB177827DB00C67639 /* GravityCollisionSpringViewController.h */,
+				F13875FC177827DB00C67639 /* GravityCollisionSpringViewController.m */,
 			);
 			path = UIDynamicsViewControllers;
 			sourceTree = "<group>";
@@ -295,7 +305,9 @@
 				F137FD34177558B100B1AD33 /* AppDelegate.m in Sources */,
 				F13875F717780D4E00C67639 /* MainViewController.m in Sources */,
 				F137FD30177558B100B1AD33 /* main.m in Sources */,
+				F13875FA177824C000C67639 /* ItemPropertiesViewController.m in Sources */,
 				F13F777A177705C1000F048E /* SnapViewController.m in Sources */,
+				F13875FD177827DB00C67639 /* GravityCollisionSpringViewController.m in Sources */,
 				F18FCE9D1777E2A0009B44E6 /* PushViewController.m in Sources */,
 				F137FD5E1775606200B1AD33 /* GravityViewController.m in Sources */,
 			);

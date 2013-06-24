@@ -82,7 +82,9 @@
     /*
      A push behavior in instantaneous (impulse) mode automatically deactivate itself after applying the impulse. We thus need to reactivate it when changing the impulse vector.
      */
-    [self.pushBehavior setActive:TRUE];
+    if (self.category == Instantaneous) {
+        [self.pushBehavior setActive:TRUE];
+    }
 }
 
 - (void)didReceiveMemoryWarning
