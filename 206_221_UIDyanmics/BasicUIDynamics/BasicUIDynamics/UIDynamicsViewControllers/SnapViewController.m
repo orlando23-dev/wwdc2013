@@ -27,6 +27,7 @@
 {
     CGPoint point = [gesture locationInView:self.view];
     UISnapBehavior* beSnap = [[UISnapBehavior alloc]initWithItem:self.square snapToPoint:point];
+    [beSnap setDamping:1.5];
     if (!self.animator) {
         UIDynamicAnimator* animator = [[UIDynamicAnimator alloc]initWithReferenceView:self.view];
         [animator addBehavior:beSnap];
