@@ -1,14 +1,14 @@
 //
-//  InstantPushViewController.m
+//  PushViewController.m
 //  BasicUIDynamics
 //
 //  Created by ding orlando on 6/24/13.
 //  Copyright (c) 2013 ding orlando. All rights reserved.
 //
 
-#import "InstantPushViewController.h"
+#import "PushViewController.h"
 
-@interface InstantPushViewController ()
+@interface PushViewController ()
 
 @property (nonatomic, weak) IBOutlet UIView* square;
 @property (nonatomic, weak) IBOutlet UIView* vectorView;
@@ -17,12 +17,15 @@
 
 @end
 
-@implementation InstantPushViewController
+@implementation PushViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    if (self.category == Continuous) {
+        self.title = @"Continuous Push";
+    }
     self->_locationOfVectorview = self.vectorView.center;
     UIDynamicAnimator* animator = [[UIDynamicAnimator alloc]initWithReferenceView:self.view];
     
@@ -33,7 +36,7 @@
     
     // desc - push behavior, a (100, 100) view to 100 p/s^2
     UIPushBehavior* pushBehavior = [[UIPushBehavior alloc]initWithItems:@[self.square]
-                                                                   mode:UIPushBehaviorModeInstantaneous];
+                                                                   mode: (self.category == Continuous? UIPushBehaviorModeContinuous: UIPushBehaviorModeInstantaneous)];
     pushBehavior.angle = 0.0;
     pushBehavior.magnitude = 0.0;
     self.pushBehavior = pushBehavior;
@@ -43,7 +46,7 @@
     
     // desc - additional setup
 //    self.vectorView.center = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds));
-    NSLog(@"%f %f", self.vectorView.center.x, self.vectorView.center.y);
+//    NSLog(@"%f %f", self.vectorView.center.x, self.vectorView.center.y);
     self.vectorView.layer.anchorPoint = CGPointMake(0.0,0.0);
 }
 
@@ -66,9 +69,11 @@
     self.vectorView.bounds = CGRectMake(0.0, 0.0, distance, 5.0);
     self.vectorView.transform = CGAffineTransformMakeRotation(angle);
     self.vectorView.alpha = 1.0;
-    [UIView animateWithDuration:1.0 animations:^{
-        self.vectorView.alpha = 0.0;
-    }];
+    if (self.category == Instantaneous) {
+        [UIView animateWithDuration:1.0 animations:^{
+            self.vectorView.alpha = 0.0;
+        }];
+    }
     
     // desc - change of push
     // These two lines change the actual force vector.

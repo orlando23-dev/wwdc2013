@@ -1,5 +1,5 @@
 //
-//  InstantPushViewController.h
+//  MainViewController.h
 //  BasicUIDynamics
 //
 //  Created by ding orlando on 6/24/13.
@@ -7,11 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@import UIKit;
 
-@interface InstantPushViewController : UIViewController{
-    @private
-    CGPoint _locationOfVectorview;
-}
+@interface MainViewController : UITableViewController
 
 @end

@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3682.6"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller - UIDynamics-->
+        <!--Main View Controller - UIDynamics-->
         <scene sceneID="xd8-iJ-hc6">
             <objects>
-                <tableViewController id="1xT-Iu-c69" sceneMemberID="viewController">
+                <tableViewController id="1xT-Iu-c69" customClass="MainViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0mJ-H2-78e">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -117,7 +117,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="R6M-Qk-8HJ" kind="push" id="BSw-xf-5Ud"/>
+                                            <segue destination="R6M-Qk-8HJ" kind="push" identifier="Instantaneous" id="BSw-xf-5Ud"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="BH2-IO-9Kb">
@@ -137,6 +137,9 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <segue destination="R6M-Qk-8HJ" kind="push" identifier="Continuous" id="UiG-qE-aln"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -180,10 +183,10 @@
             </objects>
             <point key="canvasLocation" x="889" y="34"/>
         </scene>
-        <!--Instant Push View Controller - Instantaneous Push-->
+        <!--Push View Controller - Instantaneous Push-->
         <scene sceneID="QLI-dP-F2g">
             <objects>
-                <viewController id="R6M-Qk-8HJ" customClass="InstantPushViewController" sceneMemberID="viewController">
+                <viewController id="R6M-Qk-8HJ" customClass="PushViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kPt-4C-o2R">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -359,49 +362,12 @@
             <point key="canvasLocation" x="-18" y="517"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="AttachmentView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AttachmentView.h"/>
-        </class>
-        <class className="AttachmentsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AttachmentsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="blueSquare" candidateClass="UIView"/>
-                <relationship kind="outlet" name="redSquare" candidateClass="UIView"/>
-                <relationship kind="outlet" name="square" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="GravityCollisionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GravityCollisionViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="lowerSquare" candidateClass="UIView"/>
-                <relationship kind="outlet" name="upperSquare" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="GravityViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GravityViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="square" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="InstantPushViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InstantPushViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="handleGesture:" candidateClass="UITapGestureRecognizer"/>
-                <relationship kind="outlet" name="square" candidateClass="UIView"/>
-                <relationship kind="outlet" name="vectorView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="SnapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SnapViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="square" candidateClass="UIView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="UiG-qE-aln"/>
+    </inferredMetricsTieBreakers>
 </document>

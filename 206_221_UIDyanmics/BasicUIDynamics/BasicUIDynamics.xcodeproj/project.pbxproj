@@ -24,8 +24,9 @@
 		F137FD4D177558B100B1AD33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F137FD4B177558B100B1AD33 /* InfoPlist.strings */; };
 		F137FD4F177558B100B1AD33 /* BasicUIDynamicsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F137FD4E177558B100B1AD33 /* BasicUIDynamicsTests.m */; };
 		F137FD5E1775606200B1AD33 /* GravityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F137FD5D1775606200B1AD33 /* GravityViewController.m */; };
+		F13875F717780D4E00C67639 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F13875F617780D4E00C67639 /* MainViewController.m */; };
 		F13F777A177705C1000F048E /* SnapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F13F7779177705C1000F048E /* SnapViewController.m */; };
-		F18FCE9D1777E2A0009B44E6 /* InstantPushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F18FCE9C1777E2A0009B44E6 /* InstantPushViewController.m */; };
+		F18FCE9D1777E2A0009B44E6 /* PushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F18FCE9C1777E2A0009B44E6 /* PushViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,10 +66,12 @@
 		F137FD59177558FF00B1AD33 /* readme.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = readme.rtf; sourceTree = "<group>"; };
 		F137FD5C1775606200B1AD33 /* GravityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GravityViewController.h; sourceTree = "<group>"; };
 		F137FD5D1775606200B1AD33 /* GravityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GravityViewController.m; sourceTree = "<group>"; };
+		F13875F517780D4E00C67639 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		F13875F617780D4E00C67639 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		F13F7778177705C1000F048E /* SnapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapViewController.h; sourceTree = "<group>"; };
 		F13F7779177705C1000F048E /* SnapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnapViewController.m; sourceTree = "<group>"; };
-		F18FCE9B1777E2A0009B44E6 /* InstantPushViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstantPushViewController.h; sourceTree = "<group>"; };
-		F18FCE9C1777E2A0009B44E6 /* InstantPushViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstantPushViewController.m; sourceTree = "<group>"; };
+		F18FCE9B1777E2A0009B44E6 /* PushViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushViewController.h; sourceTree = "<group>"; };
+		F18FCE9C1777E2A0009B44E6 /* PushViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +135,8 @@
 				F137FD5B1775604800B1AD33 /* UIDynamicsViewControllers */,
 				F137FD32177558B100B1AD33 /* AppDelegate.h */,
 				F137FD33177558B100B1AD33 /* AppDelegate.m */,
+				F13875F517780D4E00C67639 /* MainViewController.h */,
+				F13875F617780D4E00C67639 /* MainViewController.m */,
 				F137FD35177558B100B1AD33 /* Main.storyboard */,
 				F137FD3B177558B100B1AD33 /* Images.xcassets */,
 				F137FD2A177558B100B1AD33 /* Supporting Files */,
@@ -181,8 +186,8 @@
 				F1095DED1776AEA800A259CD /* AttachmentView.m */,
 				F13F7778177705C1000F048E /* SnapViewController.h */,
 				F13F7779177705C1000F048E /* SnapViewController.m */,
-				F18FCE9B1777E2A0009B44E6 /* InstantPushViewController.h */,
-				F18FCE9C1777E2A0009B44E6 /* InstantPushViewController.m */,
+				F18FCE9B1777E2A0009B44E6 /* PushViewController.h */,
+				F18FCE9C1777E2A0009B44E6 /* PushViewController.m */,
 			);
 			path = UIDynamicsViewControllers;
 			sourceTree = "<group>";
@@ -288,9 +293,10 @@
 				F1095DEE1776AEA800A259CD /* AttachmentView.m in Sources */,
 				F1115D3C1775A2A4001A46FB /* GravityCollisionViewController.m in Sources */,
 				F137FD34177558B100B1AD33 /* AppDelegate.m in Sources */,
+				F13875F717780D4E00C67639 /* MainViewController.m in Sources */,
 				F137FD30177558B100B1AD33 /* main.m in Sources */,
 				F13F777A177705C1000F048E /* SnapViewController.m in Sources */,
-				F18FCE9D1777E2A0009B44E6 /* InstantPushViewController.m in Sources */,
+				F18FCE9D1777E2A0009B44E6 /* PushViewController.m in Sources */,
 				F137FD5E1775606200B1AD33 /* GravityViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
