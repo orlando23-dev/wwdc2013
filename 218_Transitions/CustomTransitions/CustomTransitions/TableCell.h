@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  TableCell.h
 //  CustomTransitions
 //
 //  Created by ding orlando on 6/28/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface TableCell : UITableViewCell
 
 @end
