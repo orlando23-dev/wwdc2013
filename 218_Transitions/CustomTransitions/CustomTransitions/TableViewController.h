@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TableViewController : UITableViewController{
+@interface TableViewController : UITableViewController<UIViewControllerTransitioningDelegate>{
     @private
-        NSArray* _sections;
+//        NSArray* _sections;
 }
 
 @end

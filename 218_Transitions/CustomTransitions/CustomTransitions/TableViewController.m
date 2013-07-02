@@ -5,8 +5,14 @@
 //  Created by ding orlando on 6/28/13.
 //  Copyright (c) 2013 ding orlando. All rights reserved.
 //
+//  see https://devforums.apple.com/thread/190664?tstart=100
+//  see https://devforums.apple.com/message/834386
+//  see https://devforums.apple.com/message/828441
+//  core reference, see https://devforums.apple.com/message/829685
+//
 
 #import "TableViewController.h"
+#import "NavigatedViewController.h"
 
 @interface TableViewController ()
 
@@ -18,7 +24,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self->_sections = @[@"Basic", @"Spring",@"Keyframe",@"CollectionView",@"Dynamics"];
+//    self->_sections = @[@"Basic", @"Spring",@"Keyframe",@"CollectionView",@"Dynamics"];
     self.tableView.opaque = NO;
     self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"shadow.png"]];
 }
@@ -75,5 +81,17 @@
 // heightForFooterInSection:(NSInteger)section {
 //    return 0;
 //}
+
+- (IBAction)pushView:(id)sender{
+    //create that only once
+    NavigatedViewController *controller  = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"NavigatedVC"];
+    
+    controller.modalPresentationStyle = UIModalPresentationCustom;
+    [controller setTransitioningDelegate:self];
+//    controller.delegate = self;
+    [self presentViewController:controller animated:YES completion:nil];
+    
+    
+}
 
 @end
