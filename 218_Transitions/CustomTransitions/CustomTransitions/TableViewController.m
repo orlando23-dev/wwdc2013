@@ -9,12 +9,17 @@
 //  see https://devforums.apple.com/message/834386
 //  see https://devforums.apple.com/message/828441
 //  core reference, see https://devforums.apple.com/message/829685
+//  see https://devforums.apple.com/message/831522#831522
 //
 
 #import "TableViewController.h"
 #import "NavigatedViewController.h"
+#import "NavigatedTransitionController.h"
+#import "NavigateUIVControllerAnimatedTransitioning.h"
 
 @interface TableViewController ()
+
+@property (nonatomic) NavigatedTransitionController *transitionController;
 
 @end
 
@@ -27,6 +32,9 @@
 //    self->_sections = @[@"Basic", @"Spring",@"Keyframe",@"CollectionView",@"Dynamics"];
     self.tableView.opaque = NO;
     self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"shadow.png"]];
+    // desc - navigation controller
+    self.transitionController = [NavigatedTransitionController new];
+    [[self navigationController] setDelegate:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -77,21 +85,62 @@
     return sectionView;
 }
 
+- (void)        tableView:(UITableView *)tableView
+  didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+//    //create that only once
+//    NavigatedViewController *controller  = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"NavigatedVC"];
+//    controller.modalPresentationStyle = UIModalPresentationCustom;
+//    [controller setTransitioningDelegate:self];
+////    controller.delegate = self;
+//    [self presentViewController:controller animated:YES completion:nil];
+    if (0 == [indexPath section]) {
+        [[self navigationController] pushViewController:[[self storyboard] instantiateViewControllerWithIdentifier:@"NavigatedVC"] animated:YES];
+    }
+}
+
+#pragma mark - UINavigationControllerDelegate
+
+- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
+                                  animationControllerForOperation:(UINavigationControllerOperation)operation
+                                               fromViewController:(UIViewController *)fromVC
+                                                 toViewController:(UIViewController *)toVC {
+    if (!navigationController) {
+        return  nil;
+    }
+    
+    return [self transitionController];
+}
+
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    if ([[segue identifier] isEqualToString:@"ShowDetails"]) {
+//        NavigatedViewController *detailViewController = [segue destinationViewController];
+//        detailViewController.modalPresentationStyle = UIModalPresentationCustom;
+//        [detailViewController setTransitioningDelegate:self];
+////        [self presentViewController:detailViewController animated:YES completion:nil];
+//    }
+//}
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
+                                                                  presentingController:(UIViewController *)presenting
+                                                                      sourceController:(UIViewController *)source{
+    NavigateUIVControllerAnimatedTransitioning *trans = [NavigateUIVControllerAnimatedTransitioning new];
+//    trans.isPresented = YES;
+    return trans;
+}
+
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
+    NavigateUIVControllerAnimatedTransitioning *trans = [NavigateUIVControllerAnimatedTransitioning new];
+//    trans.isPresented = NO;
+    return trans;
+}
+
 //- (CGFloat)     tableView:(UITableView *)tableView
 // heightForFooterInSection:(NSInteger)section {
 //    return 0;
 //}
-
-- (IBAction)pushView:(id)sender{
-    //create that only once
-    NavigatedViewController *controller  = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"NavigatedVC"];
-    
-    controller.modalPresentationStyle = UIModalPresentationCustom;
-    [controller setTransitioningDelegate:self];
-//    controller.delegate = self;
-    [self presentViewController:controller animated:YES completion:nil];
-    
-    
-}
 
 @end

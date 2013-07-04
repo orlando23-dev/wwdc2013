@@ -12,6 +12,7 @@
 		F11A7CEF177D862600126CE3 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = F11A7CEE177D862600126CE3 /* background.png */; };
 		F11A7CF2177D8F8B00126CE3 /* shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = F11A7CF1177D8F8B00126CE3 /* shadow.png */; };
 		F11A7CF5177D942B00126CE3 /* TableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F11A7CF4177D942B00126CE3 /* TableCell.m */; };
+		F18633B41785B8EF001B2953 /* NavigatedTransitionController.m in Sources */ = {isa = PBXBuildFile; fileRef = F18633B31785B8EF001B2953 /* NavigatedTransitionController.m */; };
 		F1955FE9177D415800C1FF25 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1955FE8177D415800C1FF25 /* Foundation.framework */; };
 		F1955FEB177D415800C1FF25 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1955FEA177D415800C1FF25 /* CoreGraphics.framework */; };
 		F1955FED177D415800C1FF25 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1955FEC177D415800C1FF25 /* UIKit.framework */; };
@@ -47,6 +48,8 @@
 		F11A7CF1177D8F8B00126CE3 /* shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow.png; sourceTree = "<group>"; };
 		F11A7CF3177D942B00126CE3 /* TableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableCell.h; sourceTree = "<group>"; };
 		F11A7CF4177D942B00126CE3 /* TableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableCell.m; sourceTree = "<group>"; };
+		F18633B21785B8EF001B2953 /* NavigatedTransitionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigatedTransitionController.h; sourceTree = "<group>"; };
+		F18633B31785B8EF001B2953 /* NavigatedTransitionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigatedTransitionController.m; sourceTree = "<group>"; };
 		F1955FE5177D415800C1FF25 /* CustomTransitions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomTransitions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1955FE8177D415800C1FF25 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F1955FEA177D415800C1FF25 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -98,6 +101,8 @@
 			children = (
 				F1190714178326D200B3AAC8 /* NavigateUIVControllerAnimatedTransitioning.h */,
 				F1190715178326D200B3AAC8 /* NavigateUIVControllerAnimatedTransitioning.m */,
+				F18633B21785B8EF001B2953 /* NavigatedTransitionController.h */,
+				F18633B31785B8EF001B2953 /* NavigatedTransitionController.m */,
 			);
 			path = AnimatedTransitions;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 				F1190716178326D200B3AAC8 /* NavigateUIVControllerAnimatedTransitioning.m in Sources */,
 				F1955FFF177D415800C1FF25 /* TableViewController.m in Sources */,
 				F1955FF9177D415800C1FF25 /* AppDelegate.m in Sources */,
+				F18633B41785B8EF001B2953 /* NavigatedTransitionController.m in Sources */,
 				F11A7CF5177D942B00126CE3 /* TableCell.m in Sources */,
 				F1955FF5177D415800C1FF25 /* main.m in Sources */,
 			);

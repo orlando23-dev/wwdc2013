@@ -185,9 +185,31 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X8G-Qa-eRy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-238" y="-396"/>
+            <point key="canvasLocation" x="-291" y="-396"/>
         </scene>
-        <!--Navigated View Controller-->
+        <!--Navigated View Controller - Lonely Cypress-->
+        <scene sceneID="5OV-fS-PcX">
+            <objects>
+                <viewController id="qYc-wM-M3x" customClass="NavigatedViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jEW-iP-bBz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.png" id="mB1-gl-UJN">
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Lonely Cypress" id="Xf9-dj-6rc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4OY-xe-yfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="149" y="189"/>
+        </scene>
+        <!--Navigated View Controller - Title-->
         <scene sceneID="aI5-zD-e7V">
             <objects>
                 <viewController storyboardIdentifier="NavigatedVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hZg-r7-KAH" customClass="NavigatedViewController" sceneMemberID="viewController">
@@ -195,25 +217,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" id="1ax-5J-nhe">
-                                <rect key="frame" x="0.0" y="23" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Lonely Cypress" id="MLI-Bu-8pk"/>
-                                </items>
-                            </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.png" id="bR3-N6-cVy">
-                                <rect key="frame" x="-6" y="67" width="333" height="413"/>
+                                <rect key="frame" x="0.0" y="0.0" width="333" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Title" id="WY7-Bf-3rI"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bSo-eX-0f7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="170" y="-398"/>
+            <point key="canvasLocation" x="149" y="-396"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="djZ-Nj-ykc">
@@ -229,7 +245,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Af-2l-ZQJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-700" y="-396"/>
+            <point key="canvasLocation" x="-729" y="-396"/>
         </scene>
     </scenes>
     <resources>
