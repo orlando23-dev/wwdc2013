@@ -53,9 +53,9 @@
     
     [UIView animateWithDuration:[self transitionDuration:transitionContext]
                           delay:0.0f
-         usingSpringWithDamping:1.2f
+         usingSpringWithDamping:.2f
           initialSpringVelocity:1.4f
-                        options:UIViewAnimationOptionTransitionFlipFromLeft
+                        options:UIViewAnimationOptionTransitionNone
      //UIViewAnimationOptionCurveEaseIn
      //UIViewAnimationOptionTransitionFlipFromLeft
                      animations:^{
@@ -75,7 +75,8 @@
 }
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
-
+//    [self slide:transitionContext];
+    [self spring:transitionContext];
 }
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext {
