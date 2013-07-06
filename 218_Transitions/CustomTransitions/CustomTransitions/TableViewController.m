@@ -33,7 +33,7 @@
     self.tableView.opaque = NO;
     self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"shadow.png"]];
     // desc - navigation controller embedded - disable navigation delegate via default transition
-//    [self navigationController].delegate = self;
+    [self navigationController].delegate = self;
     self.transitionController = [NavigatedTransitionController new];
 }
 
@@ -43,6 +43,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - table presetation
 
 //- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 //{
@@ -53,6 +54,11 @@
  heightForHeaderInSection:(NSInteger)section {
     return 22;
 }
+
+//- (CGFloat)     tableView:(UITableView *)tableView
+// heightForFooterInSection:(NSInteger)section {
+//    return 0;
+//}
 
 //- (void)    tableView:(UITableView*) tableView
 //willDisplayHeaderView:(UIView*) view
@@ -89,24 +95,36 @@
   didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-//    //create that only once
-//    NavigatedViewController *controller  = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"NavigatedVC"];
-//    controller.modalPresentationStyle = UIModalPresentationCustom;
-//    [controller setTransitioningDelegate:self];
-////    controller.delegate = self;
-//    [self presentViewController:controller animated:YES completion:nil];
+    [self presentNavigation:indexPath];
+}
+
+// see navigation via Segue delegate
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    if ([[segue identifier] isEqualToString:@"ShowDetails"]) {
+//        NavigatedViewController *detailViewController = [segue destinationViewController];
+//        detailViewController.modalPresentationStyle = UIModalPresentationCustom;
+//        [detailViewController setTransitioningDelegate:self];
+////        [self presentViewController:detailViewController animated:YES completion:nil];
+//    }
+//}
+
+#pragma mark - UINavigationControllerDelegate
+
+- (void)presentNavigation:(NSIndexPath *)indexPath{
     if (0 == [indexPath section]) {
         UIViewController *vc = [[self storyboard] instantiateViewControllerWithIdentifier:@"NavigatedVC"];
         vc.modalPresentationStyle = UIModalPresentationCustom;
-//        [vc setTransitioningDelegate: self];
+        [vc setTransitioningDelegate: self];
         [self setTransitioningDelegate:self];
         [[self navigationController] pushViewController:vc
                                                animated:YES];
     }
 }
 
-#pragma mark - UINavigationControllerDelegate
-
+/**
+ * enable navigation delegate see line 36
+ **/
 - (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
                                   animationControllerForOperation:(UINavigationControllerOperation)operation
                                                fromViewController:(UIViewController *)fromVC
@@ -119,20 +137,21 @@
     return self.transitionController;
 }
 
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
-//    if ([[segue identifier] isEqualToString:@"ShowDetails"]) {
-//        NavigatedViewController *detailViewController = [segue destinationViewController];
-//        detailViewController.modalPresentationStyle = UIModalPresentationCustom;
-//        [detailViewController setTransitioningDelegate:self];
-////        [self presentViewController:detailViewController animated:YES completion:nil];
-//    }
-//}
+#pragma mark - customized preseted viewcontroller
+
+- (void)presentNavigationVCBySelfCode:(NSIndexPath *)indexPath{
+    if(0 == [indexPath section]){
+        NavigatedViewController *controller  = [[self storyboard] instantiateViewControllerWithIdentifier:@"NavigatedVC"];
+        controller.modalPresentationStyle = UIModalPresentationCustom;
+        [controller setTransitioningDelegate:self];
+//        controller.delegate = self;
+        [self presentViewController:controller animated:YES completion:nil];
+    }
+}
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
                                                                   presentingController:(UIViewController *)presenting
                                                                       sourceController:(UIViewController *)source{
-    // desc - where to enable transiation
     if (!presented) {
         return  nil;
     }
@@ -140,19 +159,12 @@
     return self.transitionController;
 }
 
-
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
-    // desc - where to enable transiation
     if (!self.transitionController) {
         return  nil;
     }
     
     return self.transitionController;
 }
-
-//- (CGFloat)     tableView:(UITableView *)tableView
-// heightForFooterInSection:(NSInteger)section {
-//    return 0;
-//}
 
 @end

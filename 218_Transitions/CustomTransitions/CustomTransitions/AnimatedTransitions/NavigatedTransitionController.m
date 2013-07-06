@@ -8,6 +8,8 @@
 
 #import "NavigatedTransitionController.h"
 
+#define IS_IOS7_DP2 0
+
 @implementation NavigatedTransitionController
 
 #pragma mark - source code template
@@ -47,6 +49,12 @@ CATransform3D template_perspectiveTransform() {
 
 #pragma mark - spring and slide effect implementations
 
+#if IS_IOS7_DP2
+
+/**
+ *see http://www.makebetterthings.com/iphone/check-ios-version-and-write-conditional-code/
+ *see http://stackoverflow.com/questions/820142/how-to-target-a-specific-iphone-version
+ **/
 - (void)spring:(id<UIViewControllerContextTransitioning>)transitionContext {
     UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
@@ -66,6 +74,8 @@ CATransform3D template_perspectiveTransform() {
                          [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
                      }];
 }
+
+#endif
 
 - (void)slide:(id<UIViewControllerContextTransitioning>)transitionContext {
     UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
