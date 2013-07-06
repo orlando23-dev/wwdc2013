@@ -55,7 +55,11 @@ CATransform3D template_perspectiveTransform() {
     toVC.view.frame = [transitionContext initialFrameForViewController:fromVC];
     
     [UIView animateWithDuration:[self transitionDuration:transitionContext]/2.0f
-                          delay:0.0f usingSpringWithDamping:0.2f initialSpringVelocity:1.4f options:UIViewAnimationOptionTransitionNone animations:^{
+                          delay:0.0f
+         usingSpringWithDamping:0.2f
+          initialSpringVelocity:2.4f
+                        options:UIViewAnimationOptionTransitionNone
+                     animations:^{
                               toVC.view.center = [transitionContext containerView].center;
                           }
                      completion:^(BOOL finished) {
@@ -75,7 +79,7 @@ CATransform3D template_perspectiveTransform() {
                           delay:0.0f
                         options:UIViewAnimationOptionTransitionFlipFromLeft
                      animations:^{
-                         fromVC.view.layer.transform = CATransform3DMakeRotation(M_PI * 2,0.0,1.0,0.0); //flip halfway
+//                         toVC.view.center = [transitionContext containerView].center;
                      }
                      completion:^(BOOL finished){
                          [transitionContext completeTransition:!transitionContext.transitionWasCancelled];

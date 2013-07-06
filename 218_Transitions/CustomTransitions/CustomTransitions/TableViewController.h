@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TableViewController : UITableViewController<UINavigationControllerDelegate>{//<UIViewControllerTransitioningDelegate>{
+@interface TableViewController : UITableViewController<UINavigationControllerDelegate, UIViewControllerTransitioningDelegate>{
     @private
 //        NSArray* _sections;
 }

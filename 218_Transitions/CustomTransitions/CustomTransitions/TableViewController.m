@@ -32,8 +32,8 @@
 //    self->_sections = @[@"Basic", @"Spring",@"Keyframe",@"CollectionView",@"Dynamics"];
     self.tableView.opaque = NO;
     self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"shadow.png"]];
-    // desc - navigation controller embedded
-    [self navigationController].delegate = self;
+    // desc - navigation controller embedded - disable navigation delegate via default transition
+//    [self navigationController].delegate = self;
     self.transitionController = [NavigatedTransitionController new];
 }
 
@@ -96,7 +96,11 @@
 ////    controller.delegate = self;
 //    [self presentViewController:controller animated:YES completion:nil];
     if (0 == [indexPath section]) {
-        [[self navigationController] pushViewController:[[self storyboard] instantiateViewControllerWithIdentifier:@"NavigatedVC"]
+        UIViewController *vc = [[self storyboard] instantiateViewControllerWithIdentifier:@"NavigatedVC"];
+        vc.modalPresentationStyle = UIModalPresentationCustom;
+//        [vc setTransitioningDelegate: self];
+        [self setTransitioningDelegate:self];
+        [[self navigationController] pushViewController:vc
                                                animated:YES];
     }
 }
@@ -128,16 +132,22 @@
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
                                                                   presentingController:(UIViewController *)presenting
                                                                       sourceController:(UIViewController *)source{
-    NavigateUIVControllerAnimatedTransitioning *trans = [NavigateUIVControllerAnimatedTransitioning new];
-//    trans.isPresented = YES;
-    return trans;
+    // desc - where to enable transiation
+    if (!presented) {
+        return  nil;
+    }
+    
+    return self.transitionController;
 }
 
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
-    NavigateUIVControllerAnimatedTransitioning *trans = [NavigateUIVControllerAnimatedTransitioning new];
-//    trans.isPresented = NO;
-    return trans;
+    // desc - where to enable transiation
+    if (!self.transitionController) {
+        return  nil;
+    }
+    
+    return self.transitionController;
 }
 
 //- (CGFloat)     tableView:(UITableView *)tableView
