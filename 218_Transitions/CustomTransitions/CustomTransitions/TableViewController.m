@@ -105,7 +105,7 @@
 //        NavigatedViewController *detailViewController = [segue destinationViewController];
 //        detailViewController.modalPresentationStyle = UIModalPresentationCustom;
 //        [detailViewController setTransitioningDelegate:self];
-////        [self presentViewController:detailViewController animated:YES completion:nil];
+//        [self presentViewController:detailViewController animated:YES completion:nil];
 //    }
 //}
 
@@ -114,9 +114,8 @@
 - (void)presentNavigation:(NSIndexPath *)indexPath{
     if (0 == [indexPath section]) {
         UIViewController *vc = [[self storyboard] instantiateViewControllerWithIdentifier:@"NavigatedVC"];
-        vc.modalPresentationStyle = UIModalPresentationCustom;
-        [vc setTransitioningDelegate: self];
         [self setTransitioningDelegate:self];
+        [self navigationController].hidesBottomBarWhenPushed = YES;
         [[self navigationController] pushViewController:vc
                                                animated:YES];
     }

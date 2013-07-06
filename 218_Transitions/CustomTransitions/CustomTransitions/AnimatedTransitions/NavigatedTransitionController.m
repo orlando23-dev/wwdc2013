@@ -77,19 +77,50 @@ CATransform3D template_perspectiveTransform() {
 
 #endif
 
+/**
+ * see https://devforums.apple.com/message/835530#835530
+ *  1, slide edge effect - follow-ups: (customized pop-up, preseted VC)
+ *  top - (0, -height)
+ *  left - (-width, 0)
+ *  bottom - (0, height)
+ *  right - (width, 0)
+ *  top-right - (width, -height)
+ *  top-left - (-width, -height)
+ *  bottom-right - (width, height)
+ *  bottom-left - (0, height)
+ *  2, bottom empty area - how-to fill it?
+ **/
 - (void)slide:(id<UIViewControllerContextTransitioning>)transitionContext {
     UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     [[transitionContext containerView] addSubview:toVC.view];
     
     fromVC.view.frame = [transitionContext initialFrameForViewController:fromVC];
-    toVC.view.frame = [transitionContext initialFrameForViewController:fromVC];
-    
-    [UIView animateWithDuration:[self transitionDuration:transitionContext]/2.0f
+    float _fHeight = [transitionContext containerView].frame.size.height, _fWidth = [transitionContext containerView].frame.size.width;
+    // desc - top
+//    toVC.view.frame = CGRectMake(0, -_fHeigth, _fWidth, _fHeight);
+    // desc - left
+//    toVC.view.frame = CGRectMake(-_fWidth, 0, _fWidth, _fHeight);
+    // desc - bottom
+//    toVC.view.frame = CGRectMake(0, _fHeight, _fWidth, _fHeight);
+    // desc - right
+//    toVC.view.frame = CGRectMake([transitionContext containerView].frame.size.width, 0, _fWidth, _fHeight);
+    // desc - top-right
+//    toVC.view.frame = CGRectMake(_fWidth, -_fHeight, _fWidth, _fHeight);
+    // desc - top-left
+//    toVC.view.frame = CGRectMake(-_fWidth, -_fHeight, _fWidth, _fHeight);
+    // desc - top-left
+//    toVC.view.frame = CGRectMake(-_fWidth, -_fHeight, _fWidth, _fHeight);
+    // desc - bottom-right
+//    toVC.view.frame = CGRectMake(_fWidth, _fHeight, _fWidth, _fHeight);
+    // desc - bottom-left
+    toVC.view.frame = CGRectMake(-_fWidth, _fHeight, _fWidth, _fHeight);
+
+    [UIView animateWithDuration:[self transitionDuration:transitionContext]
                           delay:0.0f
-                        options:UIViewAnimationOptionTransitionFlipFromLeft
+                        options:UIViewAnimationOptionBeginFromCurrentState
                      animations:^{
-//                         toVC.view.center = [transitionContext containerView].center;
+                         toVC.view.frame = [transitionContext initialFrameForViewController:fromVC];
                      }
                      completion:^(BOOL finished){
                          [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
