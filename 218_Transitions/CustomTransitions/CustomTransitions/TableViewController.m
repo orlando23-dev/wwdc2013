@@ -32,9 +32,9 @@
 //    self->_sections = @[@"Basic", @"Spring",@"Keyframe",@"CollectionView",@"Dynamics"];
     self.tableView.opaque = NO;
     self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"shadow.png"]];
-    // desc - navigation controller
+    // desc - navigation controller embedded
+    [self navigationController].delegate = self;
     self.transitionController = [NavigatedTransitionController new];
-    [[self navigationController] setDelegate:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -96,7 +96,8 @@
 ////    controller.delegate = self;
 //    [self presentViewController:controller animated:YES completion:nil];
     if (0 == [indexPath section]) {
-        [[self navigationController] pushViewController:[[self storyboard] instantiateViewControllerWithIdentifier:@"NavigatedVC"] animated:YES];
+        [[self navigationController] pushViewController:[[self storyboard] instantiateViewControllerWithIdentifier:@"NavigatedVC"]
+                                               animated:YES];
     }
 }
 
@@ -106,11 +107,12 @@
                                   animationControllerForOperation:(UINavigationControllerOperation)operation
                                                fromViewController:(UIViewController *)fromVC
                                                  toViewController:(UIViewController *)toVC {
+    // desc - where to enable transiation
     if (!navigationController) {
         return  nil;
     }
     
-    return [self transitionController];
+    return self.transitionController;
 }
 
 //- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
