@@ -16,6 +16,7 @@
 #import "NavigatedViewController.h"
 #import "NavigatedTransitionController.h"
 #import "NavigateUIVControllerAnimatedTransitioning.h"
+#import "ResourceUtil.h"
 
 static float iHeightOfHeader = 18.0f;
 
@@ -31,10 +32,24 @@ static float iHeightOfHeader = 18.0f;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self->_sections = @[@"Basic", @"Spring",@"Keyframe",@"CollectionView",@"Dynamics"];
-    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"shadow.png"]];
-//    NSLog(@"%@", self.tableView.tableHeaderView);
-//    NSLog(@"%@", self.tableView.tableFooterView);
+    // see https://devforums.apple.com/message/838984#838984 for hidden status bar
+//    self->_sections = @[@"Basic", @"Spring",@"Keyframe",@"CollectionView",@"Dynamics"];
+
+#ifdef TRACEUISIZE
+    NSLog(@"[ApplicationFrame] x - %f, y - %f, width - %f, height - %f", [UIScreen mainScreen].applicationFrame.origin.x, [UIScreen mainScreen].applicationFrame.origin.y, [UIScreen mainScreen].applicationFrame.size.width, [UIScreen mainScreen].applicationFrame.size.height);
+    NSLog(@"[UIScreen] width - %f, height - %f", [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+    NSLog(@"[TableView] x - %f, y - %f, width - %f, height - %f", self.tableView.bounds.origin.x, self.tableView.bounds.origin.y, self.tableView.bounds.size.width, self.tableView.bounds.size.height);
+    NSLog(@"%@", self.tableView.tableHeaderView);
+    NSLog(@"%@", self.tableView.tableFooterView);
+    NSLog(@"scale - %f", [[UIScreen mainScreen] scale]);
+#endif
+    
+    self.tableView.backgroundColor = [ResourceUtil tableBackgroundImage];
+    
+#ifdef TRACEUISIZE
+    NSLog(@"[BackgroundView] x - %f, y - %f, width - %f, height - %f", self.tableView.bounds.origin.x, self.tableView.bounds.origin.y, self.tableView.bounds.size.width, self.tableView.bounds.size.height);
+#endif
+    
     // desc - navigation controller embedded - disable navigation delegate via default transition
     [self navigationController].delegate = self;
     self.transitionController = [NavigatedTransitionController new];
@@ -48,10 +63,10 @@ static float iHeightOfHeader = 18.0f;
 
 #pragma mark - table presetation
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    return NSLocalizedString(self->_sections[section], self->_sections[section]);
-}
+//- (NSString *)      tableView:(UITableView *)tableView
+//      titleForHeaderInSection:(NSInteger)section{
+//    return NSLocalizedString(self->_sections[section], self->_sections[section]);
+//}
 
 - (CGFloat)     tableView:(UITableView *)tableView
  heightForHeaderInSection:(NSInteger)section {

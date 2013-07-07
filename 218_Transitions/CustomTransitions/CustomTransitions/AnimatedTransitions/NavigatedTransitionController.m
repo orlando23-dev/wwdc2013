@@ -116,7 +116,7 @@ CATransform3D template_perspectiveTransform() {
     // desc - bottom-left
 //    toVC.view.frame = CGRectMake(-_fWidth, _fHeight, _fWidth, _fHeight);
 
-    [UIView animateWithDuration:[self transitionDuration:transitionContext]
+    [UIView animateWithDuration:[self transitionDuration:transitionContext]/2.0f
                           delay:0.0f
                         options:UIViewAnimationOptionBeginFromCurrentState
                      animations:^{
@@ -133,7 +133,7 @@ CATransform3D template_perspectiveTransform() {
 }
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext {
-    return 1.5f;
+    return 1.0f;
 }
 
 @end

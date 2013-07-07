@@ -7,6 +7,7 @@
 //
 
 #import "NavigatedViewController.h"
+#import "ResourceUtil.h"
 
 @interface NavigatedViewController ()
 
@@ -29,7 +30,12 @@
 	// Do any additional setup after loading the view.
     self.title = @"Lonely Cypress";
     // see http://stackoverflow.com/questions/7816972/how-can-i-set-image-directly-on-uiview
-    UIImageView * imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
+    UIImageView* imageView = [ResourceUtil navigateImage];
+    
+#ifdef TRACEUISIZE
+    NSLog(@"[ImageView] x - %f, y - %f, width - %f, height - %f", imageView.bounds.origin.x, imageView.bounds.origin.y, imageView.bounds.size.width, imageView.bounds.size.height);
+#endif
+    
     [self.view addSubview:imageView];
 }
 

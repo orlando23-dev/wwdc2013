@@ -10,7 +10,7 @@
 
 @interface TableViewController : UITableViewController<UINavigationControllerDelegate, UIViewControllerTransitioningDelegate>{
     @private
-        NSArray* _sections;
+//        NSArray* _sections;
 }
 
 @end
