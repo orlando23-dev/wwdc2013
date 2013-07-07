@@ -28,7 +28,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.title = @"Lonely Cypress";
-    // http://stackoverflow.com/questions/7816972/how-can-i-set-image-directly-on-uiview
+    // see http://stackoverflow.com/questions/7816972/how-can-i-set-image-directly-on-uiview
     UIImageView * imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
     [self.view addSubview:imageView];
 }

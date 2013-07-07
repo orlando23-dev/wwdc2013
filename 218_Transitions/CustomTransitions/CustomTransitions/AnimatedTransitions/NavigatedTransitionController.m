@@ -98,7 +98,7 @@ CATransform3D template_perspectiveTransform() {
     fromVC.view.frame = [transitionContext initialFrameForViewController:fromVC];
     float _fHeight = [transitionContext containerView].frame.size.height, _fWidth = [transitionContext containerView].frame.size.width;
     // desc - top
-//    toVC.view.frame = CGRectMake(0, -_fHeigth, _fWidth, _fHeight);
+    toVC.view.frame = CGRectMake(0, -_fHeight, _fWidth, _fHeight);
     // desc - left
 //    toVC.view.frame = CGRectMake(-_fWidth, 0, _fWidth, _fHeight);
     // desc - bottom
@@ -114,7 +114,7 @@ CATransform3D template_perspectiveTransform() {
     // desc - bottom-right
 //    toVC.view.frame = CGRectMake(_fWidth, _fHeight, _fWidth, _fHeight);
     // desc - bottom-left
-    toVC.view.frame = CGRectMake(-_fWidth, _fHeight, _fWidth, _fHeight);
+//    toVC.view.frame = CGRectMake(-_fWidth, _fHeight, _fWidth, _fHeight);
 
     [UIView animateWithDuration:[self transitionDuration:transitionContext]
                           delay:0.0f
@@ -133,7 +133,7 @@ CATransform3D template_perspectiveTransform() {
 }
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext {
-    return 1.0f;
+    return 1.5f;
 }
 
 @end

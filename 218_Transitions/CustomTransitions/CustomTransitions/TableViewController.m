@@ -17,6 +17,8 @@
 #import "NavigatedTransitionController.h"
 #import "NavigateUIVControllerAnimatedTransitioning.h"
 
+static float iHeightOfHeader = 18.0f;
+
 @interface TableViewController ()
 
 @property (nonatomic) NavigatedTransitionController *transitionController;
@@ -29,9 +31,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-//    self->_sections = @[@"Basic", @"Spring",@"Keyframe",@"CollectionView",@"Dynamics"];
-    self.tableView.opaque = NO;
+    self->_sections = @[@"Basic", @"Spring",@"Keyframe",@"CollectionView",@"Dynamics"];
     self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"shadow.png"]];
+//    NSLog(@"%@", self.tableView.tableHeaderView);
+//    NSLog(@"%@", self.tableView.tableFooterView);
     // desc - navigation controller embedded - disable navigation delegate via default transition
     [self navigationController].delegate = self;
     self.transitionController = [NavigatedTransitionController new];
@@ -45,20 +48,23 @@
 
 #pragma mark - table presetation
 
-//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-//{
-//    return NSLocalizedString(self->_sections[section], self->_sections[section]);
-//}
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return NSLocalizedString(self->_sections[section], self->_sections[section]);
+}
 
 - (CGFloat)     tableView:(UITableView *)tableView
  heightForHeaderInSection:(NSInteger)section {
-    return 22;
+    return iHeightOfHeader;
 }
 
-//- (CGFloat)     tableView:(UITableView *)tableView
-// heightForFooterInSection:(NSInteger)section {
-//    return 0;
-//}
+/**
+ * just show 0.0f at the bottom, 0.0f will show the default size, so workaround here.
+ **/
+- (CGFloat)     tableView:(UITableView *)tableView
+ heightForFooterInSection:(NSInteger)section {
+    return 0.001f;
+}
 
 //- (void)    tableView:(UITableView*) tableView
 //willDisplayHeaderView:(UIView*) view
@@ -76,16 +82,17 @@
         return nil;
     }
     
+    float _fLabelSize = 12.0f;
     // Create label with section title
     UILabel *label=[[UILabel alloc] init];
-    label.frame=CGRectMake(12, 0, 300, 22);
+    label.frame=CGRectMake(_fLabelSize, 0, 300, iHeightOfHeader);
 //    label.backgroundColor=[UIColor grayColor];
     label.textColor=[UIColor blackColor];
-    label.font=[UIFont fontWithName:@"Helvetica-Bold" size:14];
+    label.font=[UIFont fontWithName:@"Helvetica-Bold" size:_fLabelSize];
     label.text=sectionTitle;
     
     // Create header view and add label as a subview
-    UIView *sectionView=[[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 22)];
+    UIView *sectionView=[[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, iHeightOfHeader)];
     [sectionView setBackgroundColor:[UIColor lightTextColor]];
     [sectionView addSubview:label];
     return sectionView;
@@ -115,7 +122,6 @@
     if (0 == [indexPath section]) {
         UIViewController *vc = [[self storyboard] instantiateViewControllerWithIdentifier:@"NavigatedVC"];
         [self setTransitioningDelegate:self];
-        [self navigationController].hidesBottomBarWhenPushed = YES;
         [[self navigationController] pushViewController:vc
                                                animated:YES];
     }

@@ -504,7 +504,6 @@
         <class className="GravityCollisionSpringViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GravityCollisionSpringViewController.h"/>
             <relationships>
-                <relationship kind="action" name="handleSpringAttachmentGesture:" candidateClass="UIPanGestureRecognizer"/>
                 <relationship kind="outlet" name="blueSquare" candidateClass="UIView"/>
                 <relationship kind="outlet" name="redSquare" candidateClass="UIView"/>
                 <relationship kind="outlet" name="square" candidateClass="UIView"/>
