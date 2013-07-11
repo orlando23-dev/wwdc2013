@@ -44,7 +44,7 @@ static float iHeightOfHeader = 18.0f;
     NSLog(@"scale - %f", [[UIScreen mainScreen] scale]);
 #endif
     
-    self.tableView.backgroundColor = [ResourceUtil tableBackgroundImage];
+    self.tableView.backgroundView = [ResourceUtil tableBackgroundView];
     
 #ifdef TRACEUISIZE
     NSLog(@"[BackgroundView] x - %f, y - %f, width - %f, height - %f", self.tableView.bounds.origin.x, self.tableView.bounds.origin.y, self.tableView.bounds.size.width, self.tableView.bounds.size.height);
@@ -139,14 +139,21 @@ static float iHeightOfHeader = 18.0f;
 //    }
     [self setTransitioningDelegate:self];
     int _iSection = [indexPath section];
+//    int _iRow = [indexPath row];
     if (0 == _iSection) {
         self.transitionController.navTag = slide;
     }
     else if (1 == _iSection){
         self.transitionController.navTag = dump;
     }
-    [[self navigationController] pushViewController:self->_vc
-                                           animated:YES];
+    else{
+        self.transitionController.navTag = none;
+    }
+    
+    if (none != self.transitionController.navTag) {
+        [[self navigationController] pushViewController:self->_vc
+                                               animated:YES];
+    }
 }
 
 /**

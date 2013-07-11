@@ -25,6 +25,21 @@
     return imgBackgroundColor;
 }
 
++ (UIImageView*)tableBackgroundView{
+    int _dHeight = (int)[UIScreen mainScreen].bounds.size.height;
+    UIImageView* imgBackgroundView = nil;
+    if(568 == _dHeight){
+        imgBackgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"shadow-extends.png"]];
+    }
+    else if(480 == _dHeight){
+        imgBackgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"shadow.png"]];
+    }
+    else{
+        imgBackgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"shadow.png"]];
+    }
+    return imgBackgroundView;
+}
+
 + (UIImageView*)navigateImage{
     int _dHeight = (int)[UIScreen mainScreen].bounds.size.height;
     UIImageView * imageView = nil;

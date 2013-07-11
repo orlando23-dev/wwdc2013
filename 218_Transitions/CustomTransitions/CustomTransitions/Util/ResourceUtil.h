@@ -12,5 +12,6 @@
 
 + (UIColor*)tableBackgroundImage;
 + (UIImageView*)navigateImage;
++ (UIImageView*)tableBackgroundView;
 
 @end

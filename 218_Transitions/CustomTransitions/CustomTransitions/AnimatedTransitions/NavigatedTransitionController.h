@@ -10,7 +10,8 @@
 
 typedef enum {
     slide,
-    dump
+    dump,
+    none
 } NavigatedCategory;
 
 @interface NavigatedTransitionController : NSObject<UIViewControllerAnimatedTransitioning>
