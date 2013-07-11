@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum {
+    slide,
+    dump
+} NavigatedCategory;
+
 @interface NavigatedTransitionController : NSObject<UIViewControllerAnimatedTransitioning>
+
+@property (nonatomic, readwrite) NavigatedCategory navTag;
 
 @end

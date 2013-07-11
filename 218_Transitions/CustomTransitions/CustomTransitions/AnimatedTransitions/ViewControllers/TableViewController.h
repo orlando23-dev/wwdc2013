@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class NavigatedViewController;
 
 @interface TableViewController : UITableViewController<UINavigationControllerDelegate, UIViewControllerTransitioningDelegate>{
-    @private
-//        NSArray* _sections;
+@private
+    NavigatedViewController *_vc;
 }
 
 @end

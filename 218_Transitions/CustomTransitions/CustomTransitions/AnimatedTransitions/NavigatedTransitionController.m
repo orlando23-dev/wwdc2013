@@ -90,45 +90,64 @@ CATransform3D template_perspectiveTransform() {
  *  bottom-left - (0, height)
  *  2, bottom empty area - how-to fill it?
  **/
-- (void)slide:(id<UIViewControllerContextTransitioning>)transitionContext {
+- (void)animateWithOption:(id<UIViewControllerContextTransitioning>)transitionContext {
     UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     [[transitionContext containerView] addSubview:toVC.view];
     
     fromVC.view.frame = [transitionContext initialFrameForViewController:fromVC];
     float _fHeight = [transitionContext containerView].frame.size.height, _fWidth = [transitionContext containerView].frame.size.width;
-    // desc - top
-    toVC.view.frame = CGRectMake(0, -_fHeight, _fWidth, _fHeight);
-    // desc - left
-//    toVC.view.frame = CGRectMake(-_fWidth, 0, _fWidth, _fHeight);
-    // desc - bottom
-//    toVC.view.frame = CGRectMake(0, _fHeight, _fWidth, _fHeight);
-    // desc - right
-//    toVC.view.frame = CGRectMake([transitionContext containerView].frame.size.width, 0, _fWidth, _fHeight);
-    // desc - top-right
-//    toVC.view.frame = CGRectMake(_fWidth, -_fHeight, _fWidth, _fHeight);
-    // desc - top-left
-//    toVC.view.frame = CGRectMake(-_fWidth, -_fHeight, _fWidth, _fHeight);
-    // desc - top-left
-//    toVC.view.frame = CGRectMake(-_fWidth, -_fHeight, _fWidth, _fHeight);
-    // desc - bottom-right
-//    toVC.view.frame = CGRectMake(_fWidth, _fHeight, _fWidth, _fHeight);
-    // desc - bottom-left
-//    toVC.view.frame = CGRectMake(-_fWidth, _fHeight, _fWidth, _fHeight);
-
-    [UIView animateWithDuration:[self transitionDuration:transitionContext]/2.0f
-                          delay:0.0f
-                        options:UIViewAnimationOptionBeginFromCurrentState
-                     animations:^{
-                         toVC.view.frame = [transitionContext initialFrameForViewController:fromVC];
-                     }
-                     completion:^(BOOL finished){
-                         [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
-                     }];
+    
+    if (self.navTag == slide) {
+        // desc - top
+        toVC.view.frame = CGRectMake(0, -_fHeight, _fWidth, _fHeight);
+        // desc - left
+        //    toVC.view.frame = CGRectMake(-_fWidth, 0, _fWidth, _fHeight);
+        // desc - bottom
+        //    toVC.view.frame = CGRectMake(0, _fHeight, _fWidth, _fHeight);
+        // desc - right
+        //    toVC.view.frame = CGRectMake([transitionContext containerView].frame.size.width, 0, _fWidth, _fHeight);
+        // desc - top-right
+        //    toVC.view.frame = CGRectMake(_fWidth, -_fHeight, _fWidth, _fHeight);
+        // desc - top-left
+        //    toVC.view.frame = CGRectMake(-_fWidth, -_fHeight, _fWidth, _fHeight);
+        // desc - top-left
+        //    toVC.view.frame = CGRectMake(-_fWidth, -_fHeight, _fWidth, _fHeight);
+        // desc - bottom-right
+        //    toVC.view.frame = CGRectMake(_fWidth, _fHeight, _fWidth, _fHeight);
+        // desc - bottom-left
+        //    toVC.view.frame = CGRectMake(-_fWidth, _fHeight, _fWidth, _fHeight);
+        
+        [UIView animateWithDuration:[self transitionDuration:transitionContext]/2.0f
+                              delay:0.0f
+                            options:UIViewAnimationOptionBeginFromCurrentState
+                         animations:^{
+                             toVC.view.frame = [transitionContext initialFrameForViewController:fromVC];
+                         }
+                         completion:^(BOOL finished){
+                             [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
+                         }];
+    }
+    else if (self.navTag == dump){
+        // desc - top to damping
+        toVC.view.frame = CGRectMake(0, -_fHeight, _fWidth, _fHeight);
+        
+        [UIView animateWithDuration:[self transitionDuration:transitionContext]
+                              delay:0.0f
+             usingSpringWithDamping:.75f
+              initialSpringVelocity:7.0f
+                            options:UIViewAnimationOptionBeginFromCurrentState
+                         animations:^{
+                             toVC.view.frame = [transitionContext initialFrameForViewController:fromVC];
+                         }
+                         completion:^(BOOL finished){
+                             [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
+                         }];
+    }
 }
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
-    [self slide:transitionContext];
+    [self animateWithOption:transitionContext];
 //    [self spring:transitionContext];
 }
 

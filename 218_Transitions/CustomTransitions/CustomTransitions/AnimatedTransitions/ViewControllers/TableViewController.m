@@ -134,12 +134,19 @@ static float iHeightOfHeader = 18.0f;
 #pragma mark - UINavigationControllerDelegate
 
 - (void)presentNavigation:(NSIndexPath *)indexPath{
-    if (0 == [indexPath section]) {
-        UIViewController *vc = [[self storyboard] instantiateViewControllerWithIdentifier:@"NavigatedVC"];
-        [self setTransitioningDelegate:self];
-        [[self navigationController] pushViewController:vc
-                                               animated:YES];
+//    if (!self->_vc) {
+    self->_vc = (NavigatedViewController*)[[self storyboard] instantiateViewControllerWithIdentifier:@"NavigatedVC"];
+//    }
+    [self setTransitioningDelegate:self];
+    int _iSection = [indexPath section];
+    if (0 == _iSection) {
+        self.transitionController.navTag = slide;
     }
+    else if (1 == _iSection){
+        self.transitionController.navTag = dump;
+    }
+    [[self navigationController] pushViewController:self->_vc
+                                           animated:YES];
 }
 
 /**
