@@ -1,0 +1,3 @@
+[submodule "lib/RestKit"]
+	path = lib/RestKit
+	url = git@github.com:llv22/RestKit.git

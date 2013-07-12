@@ -56,6 +56,7 @@
 		F147BB2B17904E48000A40CF /* MultiTaskforSinaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MultiTaskforSinaTests-Info.plist"; sourceTree = "<group>"; };
 		F147BB2D17904E48000A40CF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F147BB2F17904E48000A40CF /* MultiTaskforSinaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiTaskforSinaTests.m; sourceTree = "<group>"; };
+		F147BB3917904F0A000A40CF /* readme.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = readme.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +86,7 @@
 		F147BAF517904E48000A40CF = {
 			isa = PBXGroup;
 			children = (
+				F147BB3917904F0A000A40CF /* readme.rtf */,
 				F147BB0717904E48000A40CF /* MultiTaskforSina */,
 				F147BB2917904E48000A40CF /* MultiTaskforSinaTests */,
 				F147BB0017904E48000A40CF /* Frameworks */,
@@ -204,9 +206,6 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "ding orlando";
 				TargetAttributes = {
-					F147BAFD17904E48000A40CF = {
-						DevelopmentTeam = 84Z8KQ6A9Q;
-					};
 					F147BB2117904E48000A40CF = {
 						TestTargetID = F147BAFD17904E48000A40CF;
 					};
