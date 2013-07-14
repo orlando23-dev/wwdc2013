@@ -22,6 +22,20 @@
 		F147BB2617904E48000A40CF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F147BB0517904E48000A40CF /* UIKit.framework */; };
 		F147BB2E17904E48000A40CF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F147BB2C17904E48000A40CF /* InfoPlist.strings */; };
 		F147BB3017904E48000A40CF /* MultiTaskforSinaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F147BB2F17904E48000A40CF /* MultiTaskforSinaTests.m */; };
+		F1789682179280F6005F4E97 /* SinaWeibo.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F178967A179280F6005F4E97 /* SinaWeibo.bundle */; };
+		F1789683179280F6005F4E97 /* SinaWeibo.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F178967A179280F6005F4E97 /* SinaWeibo.bundle */; };
+		F1789684179280F6005F4E97 /* SinaWeibo.m in Sources */ = {isa = PBXBuildFile; fileRef = F178967C179280F6005F4E97 /* SinaWeibo.m */; };
+		F1789685179280F6005F4E97 /* SinaWeibo.m in Sources */ = {isa = PBXBuildFile; fileRef = F178967C179280F6005F4E97 /* SinaWeibo.m */; };
+		F1789686179280F6005F4E97 /* SinaWeiboAuthorizeView.m in Sources */ = {isa = PBXBuildFile; fileRef = F178967E179280F6005F4E97 /* SinaWeiboAuthorizeView.m */; };
+		F1789687179280F6005F4E97 /* SinaWeiboAuthorizeView.m in Sources */ = {isa = PBXBuildFile; fileRef = F178967E179280F6005F4E97 /* SinaWeiboAuthorizeView.m */; };
+		F1789688179280F6005F4E97 /* SinaWeiboRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F1789681179280F6005F4E97 /* SinaWeiboRequest.m */; };
+		F1789689179280F6005F4E97 /* SinaWeiboRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F1789681179280F6005F4E97 /* SinaWeiboRequest.m */; };
+		F17896921792899C005F4E97 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F178965C17927BF6005F4E97 /* libRestKit.a */; };
+		F1789694179289F0005F4E97 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1789693179289F0005F4E97 /* CFNetwork.framework */; };
+		F1789696179289FB005F4E97 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1789695179289FB005F4E97 /* CoreData.framework */; };
+		F178969817928A07005F4E97 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F178969717928A07005F4E97 /* MobileCoreServices.framework */; };
+		F178969A17928A25005F4E97 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F178969917928A25005F4E97 /* Security.framework */; };
+		F178969C17928A32005F4E97 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F178969B17928A32005F4E97 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +45,41 @@
 			proxyType = 1;
 			remoteGlobalIDString = F147BAFD17904E48000A40CF;
 			remoteInfo = MultiTaskforSina;
+		};
+		F178965B17927BF6005F4E97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F178965417927BF5005F4E97 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D1614564E810060A5C5;
+			remoteInfo = RestKit;
+		};
+		F178965D17927BF6005F4E97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F178965417927BF5005F4E97 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D2614564E820060A5C5;
+			remoteInfo = RestKitTests;
+		};
+		F178965F17927BF6005F4E97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F178965417927BF5005F4E97 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E62145651060060A5C5;
+			remoteInfo = RestKitFramework;
+		};
+		F178966117927BF6005F4E97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F178965417927BF5005F4E97 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E78145651060060A5C5;
+			remoteInfo = RestKitFrameworkTests;
+		};
+		F178968E17928711005F4E97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F178965417927BF5005F4E97 /* RestKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 25160D1514564E810060A5C5;
+			remoteInfo = RestKit;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -57,6 +106,20 @@
 		F147BB2D17904E48000A40CF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F147BB2F17904E48000A40CF /* MultiTaskforSinaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiTaskforSinaTests.m; sourceTree = "<group>"; };
 		F147BB3917904F0A000A40CF /* readme.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = readme.rtf; sourceTree = "<group>"; };
+		F178965417927BF5005F4E97 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = ../../lib/RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
+		F178967A179280F6005F4E97 /* SinaWeibo.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SinaWeibo.bundle; sourceTree = "<group>"; };
+		F178967B179280F6005F4E97 /* SinaWeibo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeibo.h; sourceTree = "<group>"; };
+		F178967C179280F6005F4E97 /* SinaWeibo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaWeibo.m; sourceTree = "<group>"; };
+		F178967D179280F6005F4E97 /* SinaWeiboAuthorizeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeiboAuthorizeView.h; sourceTree = "<group>"; };
+		F178967E179280F6005F4E97 /* SinaWeiboAuthorizeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaWeiboAuthorizeView.m; sourceTree = "<group>"; };
+		F178967F179280F6005F4E97 /* SinaWeiboConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeiboConstants.h; sourceTree = "<group>"; };
+		F1789680179280F6005F4E97 /* SinaWeiboRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeiboRequest.h; sourceTree = "<group>"; };
+		F1789681179280F6005F4E97 /* SinaWeiboRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaWeiboRequest.m; sourceTree = "<group>"; };
+		F1789693179289F0005F4E97 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		F1789695179289FB005F4E97 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F178969717928A07005F4E97 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		F178969917928A25005F4E97 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		F178969B17928A32005F4E97 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +127,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F178969C17928A32005F4E97 /* SystemConfiguration.framework in Frameworks */,
+				F178969A17928A25005F4E97 /* Security.framework in Frameworks */,
+				F178969817928A07005F4E97 /* MobileCoreServices.framework in Frameworks */,
+				F1789696179289FB005F4E97 /* CoreData.framework in Frameworks */,
+				F1789694179289F0005F4E97 /* CFNetwork.framework in Frameworks */,
+				F17896921792899C005F4E97 /* libRestKit.a in Frameworks */,
 				F147BB0417904E48000A40CF /* CoreGraphics.framework in Frameworks */,
 				F147BB0617904E48000A40CF /* UIKit.framework in Frameworks */,
 				F147BB0217904E48000A40CF /* Foundation.framework in Frameworks */,
@@ -87,6 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				F147BB3917904F0A000A40CF /* readme.rtf */,
+				F178965417927BF5005F4E97 /* RestKit.xcodeproj */,
+				F1789679179280F6005F4E97 /* SinaWeiboMySDK */,
 				F147BB0717904E48000A40CF /* MultiTaskforSina */,
 				F147BB2917904E48000A40CF /* MultiTaskforSinaTests */,
 				F147BB0017904E48000A40CF /* Frameworks */,
@@ -106,6 +177,11 @@
 		F147BB0017904E48000A40CF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F178969B17928A32005F4E97 /* SystemConfiguration.framework */,
+				F178969917928A25005F4E97 /* Security.framework */,
+				F178969717928A07005F4E97 /* MobileCoreServices.framework */,
+				F1789695179289FB005F4E97 /* CoreData.framework */,
+				F1789693179289F0005F4E97 /* CFNetwork.framework */,
 				F147BB0117904E48000A40CF /* Foundation.framework */,
 				F147BB0317904E48000A40CF /* CoreGraphics.framework */,
 				F147BB0517904E48000A40CF /* UIKit.framework */,
@@ -159,6 +235,32 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F178965517927BF5005F4E97 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F178965C17927BF6005F4E97 /* libRestKit.a */,
+				F178965E17927BF6005F4E97 /* RestKitTests.octest */,
+				F178966017927BF6005F4E97 /* RestKit.framework */,
+				F178966217927BF6005F4E97 /* RestKitFrameworkTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F1789679179280F6005F4E97 /* SinaWeiboMySDK */ = {
+			isa = PBXGroup;
+			children = (
+				F178967A179280F6005F4E97 /* SinaWeibo.bundle */,
+				F178967B179280F6005F4E97 /* SinaWeibo.h */,
+				F178967C179280F6005F4E97 /* SinaWeibo.m */,
+				F178967D179280F6005F4E97 /* SinaWeiboAuthorizeView.h */,
+				F178967E179280F6005F4E97 /* SinaWeiboAuthorizeView.m */,
+				F178967F179280F6005F4E97 /* SinaWeiboConstants.h */,
+				F1789680179280F6005F4E97 /* SinaWeiboRequest.h */,
+				F1789681179280F6005F4E97 /* SinaWeiboRequest.m */,
+			);
+			path = SinaWeiboMySDK;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -173,6 +275,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				F178968F17928711005F4E97 /* PBXTargetDependency */,
 			);
 			name = MultiTaskforSina;
 			productName = MultiTaskforSina;
@@ -206,6 +309,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "ding orlando";
 				TargetAttributes = {
+					F147BAFD17904E48000A40CF = {
+						DevelopmentTeam = 84Z8KQ6A9Q;
+					};
 					F147BB2117904E48000A40CF = {
 						TestTargetID = F147BAFD17904E48000A40CF;
 					};
@@ -222,6 +328,12 @@
 			mainGroup = F147BAF517904E48000A40CF;
 			productRefGroup = F147BAFF17904E48000A40CF /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = F178965517927BF5005F4E97 /* Products */;
+					ProjectRef = F178965417927BF5005F4E97 /* RestKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				F147BAFD17904E48000A40CF /* MultiTaskforSina */,
@@ -230,12 +342,44 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		F178965C17927BF6005F4E97 /* libRestKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKit.a;
+			remoteRef = F178965B17927BF6005F4E97 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F178965E17927BF6005F4E97 /* RestKitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitTests.octest;
+			remoteRef = F178965D17927BF6005F4E97 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F178966017927BF6005F4E97 /* RestKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RestKit.framework;
+			remoteRef = F178965F17927BF6005F4E97 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F178966217927BF6005F4E97 /* RestKitFrameworkTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitFrameworkTests.octest;
+			remoteRef = F178966117927BF6005F4E97 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		F147BAFC17904E48000A40CF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F147BB1D17904E48000A40CF /* Images.xcassets in Resources */,
+				F1789682179280F6005F4E97 /* SinaWeibo.bundle in Resources */,
 				F147BB0C17904E48000A40CF /* InfoPlist.strings in Resources */,
 				F147BB1517904E48000A40CF /* Main.storyboard in Resources */,
 			);
@@ -246,6 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F147BB2E17904E48000A40CF /* InfoPlist.strings in Resources */,
+				F1789683179280F6005F4E97 /* SinaWeibo.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +401,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1789684179280F6005F4E97 /* SinaWeibo.m in Sources */,
 				F147BB1217904E48000A40CF /* AppDelegate.m in Sources */,
+				F1789686179280F6005F4E97 /* SinaWeiboAuthorizeView.m in Sources */,
 				F147BB1817904E48000A40CF /* MasterViewController.m in Sources */,
+				F1789688179280F6005F4E97 /* SinaWeiboRequest.m in Sources */,
 				F147BB0E17904E48000A40CF /* main.m in Sources */,
 				F147BB1B17904E48000A40CF /* DetailViewController.m in Sources */,
 			);
@@ -268,6 +416,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F147BB3017904E48000A40CF /* MultiTaskforSinaTests.m in Sources */,
+				F1789685179280F6005F4E97 /* SinaWeibo.m in Sources */,
+				F1789687179280F6005F4E97 /* SinaWeiboAuthorizeView.m in Sources */,
+				F1789689179280F6005F4E97 /* SinaWeiboRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +429,11 @@
 			isa = PBXTargetDependency;
 			target = F147BAFD17904E48000A40CF /* MultiTaskforSina */;
 			targetProxy = F147BB2717904E48000A40CF /* PBXContainerItemProxy */;
+		};
+		F178968F17928711005F4E97 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RestKit;
+			targetProxy = F178968E17928711005F4E97 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -380,13 +536,22 @@
 		F147BB3417904E48000A40CF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MultiTaskforSina/MultiTaskforSina-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/../../Headers/**";
 				INFOPLIST_FILE = "MultiTaskforSina/MultiTaskforSina-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -394,13 +559,22 @@
 		F147BB3517904E48000A40CF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MultiTaskforSina/MultiTaskforSina-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/../../Headers/**";
 				INFOPLIST_FILE = "MultiTaskforSina/MultiTaskforSina-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -464,6 +638,7 @@
 				F147BB3517904E48000A40CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F147BB3617904E48000A40CF /* Build configuration list for PBXNativeTarget "MultiTaskforSinaTests" */ = {
 			isa = XCConfigurationList;
@@ -472,6 +647,7 @@
 				F147BB3817904E48000A40CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
