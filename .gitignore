@@ -35,3 +35,5 @@ bin-release/
 204_Multitasking/MultiTaskforSina.xcworkspace/xcuserdata/llv22.xcuserdatad/UserInterfaceState.xcuserstate
 204_Multitasking/MultiTaskforSina.xcworkspace/xcuserdata/llv22.xcuserdatad/
 204_Multitasking/MultiTaskforSina.xcworkspace/xcshareddata/
+
+#ignore changes in subfolder of library
