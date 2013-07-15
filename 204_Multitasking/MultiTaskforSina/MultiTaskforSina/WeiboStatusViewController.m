@@ -1,23 +1,23 @@
 //
-//  MasterViewController.m
+//  WeiboStatusViewController.h
 //  MultiTaskforSina
 //
 //  Created by ding orlando on 7/12/13.
 //  Copyright (c) 2013 ding orlando. All rights reserved.
 //
 
-#import "MasterViewController.h"
+#import "WeiboStatusViewController.h"
 
-#import "DetailViewController.h"
+#import "SettingViewController.h"
 
-@interface MasterViewController () {
+@interface WeiboStatusViewController () {
     NSMutableArray *_objects;
     //desc - NO, by default
     BOOL _isWeiboSettingPage;
 }
 @end
 
-@implementation MasterViewController
+@implementation WeiboStatusViewController
 
 - (void)awakeFromNib
 {
@@ -104,7 +104,7 @@
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSDate *object = _objects[indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
+//        [[segue destinationViewController] setDetailItem:object];
     }
 }
 

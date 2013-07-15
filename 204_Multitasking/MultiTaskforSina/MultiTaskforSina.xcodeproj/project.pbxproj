@@ -13,8 +13,8 @@
 		F147BB0C17904E48000A40CF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F147BB0A17904E48000A40CF /* InfoPlist.strings */; };
 		F147BB0E17904E48000A40CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F147BB0D17904E48000A40CF /* main.m */; };
 		F147BB1217904E48000A40CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F147BB1117904E48000A40CF /* AppDelegate.m */; };
-		F147BB1817904E48000A40CF /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F147BB1717904E48000A40CF /* MasterViewController.m */; };
-		F147BB1B17904E48000A40CF /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F147BB1A17904E48000A40CF /* DetailViewController.m */; };
+		F147BB1817904E48000A40CF /* WeiboStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F147BB1717904E48000A40CF /* WeiboStatusViewController.m */; };
+		F147BB1B17904E48000A40CF /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F147BB1A17904E48000A40CF /* SettingViewController.m */; };
 		F147BB1D17904E48000A40CF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F147BB1C17904E48000A40CF /* Images.xcassets */; };
 		F147BB2417904E48000A40CF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F147BB2317904E48000A40CF /* XCTest.framework */; };
 		F147BB2517904E48000A40CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F147BB0117904E48000A40CF /* Foundation.framework */; };
@@ -94,10 +94,10 @@
 		F147BB0F17904E48000A40CF /* MultiTaskforSina-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MultiTaskforSina-Prefix.pch"; sourceTree = "<group>"; };
 		F147BB1017904E48000A40CF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F147BB1117904E48000A40CF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F147BB1617904E48000A40CF /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		F147BB1717904E48000A40CF /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		F147BB1917904E48000A40CF /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		F147BB1A17904E48000A40CF /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		F147BB1617904E48000A40CF /* WeiboStatusViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeiboStatusViewController.h; sourceTree = "<group>"; };
+		F147BB1717904E48000A40CF /* WeiboStatusViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeiboStatusViewController.m; sourceTree = "<group>"; };
+		F147BB1917904E48000A40CF /* SettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		F147BB1A17904E48000A40CF /* SettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		F147BB1C17904E48000A40CF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F147BB2217904E48000A40CF /* MultiTaskforSinaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiTaskforSinaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F147BB2317904E48000A40CF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -195,10 +195,10 @@
 			children = (
 				F147BB1017904E48000A40CF /* AppDelegate.h */,
 				F147BB1117904E48000A40CF /* AppDelegate.m */,
-				F147BB1617904E48000A40CF /* MasterViewController.h */,
-				F147BB1717904E48000A40CF /* MasterViewController.m */,
-				F147BB1917904E48000A40CF /* DetailViewController.h */,
-				F147BB1A17904E48000A40CF /* DetailViewController.m */,
+				F147BB1617904E48000A40CF /* WeiboStatusViewController.h */,
+				F147BB1717904E48000A40CF /* WeiboStatusViewController.m */,
+				F147BB1917904E48000A40CF /* SettingViewController.h */,
+				F147BB1A17904E48000A40CF /* SettingViewController.m */,
 				F18221291792EF580021A46F /* Main.storyboard */,
 				F147BB1C17904E48000A40CF /* Images.xcassets */,
 				F147BB0817904E48000A40CF /* Supporting Files */,
@@ -404,10 +404,10 @@
 				F1789684179280F6005F4E97 /* SinaWeibo.m in Sources */,
 				F147BB1217904E48000A40CF /* AppDelegate.m in Sources */,
 				F1789686179280F6005F4E97 /* SinaWeiboAuthorizeView.m in Sources */,
-				F147BB1817904E48000A40CF /* MasterViewController.m in Sources */,
+				F147BB1817904E48000A40CF /* WeiboStatusViewController.m in Sources */,
 				F1789688179280F6005F4E97 /* SinaWeiboRequest.m in Sources */,
 				F147BB0E17904E48000A40CF /* main.m in Sources */,
-				F147BB1B17904E48000A40CF /* DetailViewController.m in Sources */,
+				F147BB1B17904E48000A40CF /* SettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

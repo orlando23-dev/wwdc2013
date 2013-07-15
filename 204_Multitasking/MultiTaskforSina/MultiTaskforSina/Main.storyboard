@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3697.3"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller - WeiboUpdates-->
+        <!--Weibo Status View Controller - WeiboUpdates-->
         <scene sceneID="o1M-tl-jgN">
             <objects>
-                <tableViewController id="aAJ-wT-ZIE" sceneMemberID="viewController">
+                <tableViewController id="aAJ-wT-ZIE" customClass="WeiboStatusViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fXd-Pa-Vwy" userLabel="WeiboUpdatesTableView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,10 +83,10 @@
             </objects>
             <point key="canvasLocation" x="229" y="93"/>
         </scene>
-        <!--Table View Controller - Setting-->
+        <!--Setting View Controller - Setting-->
         <scene sceneID="xkl-qW-I8L">
             <objects>
-                <tableViewController id="c4C-0m-Fc3" sceneMemberID="viewController">
+                <tableViewController id="c4C-0m-Fc3" customClass="SettingViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="yo6-RH-WDa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

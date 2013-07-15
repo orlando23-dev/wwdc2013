@@ -1,5 +1,5 @@
 //
-//  MasterViewController.h
+//  DetailViewController.h
 //  MultiTaskforSina
 //
 //  Created by ding orlando on 7/12/13.
@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MasterViewController : UITableViewController{
-}
+@interface SettingViewController : UITableViewController
 
 @end
