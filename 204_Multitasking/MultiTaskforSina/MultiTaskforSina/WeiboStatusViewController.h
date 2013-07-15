@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WeiboStatusViewController : UITableViewController{
+@interface WeiboStatusViewController : UITableViewController<UINavigationControllerDelegate, SinaWeiboRequestDelegate> {
 }
 
 @end

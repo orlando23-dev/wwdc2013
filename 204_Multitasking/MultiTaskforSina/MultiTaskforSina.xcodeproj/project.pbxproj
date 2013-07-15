@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F124AA911794253E00919E78 /* FlippingNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F124AA901794253E00919E78 /* FlippingNavigationController.m */; };
 		F147BB0217904E48000A40CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F147BB0117904E48000A40CF /* Foundation.framework */; };
 		F147BB0417904E48000A40CF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F147BB0317904E48000A40CF /* CoreGraphics.framework */; };
 		F147BB0617904E48000A40CF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F147BB0517904E48000A40CF /* UIKit.framework */; };
@@ -84,6 +85,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F124AA8F1794253E00919E78 /* FlippingNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlippingNavigationController.h; sourceTree = "<group>"; };
+		F124AA901794253E00919E78 /* FlippingNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlippingNavigationController.m; sourceTree = "<group>"; };
 		F147BAFE17904E48000A40CF /* MultiTaskforSina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiTaskforSina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F147BB0117904E48000A40CF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F147BB0317904E48000A40CF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -199,6 +202,8 @@
 				F147BB1717904E48000A40CF /* WeiboStatusViewController.m */,
 				F147BB1917904E48000A40CF /* SettingViewController.h */,
 				F147BB1A17904E48000A40CF /* SettingViewController.m */,
+				F124AA8F1794253E00919E78 /* FlippingNavigationController.h */,
+				F124AA901794253E00919E78 /* FlippingNavigationController.m */,
 				F18221291792EF580021A46F /* Main.storyboard */,
 				F147BB1C17904E48000A40CF /* Images.xcassets */,
 				F147BB0817904E48000A40CF /* Supporting Files */,
@@ -406,6 +411,7 @@
 				F1789686179280F6005F4E97 /* SinaWeiboAuthorizeView.m in Sources */,
 				F147BB1817904E48000A40CF /* WeiboStatusViewController.m in Sources */,
 				F1789688179280F6005F4E97 /* SinaWeiboRequest.m in Sources */,
+				F124AA911794253E00919E78 /* FlippingNavigationController.m in Sources */,
 				F147BB0E17904E48000A40CF /* main.m in Sources */,
 				F147BB1B17904E48000A40CF /* SettingViewController.m in Sources */,
 			);

@@ -6,15 +6,20 @@
 //  Copyright (c) 2013 ding orlando. All rights reserved.
 //
 
+#import "AppDelegate.h"
+#import "SinaWeibo.h"
+#import "SinaWeiboRequest.h"
 #import "WeiboStatusViewController.h"
-
 #import "SettingViewController.h"
+#import "FlippingNavigationController.h"
 
 @interface WeiboStatusViewController () {
     NSMutableArray *_objects;
-    //desc - NO, by default
-    BOOL _isWeiboSettingPage;
 }
+
+//desc - transition controller
+@property (nonatomic) FlippingNavigationController *transitionController;
+
 @end
 
 @implementation WeiboStatusViewController
@@ -28,6 +33,23 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [self setTransitionController:[FlippingNavigationController new]];
+    [self.navigationController setDelegate:self];
+    
+    // desc - weibo setup
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    appDelegate.sinaweibo = [[SinaWeibo alloc] initWithAppKey:kAppKey
+                                               appSecret:kAppSecret
+                                          appRedirectURI:kAppRedirectURI
+                                             andDelegate:(id<SinaWeiboDelegate>)self];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *sinaweiboInfo = [defaults objectForKey:@"SinaWeiboAuthData"];
+    if ([sinaweiboInfo objectForKey:@"AccessTokenKey"] && [sinaweiboInfo objectForKey:@"ExpirationDateKey"] && [sinaweiboInfo objectForKey:@"UserIDKey"])
+    {
+        appDelegate.sinaweibo.accessToken = [sinaweiboInfo objectForKey:@"AccessTokenKey"];
+        appDelegate.sinaweibo.expirationDate = [sinaweiboInfo objectForKey:@"ExpirationDateKey"];
+        appDelegate.sinaweibo.userID = [sinaweiboInfo objectForKey:@"UserIDKey"];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,6 +58,26 @@
     // Dispose of any resources that can be recreated.
 }
 
+/**
+ * fliping transition
+ **/
+- (IBAction)flipping:(id)sender{
+    [[self navigationController] pushViewController:[[self storyboard] instantiateViewControllerWithIdentifier:@"settingView"]
+                                           animated:YES];
+}
+
+#pragma mark - UINavigationControllerDelegate
+
+- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
+                                  animationControllerForOperation:(UINavigationControllerOperation)operation
+                                               fromViewController:(UIViewController *)fromVC
+                                                 toViewController:(UIViewController *)toVC {
+    if (!navigationController) {
+        return  nil;
+    }
+    
+    return [self transitionController];
+}
 - (void)insertNewObject:(id)sender
 {
     if (!_objects) {
@@ -106,6 +148,25 @@
         NSDate *object = _objects[indexPath.row];
 //        [[segue destinationViewController] setDetailItem:object];
     }
+}
+
+
+#pragma mark - SinaWeiboRequestDelegate <NSObject>
+
+- (void)request:(SinaWeiboRequest *)request didReceiveResponse:(NSURLResponse *)response{
+    
+}
+
+- (void)request:(SinaWeiboRequest *)request didReceiveRawData:(NSData *)data{
+    
+}
+
+- (void)request:(SinaWeiboRequest *)request didFailWithError:(NSError *)error{
+    
+}
+
+- (void)request:(SinaWeiboRequest *)request didFinishLoadingWithResult:(id)result{
+    
 }
 
 @end

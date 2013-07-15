@@ -33,7 +33,8 @@
 @property (nonatomic, copy) NSDate *expirationDate;
 @property (nonatomic, copy) NSString *refreshToken;
 @property (nonatomic, copy) NSString *ssoCallbackScheme;
-@property (nonatomic, assign) id<SinaWeiboDelegate> delegate;
+// desc - modification of weak - assign -> weadk
+@property (nonatomic, weak) id<SinaWeiboDelegate> delegate;
 
 - (id)initWithAppKey:(NSString *)appKey appSecret:(NSString *)appSecrect
       appRedirectURI:(NSString *)appRedirectURI

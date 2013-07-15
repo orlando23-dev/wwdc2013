@@ -45,7 +45,11 @@
       appRedirectURI:(NSString *)_appRedirectURI
          andDelegate:(id<SinaWeiboDelegate>)_delegate
 {
-    return [self initWithAppKey:_appKey appSecret:_appSecrect appRedirectURI:_appRedirectURI ssoCallbackScheme:nil andDelegate:_delegate];
+    return [self initWithAppKey:_appKey
+                      appSecret:_appSecrect
+                 appRedirectURI:_appRedirectURI
+              ssoCallbackScheme:nil
+                    andDelegate:_delegate];
 }
 
 

@@ -7,13 +7,16 @@
 //
 
 #import "AppDelegate.h"
+#import "SinaWeibo.h"
+#import "WeiboStatusViewController.h"
 
 @implementation AppDelegate
+
+@synthesize sinaweibo = _sinaweibo;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    
     return YES;
 }
 							
