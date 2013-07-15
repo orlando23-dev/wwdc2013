@@ -13,7 +13,6 @@
 		F147BB0C17904E48000A40CF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F147BB0A17904E48000A40CF /* InfoPlist.strings */; };
 		F147BB0E17904E48000A40CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F147BB0D17904E48000A40CF /* main.m */; };
 		F147BB1217904E48000A40CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F147BB1117904E48000A40CF /* AppDelegate.m */; };
-		F147BB1517904E48000A40CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F147BB1317904E48000A40CF /* Main.storyboard */; };
 		F147BB1817904E48000A40CF /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F147BB1717904E48000A40CF /* MasterViewController.m */; };
 		F147BB1B17904E48000A40CF /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F147BB1A17904E48000A40CF /* DetailViewController.m */; };
 		F147BB1D17904E48000A40CF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F147BB1C17904E48000A40CF /* Images.xcassets */; };
@@ -36,6 +35,7 @@
 		F178969817928A07005F4E97 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F178969717928A07005F4E97 /* MobileCoreServices.framework */; };
 		F178969A17928A25005F4E97 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F178969917928A25005F4E97 /* Security.framework */; };
 		F178969C17928A32005F4E97 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F178969B17928A32005F4E97 /* SystemConfiguration.framework */; };
+		F182212A1792EF580021A46F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F18221291792EF580021A46F /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,7 +94,6 @@
 		F147BB0F17904E48000A40CF /* MultiTaskforSina-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MultiTaskforSina-Prefix.pch"; sourceTree = "<group>"; };
 		F147BB1017904E48000A40CF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F147BB1117904E48000A40CF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F147BB1417904E48000A40CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F147BB1617904E48000A40CF /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		F147BB1717904E48000A40CF /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		F147BB1917904E48000A40CF /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -120,6 +119,7 @@
 		F178969717928A07005F4E97 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		F178969917928A25005F4E97 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		F178969B17928A32005F4E97 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F18221291792EF580021A46F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,11 +195,11 @@
 			children = (
 				F147BB1017904E48000A40CF /* AppDelegate.h */,
 				F147BB1117904E48000A40CF /* AppDelegate.m */,
-				F147BB1317904E48000A40CF /* Main.storyboard */,
 				F147BB1617904E48000A40CF /* MasterViewController.h */,
 				F147BB1717904E48000A40CF /* MasterViewController.m */,
 				F147BB1917904E48000A40CF /* DetailViewController.h */,
 				F147BB1A17904E48000A40CF /* DetailViewController.m */,
+				F18221291792EF580021A46F /* Main.storyboard */,
 				F147BB1C17904E48000A40CF /* Images.xcassets */,
 				F147BB0817904E48000A40CF /* Supporting Files */,
 			);
@@ -381,7 +381,7 @@
 				F147BB1D17904E48000A40CF /* Images.xcassets in Resources */,
 				F1789682179280F6005F4E97 /* SinaWeibo.bundle in Resources */,
 				F147BB0C17904E48000A40CF /* InfoPlist.strings in Resources */,
-				F147BB1517904E48000A40CF /* Main.storyboard in Resources */,
+				F182212A1792EF580021A46F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,14 +444,6 @@
 				F147BB0B17904E48000A40CF /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		F147BB1317904E48000A40CF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F147BB1417904E48000A40CF /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		F147BB2C17904E48000A40CF /* InfoPlist.strings */ = {
