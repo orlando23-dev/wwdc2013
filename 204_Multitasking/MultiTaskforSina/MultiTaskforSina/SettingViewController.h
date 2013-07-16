@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SinaWeiboRequest.h"
 
-@interface SettingViewController : UITableViewController
+@interface SettingViewController : UITableViewController<SinaWeiboRequestDelegate>{
+    NSDictionary *userInfo;
+    NSArray *statuses;
+    IBOutlet UISwitch* _enableAuthroizeUISwitch;
+}
+
+/**
+ * static for global sharding setting
+ **/
++ (SinaWeibo *)sinaweibo;
 
 @end

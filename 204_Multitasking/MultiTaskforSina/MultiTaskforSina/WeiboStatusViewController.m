@@ -7,8 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "SinaWeibo.h"
-#import "SinaWeiboRequest.h"
 #import "WeiboStatusViewController.h"
 #import "SettingViewController.h"
 #import "FlippingNavigationController.h"
@@ -36,19 +34,8 @@
     [self setTransitionController:[FlippingNavigationController new]];
     [self.navigationController setDelegate:self];
     
-    // desc - weibo setup
-    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    appDelegate.sinaweibo = [[SinaWeibo alloc] initWithAppKey:kAppKey
-                                               appSecret:kAppSecret
-                                          appRedirectURI:kAppRedirectURI
-                                             andDelegate:(id<SinaWeiboDelegate>)self];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSDictionary *sinaweiboInfo = [defaults objectForKey:@"SinaWeiboAuthData"];
-    if ([sinaweiboInfo objectForKey:@"AccessTokenKey"] && [sinaweiboInfo objectForKey:@"ExpirationDateKey"] && [sinaweiboInfo objectForKey:@"UserIDKey"])
-    {
-        appDelegate.sinaweibo.accessToken = [sinaweiboInfo objectForKey:@"AccessTokenKey"];
-        appDelegate.sinaweibo.expirationDate = [sinaweiboInfo objectForKey:@"ExpirationDateKey"];
-        appDelegate.sinaweibo.userID = [sinaweiboInfo objectForKey:@"UserIDKey"];
+    if (![SettingViewController sinaweibo]) {
+        [self navigateToSetting];
     }
 }
 
@@ -58,12 +45,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)navigateToSetting{
+    [[self navigationController] pushViewController:[[self storyboard] instantiateViewControllerWithIdentifier:@"settingView"]
+                                           animated:YES];
+}
+
 /**
  * fliping transition
  **/
 - (IBAction)flipping:(id)sender{
-    [[self navigationController] pushViewController:[[self storyboard] instantiateViewControllerWithIdentifier:@"settingView"]
-                                           animated:YES];
+    [self navigateToSetting];
 }
 
 #pragma mark - UINavigationControllerDelegate
@@ -150,23 +141,5 @@
     }
 }
 
-
-#pragma mark - SinaWeiboRequestDelegate <NSObject>
-
-- (void)request:(SinaWeiboRequest *)request didReceiveResponse:(NSURLResponse *)response{
-    
-}
-
-- (void)request:(SinaWeiboRequest *)request didReceiveRawData:(NSData *)data{
-    
-}
-
-- (void)request:(SinaWeiboRequest *)request didFailWithError:(NSError *)error{
-    
-}
-
-- (void)request:(SinaWeiboRequest *)request didFinishLoadingWithResult:(id)result{
-    
-}
 
 @end

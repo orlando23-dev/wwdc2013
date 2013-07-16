@@ -393,12 +393,13 @@ static CGFloat kBorderWidth = 10;
 - (void)hide
 {
     [self removeObservers];
-    
     [webView stopLoading];
-    
     [self performSelectorOnMainThread:@selector(_hide) withObject:nil waitUntilDone:NO];
 }
 
+/**
+ * should be some mechanism for callback
+ **/
 - (void)cancel
 {
     [self hide];
