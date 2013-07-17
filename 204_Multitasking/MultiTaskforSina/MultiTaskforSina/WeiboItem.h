@@ -11,6 +11,8 @@
 @interface WeiboItem : NSObject
 
 @property (nonatomic, strong) NSString* content;
+@property (nonatomic, strong) NSString* userId;
+@property (nonatomic, strong) NSString* createAt;
 @property (nonatomic, strong) NSDate* date;
 @property (nonatomic, strong) NSString* imageURL;
 //@property (nonatomic, strong) UIImage* image;

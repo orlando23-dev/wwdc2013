@@ -12,6 +12,7 @@
 #import "WeiboStatusViewController.h"
 #import "SettingViewController.h"
 #import "FlippingNavigationController.h"
+#import "WeiboItem.h"
 
 @interface WeiboStatusViewController () {
     NSMutableArray *_objects;
@@ -111,9 +112,9 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
-    cell.detailTextLabel.text = [object description];
+    WeiboItem* object = _objects[indexPath.row];
+    cell.textLabel.text = object.userId;
+    cell.detailTextLabel.text = object.content;
 //    cell.imageView.image = [UIImage imageNamed:]
     return cell;
 }
@@ -152,11 +153,11 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = _objects[indexPath.row];
+//    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+//        NSDate *object = _objects[indexPath.row];
 //        [[segue destinationViewController] setDetailItem:object];
-    }
+//    }
 }
 
 #pragma mark - SinaWeiboRequestDelegate <NSObject>
@@ -175,9 +176,33 @@
 
 - (void)request:(SinaWeiboRequest *)request didFinishLoadingWithResult:(id)result{
     if ([request.url hasSuffix:@"statuses/friends_timeline.json"]){
-        NSLog(@"%@", result);
+        NSArray *statuses = [result objectForKey:@"statuses"];
+//        NSLog(@"%@", statuses);
+        WeiboItem* weiboItem = [WeiboItem new];
+        for (id item in statuses) {
+            NSString* content = [item valueForKey:@"text"];
+            NSString* create_at = [item valueForKey:@"created_at"];
+            NSString* userName = [item valueForKeyPath:@"user.name"];
+            NSString* profile_image_url = [item valueForKeyPath:@"user.profile_image_url"];
+            NSLog(@"%@, %@, %@, %@", content, create_at, userName, profile_image_url);
+            weiboItem.content = content;
+            weiboItem.userId = userName;
+            weiboItem.createAt = create_at;
+            weiboItem.imageURL = profile_image_url;
+            if (!_objects) {
+                _objects = [[NSMutableArray alloc] init];
+            }
+            [self->_objects addObject:item];
+        }
         //desc - update UI status
         [self.refreshControl endRefreshing];
+//        [self.tableView reloadData];
+        if (!_objects) {
+            _objects = [[NSMutableArray alloc] init];
+        }
+        [_objects insertObject:weiboItem atIndex:0];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
 }
 
