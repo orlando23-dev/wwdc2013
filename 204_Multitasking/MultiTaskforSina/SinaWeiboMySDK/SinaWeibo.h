@@ -11,6 +11,7 @@
 #import "SinaWeiboRequest.h"
 
 @protocol SinaWeiboDelegate;
+@protocol SinaWeiboStatusDelegate;
 
 @interface SinaWeibo : NSObject <SinaWeiboAuthorizeViewDelegate, SinaWeiboRequestDelegate>
 {
@@ -35,6 +36,8 @@
 @property (nonatomic, copy) NSString *ssoCallbackScheme;
 // desc - modification of weak - assign -> weadk
 @property (nonatomic, weak) id<SinaWeiboDelegate> delegate;
+// desc - status delegate, orlando, 2013-07
+@property (nonatomic, weak) id<SinaWeiboStatusDelegate> statusDelegate;
 
 - (id)initWithAppKey:(NSString *)appKey appSecret:(NSString *)appSecrect
       appRedirectURI:(NSString *)appRedirectURI

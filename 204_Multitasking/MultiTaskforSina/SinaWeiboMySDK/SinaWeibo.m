@@ -8,6 +8,7 @@
 
 
 #import "SinaWeibo.h"
+#import "SinaWeibo+StatusExtension.h"
 #import "SinaWeiboRequest.h"
 #import "SinaWeiboAuthorizeView.h"
 #import "SinaWeiboConstants.h"
@@ -31,6 +32,8 @@
 @synthesize appKey;
 @synthesize appSecret;
 @synthesize appRedirectURI;
+// desc - for status delegate
+@synthesize statusDelegate;
 
 #pragma mark - Memory management
 
@@ -539,6 +542,18 @@
         }
     }
     return YES;
+}
+
+#pragma mark - get latest statuses in weibo
+
+- (void)sinaweiboGetLatestStatuses:(id<SinaWeiboRequestDelegate>) vcdelegate{
+    if ([self isAuthValid])
+    {
+        [self requestWithURL:@"statuses/friends_timeline.json"
+                      params:nil
+                  httpMethod:@"GET"
+                    delegate:vcdelegate];
+    }
 }
 
 @end

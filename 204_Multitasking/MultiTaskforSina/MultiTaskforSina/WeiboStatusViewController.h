@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SinaWeiboRequest.h"
 
-@interface WeiboStatusViewController : UITableViewController<UINavigationControllerDelegate> {
+@interface WeiboStatusViewController : UITableViewController<UINavigationControllerDelegate, SinaWeiboRequestDelegate> {
 }
+
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end

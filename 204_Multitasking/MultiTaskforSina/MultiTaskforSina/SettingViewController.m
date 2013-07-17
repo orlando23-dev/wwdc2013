@@ -147,22 +147,4 @@
     [self resetButtons];
 }
 
-#pragma mark - SinaWeiboRequestDelegate <NSObject>
-
-- (void)request:(SinaWeiboRequest *)request didReceiveResponse:(NSURLResponse *)response{
-    
-}
-
-- (void)request:(SinaWeiboRequest *)request didReceiveRawData:(NSData *)data{
-    
-}
-
-- (void)request:(SinaWeiboRequest *)request didFailWithError:(NSError *)error{
-    
-}
-
-- (void)request:(SinaWeiboRequest *)request didFinishLoadingWithResult:(id)result{
-    
-}
-
 @end

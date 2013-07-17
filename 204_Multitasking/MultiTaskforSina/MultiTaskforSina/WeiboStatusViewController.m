@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 ding orlando. All rights reserved.
 //
 
+#import "SinaWeibo.h"
+#import "SinaWeibo+StatusExtension.h"
 #import "AppDelegate.h"
 #import "WeiboStatusViewController.h"
 #import "SettingViewController.h"
@@ -34,9 +36,23 @@
     [self setTransitionController:[FlippingNavigationController new]];
     [self.navigationController setDelegate:self];
     
-    if (![SettingViewController sinaweibo]) {
+    // desc - refershing control in table
+    self.refreshControl = [[UIRefreshControl alloc]init];
+    [self.refreshControl addTarget:self
+                            action:@selector(refreshedByPullingTable:)
+                  forControlEvents:UIControlEventValueChanged];
+    
+    SinaWeibo *sinaWeioHelper = [SettingViewController sinaweibo];
+    if (!sinaWeioHelper) {
         [self navigateToSetting];
     }
+}
+
+// desc - refreshed by pulling table
+- (void)refreshedByPullingTable: (id)sender{
+    [self.refreshControl beginRefreshing];
+    // desc - do default refresh
+    [[SettingViewController sinaweibo] sinaweiboGetLatestStatuses:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -97,6 +113,8 @@
 
     NSDate *object = _objects[indexPath.row];
     cell.textLabel.text = [object description];
+    cell.detailTextLabel.text = [object description];
+//    cell.imageView.image = [UIImage imageNamed:]
     return cell;
 }
 
@@ -138,6 +156,28 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSDate *object = _objects[indexPath.row];
 //        [[segue destinationViewController] setDetailItem:object];
+    }
+}
+
+#pragma mark - SinaWeiboRequestDelegate <NSObject>
+
+- (void)request:(SinaWeiboRequest *)request didReceiveResponse:(NSURLResponse *)response{
+    
+}
+
+- (void)request:(SinaWeiboRequest *)request didReceiveRawData:(NSData *)data{
+    
+}
+
+- (void)request:(SinaWeiboRequest *)request didFailWithError:(NSError *)error{
+    
+}
+
+- (void)request:(SinaWeiboRequest *)request didFinishLoadingWithResult:(id)result{
+    if ([request.url hasSuffix:@"statuses/friends_timeline.json"]){
+        NSLog(@"%@", result);
+        //desc - update UI status
+        [self.refreshControl endRefreshing];
     }
 }
 

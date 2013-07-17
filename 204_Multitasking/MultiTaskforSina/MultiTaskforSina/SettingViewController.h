@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SinaWeiboRequest.h"
+@class SinaWeibo;
 
-@interface SettingViewController : UITableViewController<SinaWeiboRequestDelegate>{
+@interface SettingViewController : UITableViewController{
     NSDictionary *userInfo;
     NSArray *statuses;
     IBOutlet UISwitch* _enableAuthroizeUISwitch;
