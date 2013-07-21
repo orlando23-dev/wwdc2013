@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 ding orlando. All rights reserved.
 //
 
+#define ENABLE_TRACE
+
 #import "SinaWeibo.h"
 #import "SinaWeibo+StatusExtension.h"
 #import "AppDelegate.h"
@@ -42,6 +44,8 @@
     [self.refreshControl addTarget:self
                             action:@selector(refreshedByPullingTable:)
                   forControlEvents:UIControlEventValueChanged];
+    // desc - register table cell calss
+//    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     
     SinaWeibo *sinaWeioHelper = [SettingViewController sinaweibo];
     if (!sinaWeioHelper) {
@@ -115,7 +119,9 @@
     WeiboItem* object = _objects[indexPath.row];
     cell.textLabel.text = object.userId;
     cell.detailTextLabel.text = object.content;
-//    cell.imageView.image = [UIImage imageNamed:]
+    NSURL *url = [NSURL URLWithString:object.imageURL];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    cell.imageView.image = [[UIImage alloc] initWithData:data];
     return cell;
 }
 
@@ -162,47 +168,63 @@
 
 #pragma mark - SinaWeiboRequestDelegate <NSObject>
 
-- (void)request:(SinaWeiboRequest *)request didReceiveResponse:(NSURLResponse *)response{
-    
-}
+//- (void)request:(SinaWeiboRequest *)request didReceiveResponse:(NSURLResponse *)response{
+//    
+//}
+//
+//- (void)request:(SinaWeiboRequest *)request didReceiveRawData:(NSData *)data{
+//    
+//}
 
-- (void)request:(SinaWeiboRequest *)request didReceiveRawData:(NSData *)data{
-    
-}
-
+/**
+ * if refreshment failed, have to reset content, so cache should be managed
+ **/
 - (void)request:(SinaWeiboRequest *)request didFailWithError:(NSError *)error{
-    
+    if ([request.url hasSuffix:@"statuses/friends_timeline.json"])
+    {
+        [self.refreshControl endRefreshing];
+    }
 }
 
+/**
+ * finish loading friends - will change into
+ **/
 - (void)request:(SinaWeiboRequest *)request didFinishLoadingWithResult:(id)result{
     if ([request.url hasSuffix:@"statuses/friends_timeline.json"]){
         NSArray *statuses = [result objectForKey:@"statuses"];
-//        NSLog(@"%@", statuses);
-        WeiboItem* weiboItem = [WeiboItem new];
+#ifdef ENABLE_TRACE
+        NSLog(@"%@", statuses);
+#endif
+        if (!self->_objects) {
+            self->_objects = [[NSMutableArray alloc] init];
+        }
+        
         for (id item in statuses) {
             NSString* content = [item valueForKey:@"text"];
             NSString* create_at = [item valueForKey:@"created_at"];
             NSString* userName = [item valueForKeyPath:@"user.name"];
             NSString* profile_image_url = [item valueForKeyPath:@"user.profile_image_url"];
             NSLog(@"%@, %@, %@, %@", content, create_at, userName, profile_image_url);
+            
+            WeiboItem* weiboItem = [WeiboItem new];
             weiboItem.content = content;
             weiboItem.userId = userName;
             weiboItem.createAt = create_at;
             weiboItem.imageURL = profile_image_url;
-            if (!_objects) {
-                _objects = [[NSMutableArray alloc] init];
-            }
-            [self->_objects addObject:item];
+            
+//            [self->_objects addObject:weiboItem];
+            [self->_objects insertObject:weiboItem atIndex:0];
         }
+        
         //desc - update UI status
         [self.refreshControl endRefreshing];
-//        [self.tableView reloadData];
-        if (!_objects) {
-            _objects = [[NSMutableArray alloc] init];
-        }
-        [_objects insertObject:weiboItem atIndex:0];
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-        [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        [self.tableView reloadData];
+//        if (!_objects) {
+//            _objects = [[NSMutableArray alloc] init];
+//        }
+//        [_objects insertObject:weiboItem atIndex:0];
+//        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+//        [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
 }
 
