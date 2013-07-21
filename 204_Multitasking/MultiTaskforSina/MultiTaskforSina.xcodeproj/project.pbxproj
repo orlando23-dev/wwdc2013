@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F124AA911794253E00919E78 /* FlippingNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F124AA901794253E00919E78 /* FlippingNavigationController.m */; };
 		F142F0F51796CE8A00F17138 /* WeiboItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F142F0F41796CE8A00F17138 /* WeiboItem.m */; };
+		F1432517179C23860093CD5E /* WeiboItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1432516179C23860093CD5E /* WeiboItemCell.m */; };
 		F147BB0217904E48000A40CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F147BB0117904E48000A40CF /* Foundation.framework */; };
 		F147BB0417904E48000A40CF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F147BB0317904E48000A40CF /* CoreGraphics.framework */; };
 		F147BB0617904E48000A40CF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F147BB0517904E48000A40CF /* UIKit.framework */; };
@@ -91,6 +92,8 @@
 		F142F0F31796CE8A00F17138 /* WeiboItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboItem.h; sourceTree = "<group>"; };
 		F142F0F41796CE8A00F17138 /* WeiboItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboItem.m; sourceTree = "<group>"; };
 		F142F0FA1796D06700F17138 /* SinaWeibo+StatusExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SinaWeibo+StatusExtension.h"; sourceTree = "<group>"; };
+		F1432515179C23860093CD5E /* WeiboItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboItemCell.h; sourceTree = "<group>"; };
+		F1432516179C23860093CD5E /* WeiboItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboItemCell.m; sourceTree = "<group>"; };
 		F147BAFE17904E48000A40CF /* MultiTaskforSina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiTaskforSina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F147BB0117904E48000A40CF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F147BB0317904E48000A40CF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -210,6 +213,8 @@
 			children = (
 				F142F0F31796CE8A00F17138 /* WeiboItem.h */,
 				F142F0F41796CE8A00F17138 /* WeiboItem.m */,
+				F1432515179C23860093CD5E /* WeiboItemCell.h */,
+				F1432516179C23860093CD5E /* WeiboItemCell.m */,
 				F147BB1017904E48000A40CF /* AppDelegate.h */,
 				F147BB1117904E48000A40CF /* AppDelegate.m */,
 				F147BB1617904E48000A40CF /* WeiboStatusViewController.h */,
@@ -428,6 +433,7 @@
 				F1789688179280F6005F4E97 /* SinaWeiboRequest.m in Sources */,
 				F124AA911794253E00919E78 /* FlippingNavigationController.m in Sources */,
 				F147BB0E17904E48000A40CF /* main.m in Sources */,
+				F1432517179C23860093CD5E /* WeiboItemCell.m in Sources */,
 				F147BB1B17904E48000A40CF /* SettingViewController.m in Sources */,
 				F142F0F51796CE8A00F17138 /* WeiboItem.m in Sources */,
 			);
