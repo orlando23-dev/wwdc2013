@@ -1,11 +1,12 @@
-{\rtf1\ansi\ansicpg1252\cocoartf1238\cocoasubrtf110
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset128 HiraKakuProN-W3;
-\f3\fnil\fcharset134 STHeitiSC-Light;\f4\fnil\fcharset0 Menlo-Bold;}
+{\rtf1\ansi\ansicpg1252\cocoartf1244\cocoasubrtf120
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Menlo-Bold;
+\f3\fnil\fcharset128 HiraKakuProN-W3;\f4\fnil\fcharset134 STHeitiSC-Light;}
 {\colortbl;\red255\green255\blue255;\red0\green116\blue0;}
 \margl1440\margr1440\vieww9000\viewh8400\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
 
-\f0\fs24 \cf0 1, RestKit(llv22/RestKit - https://github.com/llv22/RestKit/tree/v0.20.2) as its json framework based on AFNetworking\
+\f0\b\fs24 \cf0 1, RestKit(llv22/RestKit - https://github.com/llv22/RestKit/tree/v0.20.2) as its json framework based on AFNetworking
+\b0 \
 http://chrisjean.com/2009/04/20/git-submodules-adding-using-removing-and-updating/\
 \
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
@@ -18,75 +19,107 @@ see reference in http://smilejay.com/2013/04/git-sync-tag-and-branch-with-remote
 
 \f1 \CocoaLigature0 dings-Mac:RestKit llv22$ git tag -l | xargs git tag -d # delete local tag\
 \
-update AFNework, see \
+update submodule for RestKit and embedded submodule AFNework, see \
 dings-Mac:wwdc2013 llv22$ git submodule update --init --recursive\
 \
-*) the branches on RestKit\
+
+\f2\b *) the branches on RestKit
+\f1\b0 \
 dings-Mac:RestKit llv22$ git branch\
   development\
 * release/0.20.2\
 \
+
+\f2\b *) issue for gitsubmodule update, see http://stackoverflow.com/questions/2155887/git-submodule-head-reference-is-not-a-tree-error
+\f1\b0 \
+\
+Mavericks-DP4:wwdc2013 llv22$ git submodule update --recursive\
+fatal: reference is not a tree: 062cb8780d1572e40543b5970fefa897c61a7511\
+Unable to checkout '062cb8780d1572e40543b5970fefa897c61a7511' in submodule path 'lib/RestKit'\
+\
+there is no branch for 062cb8780d1572e40543b5970fefa897c61a7511\
+Mavericks-DP4:wwdc2013 llv22$ cd lib/RestKit/\
+Mavericks-DP4:RestKit llv22$ git branch\
+  development\
+* master\
+\
+
+\f2\b Solution: 
+\f1\b0 \
+Mavericks-DP4:RestKit llv22$ git checkout -b 062cb8780d1572e40543b5970fefa897c61a7511\
+Switched to a new branch '062cb8780d1572e40543b5970fefa897c61a7511'\
+Mavericks-DP4:lib llv22$ cd ../..\
+\
+Mavericks-DP4:wwdc2013 llv22$ git submodule update --init --recursive\
+Submodule path 'lib/RestKit': checked out '062cb8780d1572e40543b5970fefa897c61a7511'\
+Submodule 'Vendor/AFNetworking' (https://github.com/AFNetworking/AFNetworking.git) registered for path 'Vendor/AFNetworking'\
+Submodule 'Vendor/TransitionKit' (https://github.com/blakewatters/TransitionKit.git) registered for path 'Vendor/TransitionKit'\
+\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
 
-\f0 \cf0 \CocoaLigature1 2, Weibo API access\
-see http://open.weibo.com/wiki/Oauth2/get_oauth2_token.\
+\f0\b \cf0 \CocoaLigature1 2, Weibo API access
+\b0  - see http://open.weibo.com/wiki/Oauth2/get_oauth2_token.\
 \
-API URL - https://api.weibo.com/oauth2/get_oauth2_token\
+
+\b *) API URL - https://api.weibo.com/oauth2/get_oauth2_token
+\b0 \
 app - http://open.weibo.com/apps/2221754587?\
 \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
 
-\f2 \cf0 \'92\'8d\'88\'d3\'81\'46
-\f3 \'b8\'c3\'bd\'d3\'bf\'da\'ca\'b9\'d3\'c3
+\f3 \cf0 \'92\'8d\'88\'d3\'81\'46
+\f4 \'b8\'c3\'bd\'d3\'bf\'da\'ca\'b9\'d3\'c3
 \f0 OAuth1.0
-\f2 \'93\'49\'95\'fb\'8e\'ae
-\f3 \'b5\'f7\'d3\'c3\'a3\'ac\'bb\'bb\'c8\'a1
+\f3 \'93\'49\'95\'fb\'8e\'ae
+\f4 \'b5\'f7\'d3\'c3\'a3\'ac\'bb\'bb\'c8\'a1
 \f0 OAuth2.0 access token
-\f2 \'8d\'40\'8f\'41\'89\'c2\'88\'c8\'97\'70
+\f3 \'8d\'40\'8f\'41\'89\'c2\'88\'c8\'97\'70
 \f0 OAuth2.0
-\f2 \'93\'49\'95\'fb\'8e\'ae
-\f3 \'b5\'f7\'d3\'c3\'d0\'c2\'b0\'e6\'bd\'d3\'bf\'da\'a1\'a3
+\f3 \'93\'49\'95\'fb\'8e\'ae
+\f4 \'b5\'f7\'d3\'c3\'d0\'c2\'b0\'e6\'bd\'d3\'bf\'da\'a1\'a3
 \f0 \
 oauth_consumer_key: 
-\f3 \'b4\'b4\'bd\'a8\'d3\'a6\'d3\'c3\'ca\'b1\'c9\'fa\'b3\'c9\'b5\'c4
+\f4 \'b4\'b4\'bd\'a8\'d3\'a6\'d3\'c3\'ca\'b1\'c9\'fa\'b3\'c9\'b5\'c4
 \f0 APP KEY
-\f2 \'81\'42[2221754587- MyFriendsStatus]
+\f3 \'81\'42[2221754587- MyFriendsStatus]
 \f0 \
 oauth_token:oauth
-\f2 \'93\'49
+\f3 \'93\'49
 \f0 token
-\f2 \'81\'42
+\f3 \'81\'42
 \f0 \
 oauth_signature_method: 
-\f3 \'c7\'a9\'c3\'fb\'b7\'bd\'b7\'a8\'a3\'ac\'bd\'a8\'d2\'e9\'ca\'b9\'d3\'c3
+\f4 \'c7\'a9\'c3\'fb\'b7\'bd\'b7\'a8\'a3\'ac\'bd\'a8\'d2\'e9\'ca\'b9\'d3\'c3
 \f0 \'93HMAC-SHA1\'94
-\f2 \'81\'42
+\f3 \'81\'42
 \f0 \
 oauth_timestamp:
-\f3 \'ca\'b1\'bc\'e4\'b4\'c1\'a1\'a3\'c9\'fa\'b3\'c9
+\f4 \'ca\'b1\'bc\'e4\'b4\'c1\'a1\'a3\'c9\'fa\'b3\'c9
 \f0 Base String
-\f3 \'ca\'b1\'b5\'c4\'ca\'b1\'bc\'e4\'b4\'c1\'a1\'a3
+\f4 \'ca\'b1\'b5\'c4\'ca\'b1\'bc\'e4\'b4\'c1\'a1\'a3
 \f0 \
 oauth_nonce:
-\f3 \'b5\'a5\'b4\'ce\'d6\'b5\'a3\'ac\'d2\'bb\'b8\'f6\'cb\'e6\'bb\'fa\'d7\'d6\'b7\'fb\'b4\'ae\'a3\'ac\'b7\'c0\'d6\'b9\'d6\'d8\'b8\'b4\'b9\'a5\'bb\'f7\'a1\'a3\'b8\'c3\'b2\'ce\'ca\'fd\'d6\'bb\'d6\'a7\'b3\'d6
+\f4 \'b5\'a5\'b4\'ce\'d6\'b5\'a3\'ac\'d2\'bb\'b8\'f6\'cb\'e6\'bb\'fa\'d7\'d6\'b7\'fb\'b4\'ae\'a3\'ac\'b7\'c0\'d6\'b9\'d6\'d8\'b8\'b4\'b9\'a5\'bb\'f7\'a1\'a3\'b8\'c3\'b2\'ce\'ca\'fd\'d6\'bb\'d6\'a7\'b3\'d6
 \f0 ASCII
-\f3 \'c2\'eb\'b5\'c4\'d7\'d6\'b7\'fb\'b4\'ae\'a1\'a3
+\f4 \'c2\'eb\'b5\'c4\'d7\'d6\'b7\'fb\'b4\'ae\'a1\'a3
 \f0 \
 oauth_version : OAuth
-\f3 \'d0\'ad\'d2\'e9\'b0\'e6\'b1\'be\'a1\'a3\'cc\'ee\'d0\'b4
+\f4 \'d0\'ad\'d2\'e9\'b0\'e6\'b1\'be\'a1\'a3\'cc\'ee\'d0\'b4
 \f0 \'931.0\'94
-\f2 \'81\'42
+\f3 \'81\'42
 \f0 \
 oauth_signature
-\f2 \'81\'46
-\f3 \'c7\'a9\'c3\'fb\'d6\'b5\'a3\'ac\'ca\'c7\'d3\'c9\'b8\'f9\'be\'dd\'c9\'cf\'c3\'e6\'b5\'c4\'bc\'b8\'b8\'f6\'b2\'ce\'ca\'fd\'c9\'fa\'b3\'c9\'b5\'c4
+\f3 \'81\'46
+\f4 \'c7\'a9\'c3\'fb\'d6\'b5\'a3\'ac\'ca\'c7\'d3\'c9\'b8\'f9\'be\'dd\'c9\'cf\'c3\'e6\'b5\'c4\'bc\'b8\'b8\'f6\'b2\'ce\'ca\'fd\'c9\'fa\'b3\'c9\'b5\'c4
 \f0  Base String
-\f3 \'be\'ad
+\f4 \'be\'ad
 \f0 HMAC-SHA1
-\f2 \'8e\'5a\'96\'40
-\f3 \'bc\'c6\'cb\'e3\'b5\'c3\'b3\'f6\'a1\'a3\
+\f3 \'8e\'5a\'96\'40
+\f4 \'bc\'c6\'cb\'e3\'b5\'c3\'b3\'f6\'a1\'a3\
 \
-API URL - http://open.weibo.com/wiki/Oauth2/access_token\
+
+\b *) API URL - http://open.weibo.com/wiki/Oauth2/access_token
+\b0 \
 \
 App Key\'a3\'ba2221754587\
 App Secret\'a3\'ba6a6f80a0c12e72e838b7950f6c44e421\
@@ -94,39 +127,48 @@ http://open.weibo.com/wiki/Oauth2/access_token
 \f1 \CocoaLigature0 \
 \
 client_id	true	string	
-\f2 \'90\'5c
-\f3 \'c7\'eb\'d3\'a6\'d3\'c3\'ca\'b1\'b7\'d6\'c5\'e4\'b5\'c4
+\f3 \'90\'5c
+\f4 \'c7\'eb\'d3\'a6\'d3\'c3\'ca\'b1\'b7\'d6\'c5\'e4\'b5\'c4
 \f1 AppKey
-\f2 \'81\'42
+\f3 \'81\'42
 \f1 \
 client_secret	true	string	
-\f2 \'90\'5c
-\f3 \'c7\'eb\'d3\'a6\'d3\'c3\'ca\'b1\'b7\'d6\'c5\'e4\'b5\'c4
+\f3 \'90\'5c
+\f4 \'c7\'eb\'d3\'a6\'d3\'c3\'ca\'b1\'b7\'d6\'c5\'e4\'b5\'c4
 \f1 AppSecret
-\f2 \'81\'42
+\f3 \'81\'42
 \f1 \
 grant_type	true	string	
-\f3 \'c7\'eb\'c7\'f3\'b5\'c4\'c0\'e0\'d0\'cd\'a3\'ac\'cc\'ee\'d0\'b4
+\f4 \'c7\'eb\'c7\'f3\'b5\'c4\'c0\'e0\'d0\'cd\'a3\'ac\'cc\'ee\'d0\'b4
 \f1 authorization_code\
 \
 request access token - curl --data "client_id=2221754587&client_secret=6a6f80a0c12e72e838b7950f6c44e421&grant_type=authorization_code&redirect_uri=" https://api.weibo.com/oauth2/access_token\
 \
-3, left flipping effect for setting later\
-\
-4, weibo latest comments return - https://api.weibo.com/2/statuses/friends_timeline.json\
-delegate - http://stackoverflow.com/questions/732701/how-to-extend-protocols-delegates-in-objective-c\
-\
-*) timeout for refreshment\
-*) UI for loading data in table\
-issue - 
-\f4\b\fs22 2013-07-21 13:45:45.415 MultiTaskforSina[904:70b] *** Terminating app due to uncaught exception 'NSInternalInconsistencyException', reason: 'unable to dequeue a cell with identifier Cell - must register a nib or a class for the identifier or connect a prototype cell in a storyboard'\
-solution - http://stackoverflow.com/questions/12737860/assertion-failure-in-dequeuereusablecellwithidentifierforindexpath\
-approaches:\
-1, 
-\f1\b0 \cf2 [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
-\f4\b \cf0 \
-2, set for prototype UITableViewCell, with identitifer "Cell"\
+
+\f2\b 3, left flipping effect for setting later
+\f1\b0 \
 \
 
-\f1\b0\fs24 *) organize item via timeslot and UITableCell\
+\f2\b 4, weibo latest comments return and Table content - https://api.weibo.com/2/statuses/friends_timeline.json
+\f1\b0 \
+delegate - http://stackoverflow.com/questions/732701/how-to-extend-protocols-delegates-in-objective-c\
+\
+
+\f2\b *) timeout for refreshment\
+
+\f1\b0 \
+
+\f2\b *) UI for loading data in table
+\f1\b0 \
+issue - 
+\fs22 2013-07-21 13:45:45.415 MultiTaskforSina[904:70b] *** Terminating app due to uncaught exception 'NSInternalInconsistencyException', reason: 'unable to dequeue a cell with identifier Cell - must register a nib or a class for the identifier or connect a prototype cell in a storyboard'\
+solution - http://stackoverflow.com/questions/12737860/assertion-failure-in-dequeuereusablecellwithidentifierforindexpath\
+approaches:\
+1, \cf2 [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];\cf0 \
+2, set for prototype UITableViewCell, with identitifer "Cell"
+\f2\b \
+\
+
+\fs24 *) organize item via timeslot and UITableCell
+\f1\b0 \
 }
