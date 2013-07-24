@@ -8,6 +8,8 @@
 	<string>Multitasking</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>467D1FD4-1B17-4B1A-8A67-1B2F46F19A98</key>
+		<string>https://github.com/blakewatters/TransitionKit.git</string>
 		<key>BB3655AF-4E17-4F84-A9AD-DCA0F4E98AE8</key>
 		<string>ssh://github.com/llv22/wwdc2013.git</string>
 	</dict>
@@ -15,6 +17,8 @@
 	<string>204_Multitasking/Multitasking.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>467D1FD4-1B17-4B1A-8A67-1B2F46F19A98</key>
+		<string>../../lib/RestKit/Vendor/TransitionKit</string>
 		<key>BB3655AF-4E17-4F84-A9AD-DCA0F4E98AE8</key>
 		<string>../..</string>
 	</dict>
@@ -33,6 +37,14 @@
 			<string>BB3655AF-4E17-4F84-A9AD-DCA0F4E98AE8</string>
 			<key>IDESourceControlWCCName</key>
 			<string>wwdc2013</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>467D1FD4-1B17-4B1A-8A67-1B2F46F19A98</string>
+			<key>IDESourceControlWCCName</key>
+			<string>TransitionKit</string>
 		</dict>
 	</array>
 </dict>
