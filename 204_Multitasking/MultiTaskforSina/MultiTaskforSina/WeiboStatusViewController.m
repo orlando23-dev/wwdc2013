@@ -119,11 +119,14 @@
 
     WeiboItem* object = _objects[indexPath.row];
     [cell.userId setText:object.userId];
+    [cell.userId sizeToFit];
+    // desc - auto-adjust text height
     [cell.content setText:object.content];
     NSURL *url = [NSURL URLWithString:object.imageURL];
     NSData *data = [NSData dataWithContentsOfURL:url];
     cell.userIcon.image = [[UIImage alloc] initWithData:data];
     [cell.createAt setText:object.createAt];
+    [cell.createAt sizeToFit];
     return cell;
 }
 
@@ -214,19 +217,12 @@
             weiboItem.createAt = create_at;
             weiboItem.imageURL = profile_image_url;
             
-//            [self->_objects addObject:weiboItem];
             [self->_objects insertObject:weiboItem atIndex:0];
         }
         
         //desc - update UI status
         [self.refreshControl endRefreshing];
         [self.tableView reloadData];
-//        if (!_objects) {
-//            _objects = [[NSMutableArray alloc] init];
-//        }
-//        [_objects insertObject:weiboItem atIndex:0];
-//        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-//        [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
 }
 

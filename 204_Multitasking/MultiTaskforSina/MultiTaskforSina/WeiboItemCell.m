@@ -10,14 +10,20 @@
 
 @implementation WeiboItemCell
 
-//- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-//{
-//    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-//    if (self) {
-//        // Initialization code
-//    }
-//    return self;
-//}
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        // Initialization code
+    }
+    return self;
+}
+
+// desc - dynamically add constraints on UI
+- (void)layoutSubviews{
+//    NSLog(@"layoutSubView");
+}
+
 //
 //- (void)setSelected:(BOOL)selected animated:(BOOL)animated
 //{
