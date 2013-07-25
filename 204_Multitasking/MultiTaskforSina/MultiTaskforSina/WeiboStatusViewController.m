@@ -17,6 +17,8 @@
 #import "WeiboItem.h"
 #import "WeiboItemCell.h"
 
+//static float fTextAlign = 2.0f;
+
 @interface WeiboStatusViewController () {
     NSMutableArray *_objects;
 }
@@ -119,14 +121,42 @@
 
     WeiboItem* object = _objects[indexPath.row];
     [cell.userId setText:object.userId];
-    [cell.userId sizeToFit];
     // desc - auto-adjust text height
     [cell.content setText:object.content];
+    int numLines = cell.content.contentSize.height / cell.content.font.lineHeight;
+    [cell.content sizeToFit];
+    // issue - 'sizeWithFont:constrainedToSize:lineBreakMode:' is deprecated: first deprecated in iOS 7.0 - Use -boundingRectWithSize:options:attributes:context:
+//    NSDictionary *attributesDictionary = [NSDictionary dictionaryWithObjectsAndKeys:cell.content.font, NSFontAttributeName,
+//                                          cell.content.textColor, NSForegroundColorAttributeName, nil];
+//    CGRect text_size = [cell.content.text boundingRectWithSize:CGSizeMake(320., 200.0)
+//                                                       options:NSStringDrawingUsesFontLeading
+//                                                    attributes:attributesDictionary
+//                                                       context:nil];
+//    NSLog(@"%f - font height", text_size.size.height);
+//    cell.content.frame = CGRectMake(18.0, 12.0, text_size.size.width, text_size.size.height);
+//    CGSize size = [cell.content.text sizeWithFont:cell.content.font
+//                                constrainedToSize:CGSizeMake(280, 1000)
+//                                    lineBreakMode:UILineBreakModeTailTruncation];
+//    frame.size.height = size.height > 1 ? size.height + 20 : 64;
+//    cell.content.frame = frame;
     NSURL *url = [NSURL URLWithString:object.imageURL];
     NSData *data = [NSData dataWithContentsOfURL:url];
     cell.userIcon.image = [[UIImage alloc] initWithData:data];
     [cell.createAt setText:object.createAt];
-    [cell.createAt sizeToFit];
+    CGRect _originFrame = cell.frame;
+    _originFrame.size.height = cell.userId.frame.size.height + cell.content.frame.size.height + cell.createAt.frame.size.height;
+    if(_originFrame.size.height <= 76.0f){
+        _originFrame.size.height = 76.0f;
+    }
+    else{
+        // desc - no effect
+        _originFrame.size.height = _originFrame.size.height + numLines * 12.0f;
+    }
+    // desc - see https://github.com/jacquesf/AutoResizingEditableTableViewCell
+#ifdef ENABLE_TRACE
+    NSLog(@"[%@] %f %f %f - %f (%f)", object.userId, cell.userId.frame.size.height, cell.content.frame.size.height, cell.createAt.frame.size.height, cell.frame.size.height, _originFrame.size.height);
+#endif
+    cell.frame = _originFrame;
     return cell;
 }
 
