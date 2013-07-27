@@ -21,10 +21,10 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJL-Al-A1B">
-                                            <rect key="frame" x="58" y="0.0" width="42" height="12"/>
+                                            <rect key="frame" x="58" y="1" width="42" height="12"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="iON-xF-WbB"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="3ss-aP-0o7"/>
                                             </constraints>
                                             <attributedString key="attributedText">
                                                 <fragment content="UserId">
@@ -42,7 +42,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <textView autoresizesSubviews="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="139" fixedFrame="YES" directionalLockEnabled="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Content" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9D-rs-ilM">
-                                            <rect key="frame" x="55" y="12" width="267" height="50"/>
+                                            <rect key="frame" x="55" y="12" width="267" height="25"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>

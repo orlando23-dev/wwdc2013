@@ -6,7 +6,8 @@
 //  Copyright (c) 2013 ding orlando. All rights reserved.
 //
 
-#define ENABLE_TRACE
+#define ENABLE_DEBUGTRACE
+//#define ENABLE_TRACE
 
 #import "SinaWeibo.h"
 #import "SinaWeibo+StatusExtension.h"
@@ -115,50 +116,66 @@
     return _objects.count;
 }
 
+// desc - http://blog.sina.com.cn/s/blog_6123f9650100kmse.html
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     WeiboItemCell *cell = (WeiboItemCell*)[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
     WeiboItem* object = _objects[indexPath.row];
     [cell.userId setText:object.userId];
+    
     // desc - auto-adjust text height
     [cell.content setText:object.content];
-    int numLines = cell.content.contentSize.height / cell.content.font.lineHeight;
-    [cell.content sizeToFit];
     // issue - 'sizeWithFont:constrainedToSize:lineBreakMode:' is deprecated: first deprecated in iOS 7.0 - Use -boundingRectWithSize:options:attributes:context:
-//    NSDictionary *attributesDictionary = [NSDictionary dictionaryWithObjectsAndKeys:cell.content.font, NSFontAttributeName,
-//                                          cell.content.textColor, NSForegroundColorAttributeName, nil];
-//    CGRect text_size = [cell.content.text boundingRectWithSize:CGSizeMake(320., 200.0)
-//                                                       options:NSStringDrawingUsesFontLeading
-//                                                    attributes:attributesDictionary
-//                                                       context:nil];
-//    NSLog(@"%f - font height", text_size.size.height);
-//    cell.content.frame = CGRectMake(18.0, 12.0, text_size.size.width, text_size.size.height);
-//    CGSize size = [cell.content.text sizeWithFont:cell.content.font
-//                                constrainedToSize:CGSizeMake(280, 1000)
-//                                    lineBreakMode:UILineBreakModeTailTruncation];
-//    frame.size.height = size.height > 1 ? size.height + 20 : 64;
-//    cell.content.frame = frame;
+    NSDictionary *attributesDictionary = [NSDictionary dictionaryWithObjectsAndKeys:cell.content.font, NSFontAttributeName,
+                                          cell.content.textColor, NSForegroundColorAttributeName, nil];
+    CGRect text_size = [cell.content.text boundingRectWithSize:CGSizeMake(320., 200.0)
+                                                       options:NSStringDrawingUsesFontLeading
+                                                    attributes:attributesDictionary
+                                                       context:nil];
+    
+#ifdef ENABLE_DEBUGTRACE
+    NSLog(@"%f %f - font height (%@) %f", text_size.size.height, text_size.size.width, cell.content.text, cell.content.contentSize.width);
+#endif
+    
+    int numLines = ceil(text_size.size.width / cell.content.contentSize.width);
+    float _targetHeight = text_size.size.height * (1.0f + numLines);
+    CGSize _cellTextSize = cell.content.contentSize;
+    _cellTextSize.height = _targetHeight;
+    
+#ifdef ENABLE_DEBUGTRACE
+    NSLog(@"required row height - %f", _cellTextSize.height);
+#endif
+    
+//    cell.content.contentSize = _cellTextSize;
+//    [cell.content sizeThatFits:cell.content.contentSize];
+    
     NSURL *url = [NSURL URLWithString:object.imageURL];
     NSData *data = [NSData dataWithContentsOfURL:url];
     cell.userIcon.image = [[UIImage alloc] initWithData:data];
     [cell.createAt setText:object.createAt];
     CGRect _originFrame = cell.frame;
-    _originFrame.size.height = cell.userId.frame.size.height + cell.content.frame.size.height + cell.createAt.frame.size.height;
-    if(_originFrame.size.height <= 76.0f){
-        _originFrame.size.height = 76.0f;
-    }
-    else{
-        // desc - no effect
-        _originFrame.size.height = _originFrame.size.height + numLines * 12.0f;
-    }
+//    _originFrame.size.height = cell.userId.frame.size.height + cell.content.contentSize.height + cell.createAt.frame.size.height;
+//    if(_originFrame.size.height <= 76.0f){
+//        _originFrame.size.height = 76.0f;
+//    }
+//    else{
+//        // desc - no effect
+//    _originFrame.size.height = 126.f;//_originFrame.size.height + numLines * 12.0f - cell.content.contentSize.height;
+//    }
     // desc - see https://github.com/jacquesf/AutoResizingEditableTableViewCell
-#ifdef ENABLE_TRACE
-    NSLog(@"[%@] %f %f %f - %f (%f)", object.userId, cell.userId.frame.size.height, cell.content.frame.size.height, cell.createAt.frame.size.height, cell.frame.size.height, _originFrame.size.height);
+    
+#ifdef ENABLE_DEBUGTRACE
+    NSLog(@"[%@] %f %f %f - %f (%f) - line %d", object.userId, cell.userId.frame.size.height, cell.content.contentSize.height, cell.createAt.frame.size.height, cell.frame.size.height, _originFrame.size.height, numLines);
 #endif
+    
     cell.frame = _originFrame;
     return cell;
 }
+
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    return 126.f;
+//}
 
 //- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 //{
@@ -227,9 +244,11 @@
 - (void)request:(SinaWeiboRequest *)request didFinishLoadingWithResult:(id)result{
     if ([request.url hasSuffix:@"statuses/friends_timeline.json"]){
         NSArray *statuses = [result objectForKey:@"statuses"];
+        
 #ifdef ENABLE_TRACE
         NSLog(@"%@", statuses);
 #endif
+        
         if (!self->_objects) {
             self->_objects = [[NSMutableArray alloc] init];
         }
@@ -239,7 +258,10 @@
             NSString* create_at = [item valueForKey:@"created_at"];
             NSString* userName = [item valueForKeyPath:@"user.name"];
             NSString* profile_image_url = [item valueForKeyPath:@"user.profile_image_url"];
+            
+#ifdef ENABLE_TRACE
             NSLog(@"%@, %@, %@, %@", content, create_at, userName, profile_image_url);
+#endif
             
             WeiboItem* weiboItem = [WeiboItem new];
             weiboItem.content = content;
