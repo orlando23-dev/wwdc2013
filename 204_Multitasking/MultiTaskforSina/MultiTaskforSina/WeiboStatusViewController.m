@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 ding orlando. All rights reserved.
 //
 
-#define ENABLE_DEBUGTRACE
 //#define ENABLE_TRACE
 
 #import "SinaWeibo.h"
@@ -18,7 +17,7 @@
 #import "WeiboItem.h"
 #import "WeiboItemCell.h"
 
-//static float fTextAlign = 2.0f;
+static float sfTextWidth = 266.f;
 
 @interface WeiboStatusViewController () {
     NSMutableArray *_objects;
@@ -120,94 +119,58 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     WeiboItemCell *cell = (WeiboItemCell*)[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
     WeiboItem* object = _objects[indexPath.row];
+    
+    // desc - userId
     [cell.userId setText:object.userId];
     
-    // desc - auto-adjust text height
-    [cell.content setText:object.content];
-    // issue - 'sizeWithFont:constrainedToSize:lineBreakMode:' is deprecated: first deprecated in iOS 7.0 - Use -boundingRectWithSize:options:attributes:context:
-    NSDictionary *attributesDictionary = [NSDictionary dictionaryWithObjectsAndKeys:cell.content.font, NSFontAttributeName,
-                                          cell.content.textColor, NSForegroundColorAttributeName, nil];
-    CGRect text_size = [cell.content.text boundingRectWithSize:CGSizeMake(320., 200.0)
-                                                       options:NSStringDrawingUsesFontLeading
-                                                    attributes:attributesDictionary
-                                                       context:nil];
+    // desc - content with flexiable text
+    NSMutableParagraphStyle *style = [[NSParagraphStyle
+                                       defaultParagraphStyle] mutableCopy];
+    [style setLineBreakMode:NSLineBreakByWordWrapping];
+    [style setAlignment:NSTextAlignmentLeft];
     
-#ifdef ENABLE_DEBUGTRACE
-    NSLog(@"%f %f - font height (%@) %f", text_size.size.height, text_size.size.width, cell.content.text, cell.content.contentSize.width);
-#endif
+    NSMutableAttributedString *attributedContent =
+    [[NSMutableAttributedString alloc] initWithString: object.content
+                                           attributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                       style,NSParagraphStyleAttributeName,nil]];
+    [cell.content setAttributedText:attributedContent];
     
-    int numLines = ceil(text_size.size.width / cell.content.contentSize.width);
-    float _targetHeight = text_size.size.height * (1.0f + numLines);
-    CGSize _cellTextSize = cell.content.contentSize;
-    _cellTextSize.height = _targetHeight;
-    
-#ifdef ENABLE_DEBUGTRACE
-    NSLog(@"required row height - %f", _cellTextSize.height);
-#endif
-    
-//    cell.content.contentSize = _cellTextSize;
-//    [cell.content sizeThatFits:cell.content.contentSize];
-    
+    // desc - user Icon
     NSURL *url = [NSURL URLWithString:object.imageURL];
     NSData *data = [NSData dataWithContentsOfURL:url];
     cell.userIcon.image = [[UIImage alloc] initWithData:data];
+    
+    // desc - creation time
     [cell.createAt setText:object.createAt];
-    CGRect _originFrame = cell.frame;
-//    _originFrame.size.height = cell.userId.frame.size.height + cell.content.contentSize.height + cell.createAt.frame.size.height;
-//    if(_originFrame.size.height <= 76.0f){
-//        _originFrame.size.height = 76.0f;
-//    }
-//    else{
-//        // desc - no effect
-//    _originFrame.size.height = 126.f;//_originFrame.size.height + numLines * 12.0f - cell.content.contentSize.height;
-//    }
-    // desc - see https://github.com/jacquesf/AutoResizingEditableTableViewCell
     
-#ifdef ENABLE_DEBUGTRACE
-    NSLog(@"[%@] %f %f %f - %f (%f) - line %d", object.userId, cell.userId.frame.size.height, cell.content.contentSize.height, cell.createAt.frame.size.height, cell.frame.size.height, _originFrame.size.height, numLines);
-#endif
-    
-    cell.frame = _originFrame;
     return cell;
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    return 126.f;
-//}
-
-//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    // Return NO if you do not want the specified item to be editable.
-//    return YES;
-//}
-//
-//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    if (editingStyle == UITableViewCellEditingStyleDelete) {
-//        [_objects removeObjectAtIndex:indexPath.row];
-//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-//    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-//        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-//    }
-//}
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    WeiboItem* object = _objects[indexPath.row];
+    // desc - see http://stackoverflow.com/questions/12084760/nsstring-boundingrectwithsize-slightly-underestimating-the-correct-height-why
+    CGRect _rContent = [object.content boundingRectWithSize:CGSizeMake(sfTextWidth, MAXFLOAT)
+                                                    options:NSStringDrawingUsesLineFragmentOrigin
+                                                 attributes:[NSDictionary dictionaryWithObjectsAndKeys: [UIFont systemFontOfSize:12], NSFontAttributeName, [NSParagraphStyle defaultParagraphStyle], NSParagraphStyleAttributeName, nil]
+                                                    context:nil];
+    CGRect _rUserId = [object.userId boundingRectWithSize:CGSizeMake(sfTextWidth, MAXFLOAT)
+                                                  options:NSStringDrawingUsesLineFragmentOrigin
+                                               attributes:nil
+                                                  context:nil];
+    CGRect _rCreateAt = [object.createAt boundingRectWithSize:CGSizeMake(sfTextWidth, MAXFLOAT)
+                                                      options:NSStringDrawingUsesLineFragmentOrigin
+                                                   attributes:nil
+                                                      context:nil];
+    
+    float _rightSize = _rContent.size.height +  _rUserId.size.height + _rCreateAt.size.height + 4.f;
+    
+#ifdef ENABLE_TRACE
+    NSLog(@"%f", _rightSize);
+#endif
+    
+    return _rightSize > 50.f ? _rightSize : 50.f;
 }
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {

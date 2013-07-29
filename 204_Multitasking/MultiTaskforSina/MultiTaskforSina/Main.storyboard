@@ -23,9 +23,6 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJL-Al-A1B">
                                             <rect key="frame" x="58" y="1" width="42" height="12"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="3ss-aP-0o7"/>
-                                            </constraints>
                                             <attributedString key="attributedText">
                                                 <fragment content="UserId">
                                                     <attributes>
@@ -37,28 +34,45 @@
                                             </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ORV-Fy-W9H">
+                                        <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ORV-Fy-W9H">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <textView autoresizesSubviews="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="139" fixedFrame="YES" directionalLockEnabled="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Content" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9D-rs-ilM">
-                                            <rect key="frame" x="55" y="12" width="267" height="25"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="265" translatesAutoresizingMaskIntoConstraints="NO" id="Uml-jY-MlW">
+                                            <rect key="frame" x="58" y="8" width="265" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                                        </textView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vup-B8-ehG">
+                                            <attributedString key="attributedText">
+                                                <fragment content="content">
+                                                    <attributes>
+                                                        <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <font key="NSFont" size="12" name="HelveticaNeue"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Time" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vup-B8-ehG">
                                             <rect key="frame" x="60" y="62" width="260" height="13"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Vup-B8-ehG" firstAttribute="bottom" secondItem="TMA-D4-XQd" secondAttribute="bottom" id="BXM-Zy-rEa"/>
+                                        <constraint firstItem="ORV-Fy-W9H" firstAttribute="leading" secondItem="TMA-D4-XQd" secondAttribute="leading" id="JQv-qH-it5"/>
+                                        <constraint firstItem="Uml-jY-MlW" firstAttribute="leading" secondItem="ORV-Fy-W9H" secondAttribute="trailing" constant="8" id="KGr-ne-fQL"/>
+                                        <constraint firstItem="Uml-jY-MlW" firstAttribute="top" secondItem="uJL-Al-A1B" secondAttribute="bottom" constant="1" id="RpY-rB-m4I"/>
+                                        <constraint firstItem="uJL-Al-A1B" firstAttribute="leading" secondItem="ORV-Fy-W9H" secondAttribute="trailing" constant="8" id="UAr-u7-VW9"/>
+                                        <constraint firstItem="ORV-Fy-W9H" firstAttribute="top" secondItem="TMA-D4-XQd" secondAttribute="top" id="WNX-c9-OGg"/>
+                                        <constraint firstItem="Vup-B8-ehG" firstAttribute="leading" secondItem="ORV-Fy-W9H" secondAttribute="trailing" constant="10" id="YdD-gv-EMH"/>
+                                        <constraint firstItem="Vup-B8-ehG" firstAttribute="top" secondItem="Uml-jY-MlW" secondAttribute="bottom" constant="1" id="az1-K6-frX"/>
+                                        <constraint firstItem="uJL-Al-A1B" firstAttribute="top" secondItem="TMA-D4-XQd" secondAttribute="top" constant="1" id="yJl-92-x4S"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="content" destination="V9D-rs-ilM" id="nPh-E7-qmj"/>
+                                    <outlet property="content" destination="Uml-jY-MlW" id="ax9-ze-pnc"/>
                                     <outlet property="createAt" destination="Vup-B8-ehG" id="lhE-hX-QR8"/>
                                     <outlet property="userIcon" destination="ORV-Fy-W9H" id="tEr-IL-oLY"/>
                                     <outlet property="userId" destination="uJL-Al-A1B" id="mAt-S5-eXX"/>
@@ -77,7 +91,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aLX-dL-NEM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1319" y="45"/>
+            <point key="canvasLocation" x="1307" y="45"/>
         </scene>
         <!--Setting View Controller-->
         <scene sceneID="3gi-Hi-N3T">
