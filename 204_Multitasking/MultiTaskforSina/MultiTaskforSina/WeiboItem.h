@@ -10,6 +10,7 @@
 
 @interface WeiboItem : NSObject
 
+@property (nonatomic, strong) NSString* contentId;
 @property (nonatomic, strong) NSString* content;
 @property (nonatomic, strong) NSString* userId;
 @property (nonatomic, strong) NSString* createAt;

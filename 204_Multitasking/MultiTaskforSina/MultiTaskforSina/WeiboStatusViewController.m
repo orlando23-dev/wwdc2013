@@ -21,6 +21,7 @@ static float sfTextWidth = 266.f;
 
 @interface WeiboStatusViewController () {
     NSMutableArray *_objects;
+    NSMutableDictionary *_idPreExists;
 }
 
 //desc - transition controller
@@ -93,15 +94,6 @@ static float sfTextWidth = 266.f;
     
     return [self transitionController];
 }
-- (void)insertNewObject:(id)sender
-{
-    if (!_objects) {
-        _objects = [[NSMutableArray alloc] init];
-    }
-    [_objects insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-}
 
 #pragma mark - Table View
 
@@ -143,6 +135,17 @@ static float sfTextWidth = 266.f;
     
     // desc - creation time
     [cell.createAt setText:object.createAt];
+    
+    NSNumber* _isExist = self->_idPreExists[object.contentId];
+    if(0 == [_isExist intValue]){
+        cell.alpha = 0.55f;
+        cell.backgroundColor = [UIColor greenColor];
+        self->_idPreExists[object.contentId] = @YES;
+    }
+    else{
+        cell.alpha = 1.0f;
+        cell.backgroundColor = [self.tableView backgroundColor];
+    }
     
     return cell;
 }
@@ -216,7 +219,18 @@ static float sfTextWidth = 266.f;
             self->_objects = [[NSMutableArray alloc] init];
         }
         
+        if (!self->_idPreExists) {
+            self->_idPreExists = [[NSMutableDictionary alloc] init];
+        }
+        
+        int _iSizeOfIdWeiboContent = [self->_objects count];
+        
         for (id item in statuses) {
+#ifdef ENABLE_TRACE
+            NSLog(@"%@", item);
+#endif
+            
+            NSString* contentId = [item valueForKey:@"idstr"];
             NSString* content = [item valueForKey:@"text"];
             NSString* create_at = [item valueForKey:@"created_at"];
             NSString* userName = [item valueForKeyPath:@"user.name"];
@@ -227,12 +241,22 @@ static float sfTextWidth = 266.f;
 #endif
             
             WeiboItem* weiboItem = [WeiboItem new];
+            weiboItem.contentId = contentId;
             weiboItem.content = content;
             weiboItem.userId = userName;
             weiboItem.createAt = create_at;
             weiboItem.imageURL = profile_image_url;
             
-            [self->_objects insertObject:weiboItem atIndex:0];
+            // desc - see literal of objective-c http://clang.llvm.org/docs/ObjectiveCLiterals.html
+            if (nil == [self->_idPreExists valueForKey:contentId]) {
+                self->_idPreExists[contentId] = @NO;
+                [self->_objects insertObject:weiboItem atIndex:0];
+            }
+            
+        }
+        
+        if (_iSizeOfIdWeiboContent < [self->_objects count]) {
+            NSLog(@"already with new content updated");
         }
         
         //desc - update UI status
