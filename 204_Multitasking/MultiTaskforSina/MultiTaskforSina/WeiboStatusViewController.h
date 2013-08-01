@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#include "AppDelegate.h"
 #import "SinaWeiboRequest.h"
+
+typedef void (^CRefreshCompletionHandler)(BOOL didReceiveNewPosts);
 
 @interface WeiboStatusViewController : UITableViewController<UINavigationControllerDelegate, SinaWeiboRequestDelegate> {
 }
 
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+- (void)refreshWithCompletionHandler:(CRefreshCompletionHandler)completionHandler;
 
 @end

@@ -26,6 +26,8 @@ static float sfTextWidth = 266.f;
 
 //desc - transition controller
 @property (nonatomic) FlippingNavigationController *transitionController;
+//desc - refresh completion handler
+@property (strong, nonatomic) CRefreshCompletionHandler completionHandler;
 
 @end
 
@@ -40,6 +42,10 @@ static float sfTextWidth = 266.f;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    AppDelegate* _appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    if(!_appDelegate.weiboStatusViewController){
+        _appDelegate.weiboStatusViewController = self;
+    }
     [self setTransitionController:[FlippingNavigationController new]];
     [self.navigationController setDelegate:self];
     
@@ -108,6 +114,7 @@ static float sfTextWidth = 266.f;
 }
 
 // desc - http://blog.sina.com.cn/s/blog_6123f9650100kmse.html
+// desc - with bug in refreshing content background color, as only leave the current screen could trigger the explicit cell reloading
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     WeiboItemCell *cell = (WeiboItemCell*)[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
@@ -166,7 +173,7 @@ static float sfTextWidth = 266.f;
                                                    attributes:nil
                                                       context:nil];
     
-    float _rightSize = _rContent.size.height +  _rUserId.size.height + _rCreateAt.size.height + 4.f;
+    float _rightSize = _rContent.size.height +  _rUserId.size.height + _rCreateAt.size.height + 5.f;
     
 #ifdef ENABLE_TRACE
     NSLog(@"%f", _rightSize);
@@ -211,10 +218,6 @@ static float sfTextWidth = 266.f;
     if ([request.url hasSuffix:@"statuses/friends_timeline.json"]){
         NSArray *statuses = [result objectForKey:@"statuses"];
         
-#ifdef ENABLE_TRACE
-        NSLog(@"%@", statuses);
-#endif
-        
         if (!self->_objects) {
             self->_objects = [[NSMutableArray alloc] init];
         }
@@ -224,8 +227,8 @@ static float sfTextWidth = 266.f;
         }
         
         int _iSizeOfIdWeiboContent = [self->_objects count];
-        
         for (id item in statuses) {
+            
 #ifdef ENABLE_TRACE
             NSLog(@"%@", item);
 #endif
@@ -255,14 +258,30 @@ static float sfTextWidth = 266.f;
             
         }
         
-        if (_iSizeOfIdWeiboContent < [self->_objects count]) {
-            NSLog(@"already with new content updated");
+        int _iNewCounts = [self->_objects count] - _iSizeOfIdWeiboContent;
+        if (0 < _iNewCounts) {
+            NSLog(@"already with new contents updated - %d", _iNewCounts);
         }
         
         //desc - update UI status
-        [self.refreshControl endRefreshing];
         [self.tableView reloadData];
+        [self.refreshControl endRefreshing];
+        
+        if (self.completionHandler) {
+            self.completionHandler(0 < _iNewCounts ? YES : NO);
+        }
     }
+}
+
+#pragma mark - Refreshing Posts in background
+
+- (void)refreshWithCompletionHandler:(CRefreshCompletionHandler)completionHandler{
+    // desc - MUST change to handler in prod
+    self.completionHandler = completionHandler;
+    NSLog(@"refresh in background");
+    [self.refreshControl beginRefreshing];
+    // desc - do default refresh
+    [[SettingViewController sinaweibo] sinaweiboGetLatestStatuses:self];
 }
 
 

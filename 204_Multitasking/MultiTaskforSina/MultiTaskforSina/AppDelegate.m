@@ -17,6 +17,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    // desc - do background fetch with minimum interval
+    [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
+    // desc - customized loading main storyboard
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main"
+                                                             bundle: nil];
+    self.window.rootViewController =  [mainStoryboard instantiateViewControllerWithIdentifier: @"NavMainController"];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 							
@@ -45,6 +53,23 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - background fetch delegate
+// desc - background fetch to update UI
+- (void)                application:(UIApplication *)application
+  performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
+    if(self.weiboStatusViewController){
+        [self.weiboStatusViewController refreshWithCompletionHandler:^(BOOL didReceiveNewPosts) {
+            if (didReceiveNewPosts) {
+                completionHandler(UIBackgroundFetchResultNewData);
+                [[self.weiboStatusViewController navigationController]popToRootViewControllerAnimated:NO];
+            }
+            else{
+                completionHandler(UIBackgroundFetchResultNoData);
+            }
+        }];
+    }
 }
 
 @end

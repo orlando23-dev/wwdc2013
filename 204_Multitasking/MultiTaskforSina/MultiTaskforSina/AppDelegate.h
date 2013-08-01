@@ -29,10 +29,10 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>{
     SinaWeibo *_sinaweibo;
-    IBOutlet WeiboStatusViewController *weiboStatusViewController;
 }
 
 @property (readwrite, nonatomic) SinaWeibo *sinaweibo;
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) WeiboStatusViewController *weiboStatusViewController;
 
 @end
