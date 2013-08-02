@@ -10,8 +10,6 @@
 #include "AppDelegate.h"
 #import "SinaWeiboRequest.h"
 
-typedef void (^CRefreshCompletionHandler)(BOOL didReceiveNewPosts);
-
 @interface WeiboStatusViewController : UITableViewController<UINavigationControllerDelegate, SinaWeiboRequestDelegate> {
 }
 

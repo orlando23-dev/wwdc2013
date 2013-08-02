@@ -15,7 +15,8 @@
 @interface SinaWeibo (Status)
 
 - (NSArray*)doStatusRequest;
-- (void)sinaweiboGetLatestStatuses:(id<SinaWeiboRequestDelegate>) vcdelegate;
+- (void)sinaweiboGetLatestStatuses:(id<SinaWeiboRequestDelegate>) vcdelegate
+                      withCallback:(CRefreshCompletionHandler) callback;
 
 @end
 

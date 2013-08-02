@@ -367,13 +367,15 @@
  * @param params: 请求的参数，如发微博所带的文字内容等
  * @param httpMethod: http类型，GET或POST
  * @param _delegate: 处理请求结果的回调的对象，SinaweiboRequestDelegate类
+ * @param callback: delegate for done block
  * @return 完成实际请求操作的SinaWeiboRequest对象
  */
 
 - (SinaWeiboRequest *)requestWithURL:(NSString *)url
                              params:(NSMutableDictionary *)params
                          httpMethod:(NSString *)httpMethod
-                           delegate:(id<SinaWeiboRequestDelegate>)_delegate
+                            delegate:(id<SinaWeiboRequestDelegate>)_delegate
+                            callback:(CRefreshCompletionHandler)callback
 {
     if (params == nil)
     {
@@ -388,7 +390,8 @@
         SinaWeiboRequest *_request = [SinaWeiboRequest requestWithURL:fullURL
                                                            httpMethod:httpMethod
                                                                params:params
-                                                             delegate:_delegate];
+                                                             delegate:_delegate
+                                                             callback:callback];
         _request.sinaweibo = self;
         [requests addObject:_request];
         [_request connect];
@@ -546,13 +549,15 @@
 
 #pragma mark - get latest statuses in weibo
 
-- (void)sinaweiboGetLatestStatuses:(id<SinaWeiboRequestDelegate>) vcdelegate{
+- (void)sinaweiboGetLatestStatuses:(id<SinaWeiboRequestDelegate>) vcdelegate
+                      withCallback:(CRefreshCompletionHandler) callback{
     if ([self isAuthValid])
     {
         [self requestWithURL:@"statuses/friends_timeline.json"
                       params:nil
                   httpMethod:@"GET"
-                    delegate:vcdelegate];
+                    delegate:vcdelegate
+                    callback:callback];
     }
 }
 

@@ -26,8 +26,9 @@ static float sfTextWidth = 266.f;
 
 //desc - transition controller
 @property (nonatomic) FlippingNavigationController *transitionController;
-//desc - refresh completion handler
-@property (strong, nonatomic) CRefreshCompletionHandler completionHandler;
+//  depreciated for completion handler, just using callback handler
+//  desc - refresh completion handler
+//  @property (strong, nonatomic) CRefreshCompletionHandler completionHandler;
 
 @end
 
@@ -46,6 +47,7 @@ static float sfTextWidth = 266.f;
     if(!_appDelegate.weiboStatusViewController){
         _appDelegate.weiboStatusViewController = self;
     }
+    
     [self setTransitionController:[FlippingNavigationController new]];
     [self.navigationController setDelegate:self];
     
@@ -67,7 +69,8 @@ static float sfTextWidth = 266.f;
 - (void)refreshedByPullingTable: (id)sender{
     [self.refreshControl beginRefreshing];
     // desc - do default refresh
-    [[SettingViewController sinaweibo] sinaweiboGetLatestStatuses:self];
+    [[SettingViewController sinaweibo] sinaweiboGetLatestStatuses:self
+                                                     withCallback:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -182,15 +185,6 @@ static float sfTextWidth = 266.f;
     return _rightSize > 50.f ? _rightSize : 50.f;
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-//    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//        NSDate *object = _objects[indexPath.row];
-//        [[segue destinationViewController] setDetailItem:object];
-//    }
-}
-
 #pragma mark - SinaWeiboRequestDelegate <NSObject>
 
 //- (void)request:(SinaWeiboRequest *)request didReceiveResponse:(NSURLResponse *)response{
@@ -214,7 +208,8 @@ static float sfTextWidth = 266.f;
 /**
  * finish loading friends - will change into
  **/
-- (void)request:(SinaWeiboRequest *)request didFinishLoadingWithResult:(id)result{
+- (void)request:(SinaWeiboRequest *)request didFinishLoadingWithResult:(id)result
+       callback:(CRefreshCompletionHandler)callback{
     if ([request.url hasSuffix:@"statuses/friends_timeline.json"]){
         NSArray *statuses = [result objectForKey:@"statuses"];
         
@@ -267,8 +262,8 @@ static float sfTextWidth = 266.f;
         [self.tableView reloadData];
         [self.refreshControl endRefreshing];
         
-        if (self.completionHandler) {
-            self.completionHandler(0 < _iNewCounts ? YES : NO);
+        if (callback) {
+            callback(0 < _iNewCounts ? YES : NO);
         }
     }
 }
@@ -277,11 +272,12 @@ static float sfTextWidth = 266.f;
 
 - (void)refreshWithCompletionHandler:(CRefreshCompletionHandler)completionHandler{
     // desc - MUST change to handler in prod
-    self.completionHandler = completionHandler;
+//    self.completionHandler = completionHandler;
     NSLog(@"refresh in background");
     [self.refreshControl beginRefreshing];
     // desc - do default refresh
-    [[SettingViewController sinaweibo] sinaweiboGetLatestStatuses:self];
+    [[SettingViewController sinaweibo] sinaweiboGetLatestStatuses:self
+                                                     withCallback:completionHandler];
 }
 
 

@@ -162,9 +162,10 @@
         }
         else
         {
-            if ([delegate respondsToSelector:@selector(request:didFinishLoadingWithResult:)])
+            if ([delegate respondsToSelector:@selector(request:didFinishLoadingWithResult:callback:)])
             {
-                [delegate request:self didFinishLoadingWithResult:(result == nil ? data : result)];
+                [delegate request:self didFinishLoadingWithResult:(result == nil ? data : result)
+                         callback:self.callback];
             }
         }
 	}
@@ -269,12 +270,26 @@
                               params:(NSDictionary *)params
                             delegate:(id<SinaWeiboRequestDelegate>)delegate
 {
+    return [SinaWeiboRequest requestWithURL:url
+                                 httpMethod:httpMethod
+                                     params:params
+                                   delegate:delegate
+                                   callback:nil];
+}
+
++ (SinaWeiboRequest *)requestWithURL:(NSString *)url
+                          httpMethod:(NSString *)httpMethod
+                              params:(NSDictionary *)params
+                            delegate:(id<SinaWeiboRequestDelegate>)delegate
+                            callback:(CRefreshCompletionHandler)callback
+{
     SinaWeiboRequest *request = [[SinaWeiboRequest alloc] init];
     
     request.url = url;
     request.httpMethod = httpMethod;
     request.params = params;
     request.delegate = delegate;
+    request.callback = callback;
     
     return request;
 }

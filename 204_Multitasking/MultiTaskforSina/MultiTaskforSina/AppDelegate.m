@@ -19,6 +19,7 @@
     // Override point for customization after application launch.
     // desc - do background fetch with minimum interval
     [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
+    
     // desc - customized loading main storyboard
     // see also http://wuchaorang.2008.blog.163.com/blog/static/488918522013024176657/
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

@@ -67,10 +67,12 @@
 // isLoggedIn && isAuthorizeExpired
 - (BOOL)isAuthValid;
 
+// desc - callback for data done
 - (SinaWeiboRequest*)requestWithURL:(NSString *)url
                              params:(NSMutableDictionary *)params
                          httpMethod:(NSString *)httpMethod
-                           delegate:(id<SinaWeiboRequestDelegate>)delegate;
+                           delegate:(id<SinaWeiboRequestDelegate>)delegate
+                           callback:(CRefreshCompletionHandler)callback;
 
 @end
 
