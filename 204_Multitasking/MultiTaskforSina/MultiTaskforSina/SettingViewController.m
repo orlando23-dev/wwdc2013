@@ -36,8 +36,9 @@
             appDelegate.sinaweibo.userID = [sinaweiboInfo objectForKey:@"UserIDKey"];
         }
     }
-
-//    NSLog(@"%d", [SettingViewController sinaweibo].isLoggedIn);
+#ifdef ENABLE_TRACE
+    NSLog(@"%d", [SettingViewController sinaweibo].isLoggedIn);
+#endif
     self->_enableAuthroizeUISwitch.on = [SettingViewController sinaweibo].isLoggedIn;
 }
 
