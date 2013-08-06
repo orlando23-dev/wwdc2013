@@ -1,0 +1,481 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F115C7F317B13BBD001ACE47 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F115C7F217B13BBD001ACE47 /* Cocoa.framework */; };
+		F115C7FD17B13BBD001ACE47 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F115C7FB17B13BBD001ACE47 /* InfoPlist.strings */; };
+		F115C7FF17B13BBD001ACE47 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F115C7FE17B13BBD001ACE47 /* main.m */; };
+		F115C80317B13BBD001ACE47 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = F115C80117B13BBD001ACE47 /* Credits.rtf */; };
+		F115C80617B13BBD001ACE47 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F115C80517B13BBD001ACE47 /* AppDelegate.m */; };
+		F115C80917B13BBD001ACE47 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F115C80717B13BBD001ACE47 /* MainMenu.xib */; };
+		F115C80B17B13BBD001ACE47 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F115C80A17B13BBD001ACE47 /* Images.xcassets */; };
+		F115C81217B13BBE001ACE47 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F115C81117B13BBE001ACE47 /* XCTest.framework */; };
+		F115C81317B13BBE001ACE47 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F115C7F217B13BBD001ACE47 /* Cocoa.framework */; };
+		F115C81B17B13BBE001ACE47 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F115C81917B13BBE001ACE47 /* InfoPlist.strings */; };
+		F115C81D17B13BBE001ACE47 /* CoffeeMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F115C81C17B13BBE001ACE47 /* CoffeeMapTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F115C81417B13BBE001ACE47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F115C7E717B13BBD001ACE47 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F115C7EE17B13BBD001ACE47;
+			remoteInfo = CoffeeMap;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F115C7EF17B13BBD001ACE47 /* CoffeeMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F115C7F217B13BBD001ACE47 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		F115C7F517B13BBD001ACE47 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		F115C7F617B13BBD001ACE47 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F115C7F717B13BBD001ACE47 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F115C7FA17B13BBD001ACE47 /* CoffeeMap-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoffeeMap-Info.plist"; sourceTree = "<group>"; };
+		F115C7FC17B13BBD001ACE47 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F115C7FE17B13BBD001ACE47 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F115C80017B13BBD001ACE47 /* CoffeeMap-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoffeeMap-Prefix.pch"; sourceTree = "<group>"; };
+		F115C80217B13BBD001ACE47 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		F115C80417B13BBD001ACE47 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F115C80517B13BBD001ACE47 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F115C80817B13BBD001ACE47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		F115C80A17B13BBD001ACE47 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F115C81017B13BBE001ACE47 /* CoffeeMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoffeeMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F115C81117B13BBE001ACE47 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		F115C81817B13BBE001ACE47 /* CoffeeMapTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoffeeMapTests-Info.plist"; sourceTree = "<group>"; };
+		F115C81A17B13BBE001ACE47 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F115C81C17B13BBE001ACE47 /* CoffeeMapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoffeeMapTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F115C7EC17B13BBD001ACE47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F115C7F317B13BBD001ACE47 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F115C80D17B13BBE001ACE47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F115C81317B13BBE001ACE47 /* Cocoa.framework in Frameworks */,
+				F115C81217B13BBE001ACE47 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F115C7E617B13BBD001ACE47 = {
+			isa = PBXGroup;
+			children = (
+				F115C7F817B13BBD001ACE47 /* CoffeeMap */,
+				F115C81617B13BBE001ACE47 /* CoffeeMapTests */,
+				F115C7F117B13BBD001ACE47 /* Frameworks */,
+				F115C7F017B13BBD001ACE47 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F115C7F017B13BBD001ACE47 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F115C7EF17B13BBD001ACE47 /* CoffeeMap.app */,
+				F115C81017B13BBE001ACE47 /* CoffeeMapTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F115C7F117B13BBD001ACE47 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F115C7F217B13BBD001ACE47 /* Cocoa.framework */,
+				F115C81117B13BBE001ACE47 /* XCTest.framework */,
+				F115C7F417B13BBD001ACE47 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F115C7F417B13BBD001ACE47 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F115C7F517B13BBD001ACE47 /* AppKit.framework */,
+				F115C7F617B13BBD001ACE47 /* CoreData.framework */,
+				F115C7F717B13BBD001ACE47 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		F115C7F817B13BBD001ACE47 /* CoffeeMap */ = {
+			isa = PBXGroup;
+			children = (
+				F115C80417B13BBD001ACE47 /* AppDelegate.h */,
+				F115C80517B13BBD001ACE47 /* AppDelegate.m */,
+				F115C80717B13BBD001ACE47 /* MainMenu.xib */,
+				F115C80A17B13BBD001ACE47 /* Images.xcassets */,
+				F115C7F917B13BBD001ACE47 /* Supporting Files */,
+			);
+			path = CoffeeMap;
+			sourceTree = "<group>";
+		};
+		F115C7F917B13BBD001ACE47 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F115C7FA17B13BBD001ACE47 /* CoffeeMap-Info.plist */,
+				F115C7FB17B13BBD001ACE47 /* InfoPlist.strings */,
+				F115C7FE17B13BBD001ACE47 /* main.m */,
+				F115C80017B13BBD001ACE47 /* CoffeeMap-Prefix.pch */,
+				F115C80117B13BBD001ACE47 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F115C81617B13BBE001ACE47 /* CoffeeMapTests */ = {
+			isa = PBXGroup;
+			children = (
+				F115C81C17B13BBE001ACE47 /* CoffeeMapTests.m */,
+				F115C81717B13BBE001ACE47 /* Supporting Files */,
+			);
+			path = CoffeeMapTests;
+			sourceTree = "<group>";
+		};
+		F115C81717B13BBE001ACE47 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F115C81817B13BBE001ACE47 /* CoffeeMapTests-Info.plist */,
+				F115C81917B13BBE001ACE47 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F115C7EE17B13BBD001ACE47 /* CoffeeMap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F115C82017B13BBE001ACE47 /* Build configuration list for PBXNativeTarget "CoffeeMap" */;
+			buildPhases = (
+				F115C7EB17B13BBD001ACE47 /* Sources */,
+				F115C7EC17B13BBD001ACE47 /* Frameworks */,
+				F115C7ED17B13BBD001ACE47 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoffeeMap;
+			productName = CoffeeMap;
+			productReference = F115C7EF17B13BBD001ACE47 /* CoffeeMap.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F115C80F17B13BBE001ACE47 /* CoffeeMapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F115C82317B13BBE001ACE47 /* Build configuration list for PBXNativeTarget "CoffeeMapTests" */;
+			buildPhases = (
+				F115C80C17B13BBE001ACE47 /* Sources */,
+				F115C80D17B13BBE001ACE47 /* Frameworks */,
+				F115C80E17B13BBE001ACE47 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F115C81517B13BBE001ACE47 /* PBXTargetDependency */,
+			);
+			name = CoffeeMapTests;
+			productName = CoffeeMapTests;
+			productReference = F115C81017B13BBE001ACE47 /* CoffeeMapTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F115C7E717B13BBD001ACE47 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = llv22;
+				TargetAttributes = {
+					F115C80F17B13BBE001ACE47 = {
+						TestTargetID = F115C7EE17B13BBD001ACE47;
+					};
+				};
+			};
+			buildConfigurationList = F115C7EA17B13BBD001ACE47 /* Build configuration list for PBXProject "CoffeeMap" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F115C7E617B13BBD001ACE47;
+			productRefGroup = F115C7F017B13BBD001ACE47 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F115C7EE17B13BBD001ACE47 /* CoffeeMap */,
+				F115C80F17B13BBE001ACE47 /* CoffeeMapTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F115C7ED17B13BBD001ACE47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F115C7FD17B13BBD001ACE47 /* InfoPlist.strings in Resources */,
+				F115C80B17B13BBD001ACE47 /* Images.xcassets in Resources */,
+				F115C80317B13BBD001ACE47 /* Credits.rtf in Resources */,
+				F115C80917B13BBD001ACE47 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F115C80E17B13BBE001ACE47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F115C81B17B13BBE001ACE47 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F115C7EB17B13BBD001ACE47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F115C80617B13BBD001ACE47 /* AppDelegate.m in Sources */,
+				F115C7FF17B13BBD001ACE47 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F115C80C17B13BBE001ACE47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F115C81D17B13BBE001ACE47 /* CoffeeMapTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F115C81517B13BBE001ACE47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F115C7EE17B13BBD001ACE47 /* CoffeeMap */;
+			targetProxy = F115C81417B13BBE001ACE47 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F115C7FB17B13BBD001ACE47 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F115C7FC17B13BBD001ACE47 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F115C80117B13BBD001ACE47 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F115C80217B13BBD001ACE47 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		F115C80717B13BBD001ACE47 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F115C80817B13BBD001ACE47 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		F115C81917B13BBE001ACE47 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F115C81A17B13BBE001ACE47 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F115C81E17B13BBE001ACE47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F115C81F17B13BBE001ACE47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		F115C82117B13BBE001ACE47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CoffeeMap/CoffeeMap-Prefix.pch";
+				INFOPLIST_FILE = "CoffeeMap/CoffeeMap-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F115C82217B13BBE001ACE47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CoffeeMap/CoffeeMap-Prefix.pch";
+				INFOPLIST_FILE = "CoffeeMap/CoffeeMap-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		F115C82417B13BBE001ACE47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CoffeeMap.app/Contents/MacOS/CoffeeMap";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CoffeeMap/CoffeeMap-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CoffeeMapTests/CoffeeMapTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		F115C82517B13BBE001ACE47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CoffeeMap.app/Contents/MacOS/CoffeeMap";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CoffeeMap/CoffeeMap-Prefix.pch";
+				INFOPLIST_FILE = "CoffeeMapTests/CoffeeMapTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F115C7EA17B13BBD001ACE47 /* Build configuration list for PBXProject "CoffeeMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F115C81E17B13BBE001ACE47 /* Debug */,
+				F115C81F17B13BBE001ACE47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F115C82017B13BBE001ACE47 /* Build configuration list for PBXNativeTarget "CoffeeMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F115C82117B13BBE001ACE47 /* Debug */,
+				F115C82217B13BBE001ACE47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F115C82317B13BBE001ACE47 /* Build configuration list for PBXNativeTarget "CoffeeMapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F115C82417B13BBE001ACE47 /* Debug */,
+				F115C82517B13BBE001ACE47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F115C7E717B13BBD001ACE47 /* Project object */;
+}

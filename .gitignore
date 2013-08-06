@@ -39,3 +39,6 @@ bin-release/
 204_Multitasking/MultiTaskforSina/MultiTaskforSina.xcodeproj/xcuserdata/llv22.xcuserdatad/xcdebugger/
 
 #ignore changes in subfolder of library
+
+#ignore foundation subfolder
+foundation/
