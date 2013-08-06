@@ -671,6 +671,7 @@
         </window>
         <customObject id="494" customClass="AppDelegate">
             <connections>
+                <outlet property="mapView" destination="gWa-f2-maz" id="zwT-1Y-rpz"/>
                 <outlet property="window" destination="371" id="532"/>
             </connections>
         </customObject>

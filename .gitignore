@@ -42,3 +42,6 @@ bin-release/
 
 #ignore foundation subfolder
 foundation/
+
+#MapKitView
+304_Mapkitnews/MapkitNews.xcworkspace/xcuserdata/

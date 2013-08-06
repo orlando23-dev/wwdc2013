@@ -1,0 +1,44 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1244\cocoasubrtf120
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Bold;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 1, MapKit issue\
+issue - 
+\f1\b\fs22 \CocoaLigature0 2013-08-06 22:33:36.192 CoffeeMap[474:303] An uncaught exception was raised\
+\pard\tx529\pardeftab529\pardirnatural
+\cf0 2013-08-06 22:33:36.195 CoffeeMap[474:303] *** -[NSKeyedUnarchiver decodeObjectForKey:]: cannot decode object of class (MKMapView)\
+2013-08-06 22:33:36.196 CoffeeMap[474:303] (\
+	0   CoreFoundation                      0x00007fff889add7c __exceptionPreprocess + 172\
+	1   libobjc.A.dylib                     0x00007fff8c5d1e15 objc_exception_throw + 43\
+	2   CoreFoundation                      0x00007fff889adb6c +[NSException raise:format:] + 204\
+	3   Foundation                          0x00007fff8b19a39d _decodeObjectBinary + 2349\
+	4   Foundation                          0x00007fff8b19b563 -[NSKeyedUnarchiver _decodeArrayOfObjectsForKey:] + 1774\
+	5   Foundation                          0x00007fff8b19b75f -[NSArray(NSArray) initWithCoder:] + 202\
+	6   Foundation                          0x00007fff8b19a456 _decodeObjectBinary + 2534\
+	7   Foundation                          0x00007fff8b199911 _decodeObject + 288\
+	8   AppKit                              0x00007fff8ca6edfd -[NSView initWithCoder:] + 1949\
+	9   Foundation                          0x00007fff8b19a456 _decodeObjectBinary + 2534\
+	10  Foundation                          0x00007fff8b199911 _decodeObject + 288\
+	11  AppKit                              0x00007fff8ca6d58e -[NSWindowTemplate initWithCoder:] + 1043\
+	12  Foundation                          0x00007fff8b19a456 _decodeObjectBinary + 2534\
+	13  Foundation                          0x00007fff8b19b563 -[NSKeyedUnarchiver _decodeArrayOfObjectsForKey:] + 1774\
+	14  Foundation                          0x00007fff8b19ab9b -[NSSet(NSSet) initWithCoder:] + 203\
+	15  Foundation                          0x00007fff8b19a456 _decodeObjectBinary + 2534\
+	16  Foundation                          0x00007fff8b199911 _decodeObject + 288\
+	17  AppKit                              0x00007fff8ca659a0 -[NSIBObjectData initWithCoder:] + 155\
+	18  Foundation                          0x00007fff8b19a456 _decodeObjectBinary + 2534\
+	19  Foundation                          0x00007fff8b199911 _decodeObject + 288\
+	20  AppKit                              0x00007fff8ca657bf loadNib + 232\
+	21  AppKit                              0x00007fff8ca64dbc +[NSBundle(NSNibLoading) _loadNibFile:nameTable:withZone:ownerBundle:] + 288\
+	22  AppKit                              0x00007fff8ca64bac -[NSBundle(NSNibLoading) loadNibNamed:owner:topLevelObjects:] + 197\
+	23  AppKit                              0x00007fff8ca6499b +[NSBundle(NSNibLoading) loadNibNamed:owner:] + 357\
+	24  AppKit                              0x00007fff8ca61597 NSApplicationMain + 448\
+	25  CoffeeMap                           0x00000001000015e2 main + 34\
+	26  libdyld.dylib                       0x00007fff91a735fd start + 1\
+)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\b0\fs24 \cf0 \CocoaLigature1 solution - link Mapkit.framework\
+As MapKit display error on Mavericks, just skip it, just for iOS7}

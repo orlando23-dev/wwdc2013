@@ -18,6 +18,7 @@
 		F115C81317B13BBE001ACE47 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F115C7F217B13BBD001ACE47 /* Cocoa.framework */; };
 		F115C81B17B13BBE001ACE47 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F115C81917B13BBE001ACE47 /* InfoPlist.strings */; };
 		F115C81D17B13BBE001ACE47 /* CoffeeMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F115C81C17B13BBE001ACE47 /* CoffeeMapTests.m */; };
+		F115C82817B141CA001ACE47 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F115C82717B141CA001ACE47 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		F115C81817B13BBE001ACE47 /* CoffeeMapTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoffeeMapTests-Info.plist"; sourceTree = "<group>"; };
 		F115C81A17B13BBE001ACE47 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F115C81C17B13BBE001ACE47 /* CoffeeMapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoffeeMapTests.m; sourceTree = "<group>"; };
+		F115C82617B14144001ACE47 /* readme.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = readme.rtf; sourceTree = "<group>"; };
+		F115C82717B141CA001ACE47 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F115C82817B141CA001ACE47 /* MapKit.framework in Frameworks */,
 				F115C7F317B13BBD001ACE47 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,6 +80,7 @@
 		F115C7E617B13BBD001ACE47 = {
 			isa = PBXGroup;
 			children = (
+				F115C82617B14144001ACE47 /* readme.rtf */,
 				F115C7F817B13BBD001ACE47 /* CoffeeMap */,
 				F115C81617B13BBE001ACE47 /* CoffeeMapTests */,
 				F115C7F117B13BBD001ACE47 /* Frameworks */,
@@ -95,6 +100,7 @@
 		F115C7F117B13BBD001ACE47 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F115C82717B141CA001ACE47 /* MapKit.framework */,
 				F115C7F217B13BBD001ACE47 /* Cocoa.framework */,
 				F115C81117B13BBE001ACE47 /* XCTest.framework */,
 				F115C7F417B13BBD001ACE47 /* Other Frameworks */,

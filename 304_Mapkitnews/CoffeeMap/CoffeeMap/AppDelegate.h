@@ -7,9 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
+@import MapKit;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+// bug-fix - 2013-08-06 22:32:53.889 CoffeeMap[453:303] *** -[NSKeyedUnarchiver decodeObjectForKey:]: cannot decode object of class (MKMapView)
+//@property (nonatomic, strong) IBOutlet MKMapView *mapView;
+@property (assign) IBOutlet MKMapView *mapView;
 
 @end
