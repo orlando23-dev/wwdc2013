@@ -207,6 +207,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = llv22;
 				TargetAttributes = {
+					F115C7EE17B13BBD001ACE47 = {
+						DevelopmentTeam = 84Z8KQ6A9Q;
+					};
 					F115C80F17B13BBE001ACE47 = {
 						TestTargetID = F115C7EE17B13BBD001ACE47;
 					};
@@ -472,6 +475,7 @@
 				F115C82217B13BBE001ACE47 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F115C82317B13BBE001ACE47 /* Build configuration list for PBXNativeTarget "CoffeeMapTests" */ = {
 			isa = XCConfigurationList;
@@ -480,6 +484,7 @@
 				F115C82517B13BBE001ACE47 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
