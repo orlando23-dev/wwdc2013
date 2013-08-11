@@ -22,6 +22,7 @@
 		F100FCC617B690C300F3AD01 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F100FCC417B690C300F3AD01 /* InfoPlist.strings */; };
 		F100FCC817B690C300F3AD01 /* CoffeeSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F100FCC717B690C300F3AD01 /* CoffeeSearchTests.m */; };
 		F100FCD217B6929800F3AD01 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F100FCD117B6929800F3AD01 /* MapKit.framework */; };
+		F1BD2B3217B7CF6300C4C302 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1BD2B3117B7CF6300C4C302 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		F100FCC517B690C300F3AD01 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F100FCC717B690C300F3AD01 /* CoffeeSearchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoffeeSearchTests.m; sourceTree = "<group>"; };
 		F100FCD117B6929800F3AD01 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F1BD2B3117B7CF6300C4C302 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1BD2B3217B7CF6300C4C302 /* CoreLocation.framework in Frameworks */,
 				F100FC9F17B690C200F3AD01 /* CoreGraphics.framework in Frameworks */,
 				F100FCA117B690C200F3AD01 /* UIKit.framework in Frameworks */,
 				F100FCD217B6929800F3AD01 /* MapKit.framework in Frameworks */,
@@ -104,6 +107,7 @@
 		F100FC9B17B690C200F3AD01 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F1BD2B3117B7CF6300C4C302 /* CoreLocation.framework */,
 				F100FCD117B6929800F3AD01 /* MapKit.framework */,
 				F100FC9C17B690C200F3AD01 /* Foundation.framework */,
 				F100FC9E17B690C200F3AD01 /* CoreGraphics.framework */,
@@ -467,6 +471,7 @@
 				F100FCCD17B690C300F3AD01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F100FCCE17B690C300F3AD01 /* Build configuration list for PBXNativeTarget "CoffeeSearchTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +480,7 @@
 				F100FCD017B690C300F3AD01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

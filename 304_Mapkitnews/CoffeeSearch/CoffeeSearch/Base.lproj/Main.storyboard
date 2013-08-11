@@ -27,6 +27,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="515" id="0Lu-j8-ZlQ"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="wyE-o4-0NL"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -40,6 +43,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="map" destination="EXz-b1-YAa" id="PxN-0P-YDp"/>
                         <outlet property="searchDisplayController" destination="zP1-tH-9ym" id="Zo6-0A-25k"/>
                     </connections>
                 </viewController>

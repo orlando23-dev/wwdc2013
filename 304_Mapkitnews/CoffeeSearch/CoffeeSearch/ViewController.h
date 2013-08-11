@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<MKMapViewDelegate>
+
+@property (nonatomic, strong) IBOutlet MKMapView *map;
 
 @end
