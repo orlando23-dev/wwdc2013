@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController<MKMapViewDelegate>
+@interface ViewController : UIViewController<MKMapViewDelegate, UISearchBarDelegate>
 
 @property (nonatomic, strong) IBOutlet MKMapView *map;
 

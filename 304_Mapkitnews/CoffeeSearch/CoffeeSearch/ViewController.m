@@ -37,7 +37,7 @@
     // desc - replace x/y/z with OpenStreetMap layer, more style - http://wiki.openstreetmap.org/wiki/tiles
     NSString *template = @"http://c.tile.openstreetmap.org/{z}/{x}/{y}.png";
     MKTileOverlay *overlay = [[MKTileOverlay alloc]initWithURLTemplate:template];
-    overlay.canReplaceMapContent = YES;
+//    overlay.canReplaceMapContent = YES;
     [self.map addOverlay:overlay level:MKOverlayLevelAboveLabels];
 }
 
@@ -81,6 +81,35 @@
         renderer = tileRenderer;
     }
     return renderer;
+}
+
+#pragma mark - UISearchBarDelegate
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+#ifdef ENABLELOG
+    NSLog(@"doSearch via (%@)", [searchBar text]);
+#endif
+    // desc - initialize request object
+    MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc]init];
+    request.naturalLanguageQuery = [searchBar text];
+    request.region = self.map.region;
+    
+    // desc - initialize search object
+    MKLocalSearch *search = [[MKLocalSearch alloc]initWithRequest:request];
+    
+    // desc - run search and display object
+    __block UISearchBar* localSearchBar = searchBar;
+    [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
+        if (!error) {
+            NSMutableArray *placemarks = [NSMutableArray array];
+            for (MKMapItem *item in response.mapItems) {
+                [placemarks addObject:item.placemark];
+            }
+            [self.map removeAnnotations:[self.map annotations]];
+            [self.map showAnnotations:placemarks animated:YES];
+            [localSearchBar endEditing:YES];
+        }
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning
