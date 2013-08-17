@@ -113,6 +113,11 @@ typedef NS_ENUM(NSInteger, MapViewControllerMode) {
 @property (nonatomic) MapViewControllerMode mode;
 @property (nonatomic, strong) TransitInfo *transitInfo;
 @property (nonatomic, strong) Route *route;
+
+//desc - MKRoute for iOS7.0
+@property (nonatomic, strong) MKRoute *walkingLeg1;
+@property (nonatomic, strong) MKRoute *walkingLeg2;
+
 @end
 
 @implementation MapViewController {
@@ -183,7 +188,11 @@ typedef NS_ENUM(NSInteger, MapViewControllerMode) {
             self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Clear" style:UIBarButtonItemStyleBordered target:self action:@selector(clearDirections:)];
             [self.mapView addAnnotation:self.route.startStop];
             [self.mapView addAnnotation:self.route.endStop];
-            [self.mapView addOverlay:self.route.polyline];
+            [self.mapView addOverlay:self.route.polyline level:MKOverlayLevelAboveRoads];
+            
+            // desc - walking rounte
+            [self.mapView addOverlay:self.walkingLeg1.polyline level:MKOverlayLevelAboveRoads];
+            [self.mapView addOverlay:self.walkingLeg2.polyline level:MKOverlayLevelAboveRoads];
             
             NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
             [dateFormatter setTimeZone:self.transitInfo.timeZone];
@@ -202,6 +211,16 @@ typedef NS_ENUM(NSInteger, MapViewControllerMode) {
 - (void)clearDirections:(id)sender
 {
     self.mode = MapViewControllerModeStations;
+    
+    //desc - also refered in - (void)clearRoute:(id)sender
+    if (self.walkingLeg1) {
+        [self.mapView removeOverlay:self.walkingLeg1.polyline];
+        self.walkingLeg1 = nil;
+    }
+    if (self.walkingLeg2) {
+        [self.mapView removeOverlay:self.walkingLeg2.polyline];
+        self.walkingLeg2 = nil;
+    }
 }
 
 - (void)showDirectionsSheet:(id)sender
@@ -231,6 +250,7 @@ typedef NS_ENUM(NSInteger, MapViewControllerMode) {
     self.mode = MapViewControllerModeDirections;
 }
 
+// desc - walking rounte
 - (void)routeFromPlace:(MyPlace *)startPlace toPlace:(MyPlace *)endPlace
 {
     self.mode = MapViewControllerModeLoading;
@@ -239,7 +259,42 @@ typedef NS_ENUM(NSInteger, MapViewControllerMode) {
     TransitStop *startStop = [self.transitInfo closestStopToCoordinate:startPlace.coordinate];
     TransitStop *endStop = [self.transitInfo closestStopToCoordinate:endPlace.coordinate];
     
-    [self routeFromStop:startStop toStop:endStop departingAtDate:[NSDate date]];
+    // desc - iOS 7.0 how-to find the walking direction bettween two stop?
+    //[self routeFromStop:startStop toStop:endStop departingAtDate:[NSDate date]];
+    // desc - Get walking instructions to the start station
+    MKDirectionsRequest *leg1Request = [[MKDirectionsRequest alloc]init];
+    leg1Request.transportType = MKDirectionsTransportTypeWalking;
+    leg1Request.source = startPlace.mapItem;
+    leg1Request.destination = startStop.mapItem;
+    
+    MKDirections *leg1Directions = [[MKDirections alloc]initWithRequest:leg1Request];
+    [leg1Directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
+        if (error) {
+            [self handleDirectionsError:error];
+        }
+        else{
+            self.walkingLeg1 = response.routes[0];
+            
+            //get walking instructions to the end station
+            MKDirectionsRequest *leg2Request = [[MKDirectionsRequest alloc]init];
+            leg1Request.transportType = MKDirectionsTransportTypeWalking;
+            leg1Request.source = endStop.mapItem;
+            leg1Request.destination = endPlace.mapItem;
+            
+            MKDirections *leg2Directions = [[MKDirections alloc]initWithRequest:leg2Request];
+            [leg2Directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
+                if (error) {
+                    [self handleDirectionsError:error];
+                }
+                else{
+                    self.walkingLeg2 = response.routes[0];
+                    
+                    // finally get caltrain instructions bettween startStop and endStop
+                    [self routeFromStop:startStop toStop:endStop departingAtDate:[NSDate date]];
+                }
+            }];
+        }
+    }];
 }
 
 - (void)routeFromCurrentLocationToPlace:(MyPlace *)endPlace
@@ -344,6 +399,24 @@ typedef NS_ENUM(NSInteger, MapViewControllerMode) {
     }
 }
 
+// desc - new for renderer for overlay
+- (MKOverlayRenderer*) mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay{
+    if (overlay == self.route.polyline) {
+        MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc]initWithOverlay:overlay];
+        renderer.strokeColor = [[UIColor blueColor] colorWithAlphaComponent:0.7];
+        return renderer;
+    }
+    else{
+        // Must belong to one of the walking routes
+        MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc]initWithOverlay:overlay];
+        renderer.strokeColor = [[UIColor grayColor] colorWithAlphaComponent:0.7];
+        return renderer;
+    }
+}
+
+/** 
+ ** deprecated API
+ **
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay
 {
     if (overlay == self.route.polyline) {
@@ -354,6 +427,7 @@ typedef NS_ENUM(NSInteger, MapViewControllerMode) {
     }
     return nil;
 }
+ **/
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {

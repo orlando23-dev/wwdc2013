@@ -112,4 +112,12 @@
     return self;
 }
 
+// desc - http://stackoverflow.com/questions/12692924/mkmapitem-with-specific-location
+- (id) getMKMapItem{
+    MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:self.coordinate addressDictionary:nil];
+    MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+    [mapItem setName:self.name];
+    return mapItem;
+}
+
 @end

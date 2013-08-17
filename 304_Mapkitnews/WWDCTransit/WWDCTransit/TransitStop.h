@@ -102,6 +102,7 @@
 @property (nonatomic, readonly, copy) NSString *stopID;
 @property (nonatomic, readonly, copy) NSString *title;
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
+@property (nonatomic, getter = getMKMapItem) MKMapItem *mapItem;
 
 @property (nonatomic, copy) NSString *subtitle;
 

@@ -101,5 +101,6 @@
 
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
+@property (nonatomic, getter = getMKMapItem) MKMapItem *mapItem;
 
 @end

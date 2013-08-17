@@ -41,6 +41,9 @@
 	<true/>
 	<key>MKDirectionsApplicationSupportedModes</key>
 	<array>
+		<string>MKDirectionsModeCar</string>
+		<string>MKDirectionsModePlane</string>
+		<string>MKDirectionsModeSubway</string>
 		<string>MKDirectionsModeTrain</string>
 	</array>
 	<key>UIRequiredDeviceCapabilities</key>
