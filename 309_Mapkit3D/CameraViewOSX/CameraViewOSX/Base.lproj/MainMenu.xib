@@ -669,7 +669,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </searchFieldCell>
                         <connections>
-                            <action selector="performSearch:" target="494" id="yCu-4z-X7i"/>
+                            <action selector="performSearch:" target="494" id="89c-c6-qoL"/>
                         </connections>
                     </searchField>
                 </subviews>

@@ -43,6 +43,82 @@
     }
 }
 
+- (void)performShortCameraAnimation:(MKMapCamera *)end{
+//    MKMapCamera *end = [MKMapCamera cameraLookingAtCenterCoordinate:coord
+//                                                  fromEyeCoordinate:coord
+//                                                        eyeAltitude:500];
+//    // desc - 3D building for end.pitch = 55
+//    end.pitch = 55;
+    
+    // desc - do filter of current distance to traverse
+    MKMapCamera *start = self.mapView.camera;
+    CLLocation *startLocation = [[CLLocation alloc]initWithCoordinate:start.centerCoordinate
+                                                             altitude:start.altitude
+                                                   horizontalAccuracy:0
+                                                     verticalAccuracy:0
+                                                            timestamp:nil];
+    CLLocation *endLocation = [[CLLocation alloc]initWithCoordinate:end.centerCoordinate
+                                                           altitude:end.altitude
+                                                 horizontalAccuracy:0
+                                                   verticalAccuracy:0
+                                                          timestamp:nil];
+    CLLocationDistance distance = [startLocation distanceFromLocation:endLocation];
+    NSLog(@"Distance in meters: %f", distance);
+    
+    CLLocationCoordinate2D startingCoordinate = self.mapView.centerCoordinate;
+    MKMapPoint startingPoint = MKMapPointForCoordinate(startingCoordinate);
+    MKMapPoint endingPoint = MKMapPointForCoordinate(end.centerCoordinate);
+    
+    MKMapPoint midPoint = MKMapPointMake(startingPoint.x + ((endingPoint.x - startingPoint.x)/2.0), startingPoint.y + ((endingPoint.y - startingPoint.y)/2.0));
+    CLLocationCoordinate2D midCoordinate = MKCoordinateForMapPoint(midPoint);
+    // desc - just added magic for 4 3D change
+    CLLocationDistance midAltitude = end.altitude * 4;
+    
+    MKMapCamera *midCamera = [MKMapCamera cameraLookingAtCenterCoordinate:end.centerCoordinate fromEyeCoordinate:midCoordinate eyeAltitude:midAltitude];
+    if (self->animationCameras == NULL) {
+        self->animationCameras = [[NSMutableArray alloc]init];
+    }
+    else{
+        [self->animationCameras removeAllObjects];
+    }
+    [self->animationCameras addObject:midCamera];
+    [self->animationCameras addObject:end];
+    [self goToNextCamera];
+}
+
+- (void)performLongCameraAnimation:(MKMapCamera *)end{
+    MKMapCamera *start = self.mapView.camera;
+    CLLocation *startLocation = [[CLLocation alloc]initWithCoordinate:start.centerCoordinate
+                                                             altitude:start.altitude
+                                                   horizontalAccuracy:0
+                                                     verticalAccuracy:0
+                                                            timestamp:nil];
+    CLLocation *endLocation = [[CLLocation alloc]initWithCoordinate:end.centerCoordinate
+                                                           altitude:end.altitude
+                                                 horizontalAccuracy:0
+                                                   verticalAccuracy:0
+                                                          timestamp:nil];
+    CLLocationDistance distance = [startLocation distanceFromLocation:endLocation];
+    CLLocationDistance midAltitude = distance;
+    
+    // desc - pan to camera position in the same height
+    MKMapCamera *midCamera1 = [MKMapCamera cameraLookingAtCenterCoordinate:start.centerCoordinate
+                                                         fromEyeCoordinate:start.centerCoordinate
+                                                               eyeAltitude:midAltitude];
+    MKMapCamera *midCamera2 = [MKMapCamera cameraLookingAtCenterCoordinate:end.centerCoordinate
+                                                         fromEyeCoordinate:end.centerCoordinate
+                                                               eyeAltitude:midAltitude];
+    if (self->animationCameras == NULL) {
+        self->animationCameras = [[NSMutableArray alloc]init];
+    }
+    else{
+        [self->animationCameras removeAllObjects];
+    }
+    [self->animationCameras addObject:midCamera1];
+    [self->animationCameras addObject:midCamera2];
+    [self goToNextCamera];
+}
+
 - (void)goToNextCamera{
     if (animationCameras.count == 0) {
         //We've done!
@@ -59,6 +135,41 @@
         context.timingFunction = f;
         self.mapView.camera = nextCamera;
     } completionHandler:NULL];
+}
+
+- (void)goToCoordinate:(CLLocationCoordinate2D)coord{
+    MKMapCamera *end = [MKMapCamera cameraLookingAtCenterCoordinate:coord
+                                                  fromEyeCoordinate:coord
+                                                        eyeAltitude:500];
+    // desc - 3D building for end.pitch = 55
+    end.pitch = 55;
+    
+    // desc - do filter of current distance to traverse
+    MKMapCamera *start = self.mapView.camera;
+    CLLocation *startLocation = [[CLLocation alloc]initWithCoordinate:start.centerCoordinate
+                                                             altitude:start.altitude
+                                                   horizontalAccuracy:0
+                                                     verticalAccuracy:0
+                                                            timestamp:nil];
+    CLLocation *endLocation = [[CLLocation alloc]initWithCoordinate:end.centerCoordinate
+                                                           altitude:end.altitude
+                                                 horizontalAccuracy:0
+                                                   verticalAccuracy:0
+                                                          timestamp:nil];
+    CLLocationDistance distance = [startLocation distanceFromLocation:endLocation];
+    NSLog(@"Distance in meters: %f", distance);
+    
+    if (distance < 2500) {
+        [self.mapView setCamera:end animated:YES];
+        return;
+    }
+    
+    if (distance < 5000) {
+        [self performShortCameraAnimation:end];
+        return;
+    }
+    
+    [self performLongCameraAnimation:end];
 }
 
 - (IBAction)performSearch:(NSSearchField *)searchField{
@@ -82,8 +193,9 @@
         MKMapItem *topItem = [response.mapItems firstObject];
         [self.mapView removeAnnotations:self.mapView.annotations];
         [self.mapView addAnnotation:topItem.placemark];
-        // desc - not just move, but move here with 3D building
-        [self.mapView showAnnotations:@[topItem.placemark] animated:YES];
+        // desc - not just move, but move here with 3D building - replace with new anmimation
+//        [self.mapView showAnnotations:@[topItem.placemark] animated:YES];
+        [self goToCoordinate:topItem.placemark.coordinate];
     }];
 }
 
