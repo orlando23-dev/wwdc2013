@@ -16,5 +16,6 @@
 @property (nonatomic, strong) IBOutlet MKMapView *mapView;
 
 - (IBAction)performSearch:(NSSearchField *)searchField;
+- (IBAction)performSaveSnapshots:(NSMenuItem *)menuItem;
 
 @end

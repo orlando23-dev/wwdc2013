@@ -22,6 +22,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.mapView.pitchEnabled = YES;
     // desc - center coordinate
     self.mapView.camera.centerCoordinate =  CLLocationCoordinate2DMake(37.78275123, -122.40416442);
     // desc - altitude - height above the map

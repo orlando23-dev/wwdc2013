@@ -10,6 +10,10 @@
 
 @implementation AppDelegate
 
+- (IBAction)performSaveSnapshots:(NSMenuItem *)menuItem{
+    NSLog(@"performSaveSnapshots");
+}
+
 - (void)updateCameraProperties{
     NSLog(@"%@", [self.mapView.camera description]);
 }
@@ -21,6 +25,8 @@
     
     self.mapView.delegate = self;
     self.mapView.rotateEnabled = YES;
+    self.mapView.pitchEnabled = YES;
+    NSLog(@"self.mapView.pitchEnabled - %d, self.mapView.rotateEnabled - %d", self.mapView.pitchEnabled, self.mapView.rotateEnabled);
     self.mapView.showsCompass = YES;
     self.mapView.showsZoomControls = YES;
     

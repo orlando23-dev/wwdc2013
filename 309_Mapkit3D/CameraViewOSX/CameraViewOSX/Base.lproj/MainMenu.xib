@@ -31,6 +31,7 @@
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
                             <menuItem title="Services" id="131">
+                                <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Services" systemMenu="services" id="130"/>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="144">
@@ -118,6 +119,18 @@
                             <menuItem title="Print…" keyEquivalent="p" id="78">
                                 <connections>
                                     <action selector="print:" target="-1" id="86"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Snapshots" id="Sl3-vL-bmT">
+                    <menu key="submenu" title="Snapshots" id="nRa-R7-2nn">
+                        <items>
+                            <menuItem title="Store Current" keyEquivalent="c" id="CRz-vT-b4y">
+                                <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
+                                <connections>
+                                    <action selector="performSaveSnapshots:" target="-1" id="Chd-h7-0DK"/>
                                 </connections>
                             </menuItem>
                         </items>
