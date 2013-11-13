@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Trans2013TechTalks/Trans2013TechTalks.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:CustomTransitions/CustomTransitions.xcodeproj">
    </FileRef>
 </Workspace>

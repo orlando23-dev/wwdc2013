@@ -21,6 +21,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIInterpolatingMotionEffect *xAxis = [[UIInterpolatingMotionEffect alloc]initWithKeyPath:@"center.x"
+                                                                                        type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
+    xAxis.minimumRelativeValue = @-40;
+    xAxis.maximumRelativeValue = @40;
+    
+    
+    UIInterpolatingMotionEffect *yAxis = [[UIInterpolatingMotionEffect alloc]initWithKeyPath:@"center.y"
+                                                                                        type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
+    yAxis.minimumRelativeValue = @-64;
+    yAxis.maximumRelativeValue = @64;
+    
+    UIMotionEffectGroup *group = [[UIMotionEffectGroup alloc]init];
+    group.motionEffects = @[xAxis, yAxis];
+    [self.view addMotionEffect:group];
+    
 	// Do any additional setup after loading the view, typically from a nib.
     self.mapView.pitchEnabled = YES;
     // desc - center coordinate
