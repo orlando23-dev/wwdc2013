@@ -199,6 +199,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Ding Orlando";
 				TargetAttributes = {
+					F1966E321833C8BA007C74F2 = {
+						DevelopmentTeam = 84Z8KQ6A9Q;
+					};
 					F1966E531833C8BA007C74F2 = {
 						TestTargetID = F1966E321833C8BA007C74F2;
 					};
@@ -378,6 +381,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Trans2013TechTalks/Trans2013TechTalks-Prefix.pch";
 				INFOPLIST_FILE = "Trans2013TechTalks/Trans2013TechTalks-Info.plist";
@@ -391,6 +395,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Trans2013TechTalks/Trans2013TechTalks-Prefix.pch";
 				INFOPLIST_FILE = "Trans2013TechTalks/Trans2013TechTalks-Info.plist";
