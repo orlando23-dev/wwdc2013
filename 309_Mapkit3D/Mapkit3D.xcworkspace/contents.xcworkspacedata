@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:CameraViewOSX/CameraViewOSX.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:CameraView/CameraView.xcodeproj">
    </FileRef>
 </Workspace>

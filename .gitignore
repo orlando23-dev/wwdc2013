@@ -26,6 +26,9 @@ bin-release/
 218_Transitions/Transitions.xcworkspace/xcuserdata/llv22.xcuserdatad/UserInterfaceState.xcuserstate
 218_Transitions/Transitions.xcworkspace/xcuserdata/llv22.xcuserdatad/
 218_Transitions/Transitions.xcworkspace/xcshareddata/
+# iOSTechTalks
+218_Transitions/Trans2013TechTalks/Trans2013TechTalks.xcodeproj/xcuserdata/
+218_Transitions/Transitions.xcworkspace/xcuserdata/llv22.xcuserdatad/UserInterfaceState.xcuserstate
 
 # Multitasking extended folders - 204_Multitasking/OfficialSamples
 204_Multitasking/OfficialSamples
@@ -51,7 +54,9 @@ foundation/
 #CameraView
 309_Mapkit3D/OfficialSamples/
 309_Mapkit3D/Mapkit3D.xcworkspace/xcuserdata/
+309_Mapkit3D/Mapkit3D.xcworkspace/contents.xcworkspacedata
 309_Mapkit3D/CameraView/CameraView.xcodeproj/xcuserdata/
+309_Mapkit3D/CameraViewOSX/CameraViewOSX.xcodeproj/xcuserdata/
 
 #ScrollView in iOS7.0
 217_ScrollViewIniOS/OfficalSamples/
