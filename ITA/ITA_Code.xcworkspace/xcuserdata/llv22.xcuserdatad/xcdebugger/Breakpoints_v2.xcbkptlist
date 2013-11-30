@@ -2,4 +2,160 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DynamicOCThread/DynamicOCThread/NSMutableDictionary+NSMutableDictionary_ThreadSafe.m"
+            timestampString = "407490898.704612"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "-safeObjectForKey:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[NSMutableDictionary(NSMutableDictionary_ThreadSafe) safeObjectForKey:]"
+                  moduleName = "DynamicOCThread"
+                  urlString = "file:///Users/llv22/Documents/02_apple_programming/05_appleDevs/wwdc2013/ITA/DynamicOCThread/DynamicOCThread/NSMutableDictionary+NSMutableDictionary_ThreadSafe.m"
+                  timestampString = "407490900.857725"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "89">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[NSMutableDictionary(NSMutableDictionary_ThreadSafe) safeObjectForKey:]"
+                  moduleName = "DynamicOCThread"
+                  urlString = "file:///Users/llv22/Documents/02_apple_programming/05_appleDevs/wwdc2013/ITA/DynamicOCThread/DynamicOCThread/NSMutableDictionary+NSMutableDictionary_ThreadSafe.m"
+                  timestampString = "407490900.857938"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[NSMutableDictionary(NSMutableDictionary_ThreadSafe) safeObjectForKey:]"
+                  moduleName = "DynamicOCThread"
+                  urlString = "file:///Users/llv22/Documents/02_apple_programming/05_appleDevs/wwdc2013/ITA/DynamicOCThread/DynamicOCThread/NSMutableDictionary+NSMutableDictionary_ThreadSafe.m"
+                  timestampString = "407490900.858407"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "192">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DynamicOCThread/DynamicOCThread/NSMutableDictionary+NSMutableDictionary_ThreadSafe.m"
+            timestampString = "407490908.799199"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "-safeObjectForKey:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[NSMutableDictionary(NSMutableDictionary_ThreadSafe) safeObjectForKey:]"
+                  moduleName = "DynamicOCThread"
+                  urlString = "file:///Users/llv22/Documents/02_apple_programming/05_appleDevs/wwdc2013/ITA/DynamicOCThread/DynamicOCThread/NSMutableDictionary+NSMutableDictionary_ThreadSafe.m"
+                  timestampString = "407490908.802812"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "222">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[NSMutableDictionary(NSMutableDictionary_ThreadSafe) safeObjectForKey:]"
+                  moduleName = "DynamicOCThread"
+                  urlString = "file:///Users/llv22/Documents/02_apple_programming/05_appleDevs/wwdc2013/ITA/DynamicOCThread/DynamicOCThread/NSMutableDictionary+NSMutableDictionary_ThreadSafe.m"
+                  timestampString = "407490908.803247"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "284">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DynamicOCThread/DynamicOCThread/main.m"
+            timestampString = "407491057.073304"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "Fib()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DynamicOCThread/DynamicOCThread/main.m"
+            timestampString = "407491058.819036"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "Fib()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DynamicOCThread/DynamicOCThread/main.m"
+            timestampString = "407491059.590995"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "Fib()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

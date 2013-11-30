@@ -4,5 +4,14 @@
 \margl1440\margr1440\vieww9000\viewh8400\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
 
-\f0\fs24 \cf0 1, issue - /Users/llv22/Documents/wwdc2013/ITA/DynamicOCThread/DynamicOCThread/main.m:19:22: Implicit declaration of function 'dispatch_benchmark' is invalid in C99\
+\f0\fs24 \cf0 1, issue - /Users/llv22/Documents/wwdc2013/ITA/DynamicOCThread/DynamicOCThread/main.m:19:22: Implicit declaration of function 'dispatch_benchmark' is invalid in C99\\\
+2, threading safety for NSMutableDictionary\
+	- http://stackoverflow.com/questions/1986736/nsmutabledictionary-thread-safety\
+	- https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Multithreading/ThreadSafetySummary/ThreadSafetySummary.html\
+   via locking to guarantee thread-safety \
+	- https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Multithreading/ThreadSafety/ThreadSafety.html#//apple_ref/doc/uid/10000057i-CH8-SW2\
+	- http://www.mulle-kybernetik.com/artikel/Optimization/opti-4-refresher.html\
+  see also for threading-safe in http://recon-mac.googlecode.com/svn/trunk/recon-mac/Vendor/Path%20Finder%20SDK/Source/CocoatechCore/\
+  global static block variable to be modified, \
+	- see https://developer.apple.com/library/ios/documentation/cocoa/Conceptual/Blocks/Articles/bxVariables.html#//apple_ref/doc/uid/TP40007502-CH6-SW1\
 }

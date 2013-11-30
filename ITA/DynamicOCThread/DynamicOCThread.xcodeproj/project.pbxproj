@@ -10,6 +10,8 @@
 		F10ED4EF184315D200B49AE0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F10ED4EE184315D200B49AE0 /* Foundation.framework */; };
 		F10ED4F2184315D200B49AE0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F10ED4F1184315D200B49AE0 /* main.m */; };
 		F10ED4F6184315D200B49AE0 /* DynamicOCThread.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = F10ED4F5184315D200B49AE0 /* DynamicOCThread.1 */; };
+		F1FF28361849C6F5007A1A08 /* NSMutableDictionary+NSMutableDictionary_ThreadSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = F1FF28351849C6F5007A1A08 /* NSMutableDictionary+NSMutableDictionary_ThreadSafe.m */; };
+		F1FF283B1849C8F0007A1A08 /* NSDictionary+NSDictionary_NTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F1FF283A1849C8F0007A1A08 /* NSDictionary+NSDictionary_NTExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +34,10 @@
 		F10ED4F4184315D200B49AE0 /* DynamicOCThread-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DynamicOCThread-Prefix.pch"; sourceTree = "<group>"; };
 		F10ED4F5184315D200B49AE0 /* DynamicOCThread.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = DynamicOCThread.1; sourceTree = "<group>"; };
 		F10ED4FC1843187700B49AE0 /* readme.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = readme.rtf; sourceTree = "<group>"; };
+		F1FF28341849C6F5007A1A08 /* NSMutableDictionary+NSMutableDictionary_ThreadSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+NSMutableDictionary_ThreadSafe.h"; sourceTree = "<group>"; };
+		F1FF28351849C6F5007A1A08 /* NSMutableDictionary+NSMutableDictionary_ThreadSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+NSMutableDictionary_ThreadSafe.m"; sourceTree = "<group>"; };
+		F1FF28391849C8F0007A1A08 /* NSDictionary+NSDictionary_NTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+NSDictionary_NTExtensions.h"; sourceTree = "<group>"; };
+		F1FF283A1849C8F0007A1A08 /* NSDictionary+NSDictionary_NTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NSDictionary_NTExtensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,7 @@
 		F10ED4F0184315D200B49AE0 /* DynamicOCThread */ = {
 			isa = PBXGroup;
 			children = (
+				F1FF28371849C89C007A1A08 /* ThreadSafety */,
 				F10ED4F1184315D200B49AE0 /* main.m */,
 				F10ED4F5184315D200B49AE0 /* DynamicOCThread.1 */,
 				F10ED4F3184315D200B49AE0 /* Supporting Files */,
@@ -88,6 +95,17 @@
 				F10ED4F4184315D200B49AE0 /* DynamicOCThread-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F1FF28371849C89C007A1A08 /* ThreadSafety */ = {
+			isa = PBXGroup;
+			children = (
+				F1FF28341849C6F5007A1A08 /* NSMutableDictionary+NSMutableDictionary_ThreadSafe.h */,
+				F1FF28351849C6F5007A1A08 /* NSMutableDictionary+NSMutableDictionary_ThreadSafe.m */,
+				F1FF28391849C8F0007A1A08 /* NSDictionary+NSDictionary_NTExtensions.h */,
+				F1FF283A1849C8F0007A1A08 /* NSDictionary+NSDictionary_NTExtensions.m */,
+			);
+			name = ThreadSafety;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +159,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1FF283B1849C8F0007A1A08 /* NSDictionary+NSDictionary_NTExtensions.m in Sources */,
+				F1FF28361849C6F5007A1A08 /* NSMutableDictionary+NSMutableDictionary_ThreadSafe.m in Sources */,
 				F10ED4F2184315D200B49AE0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +281,7 @@
 				F10ED4FB184315D200B49AE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
