@@ -109,6 +109,7 @@ long FibInParallelGroup (int n){
 void benchmark_template(){
     size_t const objectCount = 10000;
     
+    //TODO : see http://blog.sina.com.cn/s/blog_a343f32b0101dcq4.html
     uint64_t n = dispatch_benchmark(10000, ^{
         @autoreleasepool {
             id obj = @42;
