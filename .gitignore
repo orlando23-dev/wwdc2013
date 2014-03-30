@@ -67,4 +67,6 @@ foundation/
 #ITA
 ITA/DynamicOCThread/DynamicOCThread.xcodeproj/xcuserdata/
 ITA/DynamicThread/DynamicThread.xcodeproj/xcuserdata/
+# to remove item in caches http://stackoverflow.com/questions/6564257/cant-ignore-userinterfacestate-xcuserstate
+# git rm --cached ITA/ITA_Code.xcworkspace/xcuserdata/llv22.xcuserdatad/UserInterfaceState.xcuserstate
 ITA/ITA_Code.xcworkspace/xcuserdata/llv22.xcuserdatad/
